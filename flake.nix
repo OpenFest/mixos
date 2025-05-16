@@ -19,7 +19,7 @@
     getPkgs = system: let
         orig_pkgs = import nixpkgs ({
           inherit system;
-        } // (import ./common/nixpkgs-global-config.nix));
+        });
 
         pkgs = orig_pkgs.extend (pkg_overrides { inherit system; });
       in pkgs;
@@ -38,6 +38,7 @@
           ([
             {
               nixpkgs.overlays = [ (pkg_overrides { inherit system; }) ];
+              nixpkgs.config = (import ./common/nixpkgs-global-config.nix);
             }
           ]) ++
           (if hostInfo ? imports
