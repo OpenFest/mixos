@@ -109,6 +109,15 @@
           in
             "${deployScript}";
         };
+        deploy-local = {
+          type = "app";
+          program = let
+            deployScript = hostPkgs.writeShellScript "deploy-local" ''
+              ${hostPkgs.nixos-rebuild}/bin/nixos-rebuild switch --flake ".#$1"
+            '';
+          in
+            "${deployScript}";
+        };
       };
     }
   ));

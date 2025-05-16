@@ -1,5 +1,5 @@
 { flake, lib, ... }:
-{ pkgs, ... }: {
+{ pkgs, ... }: rec {
   system.stateVersion = "23.05";
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
@@ -15,10 +15,25 @@
     pkgs.neovim
     pkgs.coreutils-full
     pkgs.moreutils
+    pkgs.obs-studio
+    pkgs.guvcview
+    pkgs.qpwgraph
+    pkgs.pavucontrol
+    pkgs.firefox
   ];
 
   services.sshd.enable = true;
   services.openssh.settings.PermitRootLogin = lib.mkDefault "yes";
+
+  security.rtkit.enable = true;
+  services.pipewire = {
+    enable = true;
+    alsa.enable = true;
+    alsa.support32Bit = true;
+    pulse.enable = true;
+    jack.enable = true;
+    wireplumber.enable = true;
+  };
 
   security.sudo = {
     enable = true;
@@ -33,7 +48,7 @@
   users.users.human = {
     home = "/home/human";
     description = "human";
-    extraGroups = [ "wheel" ];
+    extraGroups = [ "wheel" "video" ];
     isSystemUser = false;
     isNormalUser = true;
     group = "human";
@@ -54,4 +69,6 @@
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJfwOOXhgSNsUykIPjDaWctbDVmaT6IZKeWTSOnX+aHP human@gallifrey"
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIAcniETp/OAUsrTqPhDcNpw4BURifIE4zuPNZ7V+o3X1 human@kessel"
   ];
+
+  users.users.human.openssh.authorizedKeys.keys = users.users.root.openssh.authorizedKeys.keys;
 }
