@@ -20,6 +20,8 @@
     pkgs.qpwgraph
     pkgs.pavucontrol
     pkgs.firefox
+    pkgs.v4l-utils
+    pkgs.tigervnc
   ];
 
   services.sshd.enable = true;
@@ -45,10 +47,27 @@
     }];
   };
 
+  services.displayManager = {
+    # defaultSession = "fluxbox";
+    autoLogin.enable = true;
+    autoLogin.user = "human";
+    sddm = {
+      enable = true;
+      wayland = {
+        enable = false; # fixme
+      };
+    };
+  };
+
+  services.xserver = {
+    enable = true; # fixme
+    windowManager.fluxbox.enable = true;
+  };
+
   users.users.human = {
     home = "/home/human";
     description = "human";
-    extraGroups = [ "wheel" "video" ];
+    extraGroups = [ "wheel" "video" "audio" "power" "adm" ];
     isSystemUser = false;
     isNormalUser = true;
     group = "human";
@@ -58,8 +77,6 @@
   users.groups.human = {
     gid = 1000;
   };
-
-  services.getty.autologinUser = lib.mkDefault "human";
 
   # TODO: configuration data (users, networking) should not be in this file/repo
   # maybe see https://nixos.wiki/wiki/Agenix or similar for secret management

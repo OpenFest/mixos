@@ -15,7 +15,7 @@ in {
       config = {
         inherit hostname;
         firewall = {
-          allowedTCPPorts = [22];
+          allowedTCPPorts = [22 5900];
         };
       };
     })
