@@ -15,6 +15,10 @@ function die {
     exit 1
 }
 
+function list_configurations {
+    find "${cdir}"/hosts -mindepth 1 -maxdepth 1 -type d -printf '%f\n'
+}
+
 function usage {
     msg "usage:"
     msg "${0} sync      <configuration> <remote ssh host>    # sync this repo to remote host, build on remote host, deploy there locally"
@@ -22,6 +26,9 @@ function usage {
     msg "${0} local     <configuration>                      # build and deploy on this machine"
     msg "${0} image     <configuration>                      # build a bootable disk image and put it in result/"
     msg "${0} image-on  <configuration> <device>             # build a bootable disk image and burn it to given device (will call sudo automatically when needed)"
+    msg
+    msg "<configuration> is one of:"
+    msg "$(list_configurations)"
     die
 }
 

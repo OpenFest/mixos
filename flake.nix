@@ -9,7 +9,7 @@
     lib = nixpkgs.lib;
 
     hosts = {
-      zver = (import ./hosts/zver);
+      zver = (import ./configurations/zver);
     };
 
     pkg_overrides = { system } : (import ./common/pkg-overrides.nix) {
