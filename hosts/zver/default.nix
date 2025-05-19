@@ -21,11 +21,7 @@ in {
     })
 
     ({ pkgs, ... }: rec {
-      programs.niri.enable = true;
-
       environment.systemPackages = [
-        pkgs.alacritty
-        pkgs.fuzzel
       ];
     })
   ];

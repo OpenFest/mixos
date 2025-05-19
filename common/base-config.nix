@@ -10,31 +10,68 @@
   system.configurationRevision = lib.mkIf (flake ? rev) flake.rev;
 
   environment.systemPackages = [
+    # absolutely essential
     pkgs.rsync
     pkgs.git
     pkgs.neovim
     pkgs.coreutils-full
     pkgs.moreutils
+    pkgs.sl
+    pkgs.tmux
+
+    # video shit
     pkgs.obs-studio
     pkgs.guvcview
-    pkgs.qpwgraph
-    pkgs.pavucontrol
-    pkgs.firefox
     pkgs.v4l-utils
+
+    # audio shit
+    pkgs.qpwgraph
+    pkgs.pwvucontrol
+    pkgs.pavucontrol
+    pkgs.jackmix
+    pkgs.lsp-plugins
+    pkgs.guitarix
+    pkgs.pulseaudio # for pactl, fixme
+
+    # gui shit
+    pkgs.firefox
     pkgs.tigervnc
+    pkgs.alacritty
+    pkgs.fuzzel
+
+    # utils
+    pkgs.usbutils
+    pkgs.lshw
+    pkgs.usbtop
+    pkgs.pcm
+
+    # sigplan sandbox
+    pkgs.cryptsetup   # for integritysetup
   ];
+
+  time.timeZone = "Europe/Sofia";
 
   services.sshd.enable = true;
   services.openssh.settings.PermitRootLogin = lib.mkDefault "yes";
 
   security.rtkit.enable = true;
-  services.pipewire = {
+  services.
+  pipewire = {
     enable = true;
     alsa.enable = true;
     alsa.support32Bit = true;
     pulse.enable = true;
     jack.enable = true;
     wireplumber.enable = true;
+    extraConfig.pipewire."92-low-latency" = {
+    "context.properties" = {
+      "default.clock.rate" = 48000;
+      "default.clock.quantum" = 32;
+      "default.clock.min-quantum" = 32;
+      "default.clock.max-quantum" = 32;
+    };
+  };
+
   };
 
   security.sudo = {
@@ -58,6 +95,7 @@
       };
     };
   };
+  programs.niri.enable = true;
 
   services.xserver = {
     enable = true; # fixme
