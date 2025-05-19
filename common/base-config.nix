@@ -1,5 +1,5 @@
 { flake, lib, ... }:
-{ pkgs, ... }: rec {
+{ pkgs, config, ... }: rec {
   system.stateVersion = "23.05";
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
@@ -8,6 +8,14 @@
   # Let 'nixos-version --json' know about the Git revision
   # of this flake.
   system.configurationRevision = lib.mkIf (flake ? rev) flake.rev;
+
+  boot.kernelModules = [
+    "dm-crypt" # to be able to mount encrypted hard drives
+  ];
+
+  boot.kernelParams = [
+    "mitigations=off"
+  ];
 
   environment.systemPackages = [
     # absolutely essential
@@ -76,12 +84,17 @@
 
   security.sudo = {
     enable = true;
-
-    extraRules = [{
-      commands = [
-      ];
-      groups = [ "wheel" ];
-    }];
+    extraRules = [
+      {
+        commands = [
+          {
+            command = "ALL";
+            options = [ "NOPASSWD" ];
+          }
+        ];
+        groups = [ "wheel" ];
+      }
+    ];
   };
 
   services.displayManager = {
