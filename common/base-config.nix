@@ -63,8 +63,7 @@
   services.openssh.settings.PermitRootLogin = lib.mkDefault "yes";
 
   security.rtkit.enable = true;
-  services.
-  pipewire = {
+  services.pipewire = {
     enable = true;
     alsa.enable = true;
     alsa.support32Bit = true;
@@ -78,8 +77,6 @@
       "default.clock.min-quantum" = 32;
       "default.clock.max-quantum" = 32;
     };
-  };
-
   };
 
   security.sudo = {
