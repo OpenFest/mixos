@@ -5,6 +5,10 @@
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
   nix.settings.require-sigs = false;
 
+  imports = [
+    (import ./audio-config.nix)
+  ];
+
   # Let 'nixos-version --json' know about the Git revision
   # of this flake.
   system.configurationRevision = lib.mkIf (flake ? rev) flake.rev;
@@ -32,15 +36,6 @@
     pkgs.guvcview
     pkgs.v4l-utils
 
-    # audio shit
-    pkgs.qpwgraph
-    pkgs.pwvucontrol
-    pkgs.pavucontrol
-    pkgs.jackmix
-    pkgs.lsp-plugins
-    pkgs.guitarix
-    pkgs.pulseaudio # for pactl, fixme
-
     # gui shit
     pkgs.firefox
     pkgs.tigervnc
@@ -61,23 +56,6 @@
 
   services.sshd.enable = true;
   services.openssh.settings.PermitRootLogin = lib.mkDefault "yes";
-
-  security.rtkit.enable = true;
-  services.pipewire = {
-    enable = true;
-    alsa.enable = true;
-    alsa.support32Bit = true;
-    pulse.enable = true;
-    jack.enable = true;
-    wireplumber.enable = true;
-    extraConfig.pipewire."92-low-latency" = {
-    "context.properties" = {
-      "default.clock.rate" = 48000;
-      "default.clock.quantum" = 32;
-      "default.clock.min-quantum" = 32;
-      "default.clock.max-quantum" = 32;
-    };
-  };
 
   security.sudo = {
     enable = true;
