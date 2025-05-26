@@ -9,6 +9,8 @@ in rec {
     pkgs.lsp-plugins
     pkgs.guitarix   # absolutely essential lol
     pkgs.pulseaudio # for pactl, fixme
+
+    pkgs.jack_mixer
   ];
 
   security.rtkit.enable = true;
