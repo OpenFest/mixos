@@ -24,16 +24,6 @@ final: prev: {
       # no need to update gtk icon cache during packaging...
       sed -i 's/gtk-update-icon-cache/true/g' /build/source/meson_postinstall.py
     '';
-    # installPhase = ''
-    #   stat /build/source/meson_postinstall.py
-    #   local flagsArray=()
-    #   echo 'test run'
-    #   /usr/bin/env
-    #   /build/source/meson_postinstall.py
-
-    #   concatTo flagsArray mesonInstallFlags mesonInstallFlagsArray
-    #   ${prev.strace}/bin/strace -f -- meson install --no-rebuild "''${flagsArray[@]}"
-    # '';
     buildInputs = [
       prev.glib
       prev.pkg-config
