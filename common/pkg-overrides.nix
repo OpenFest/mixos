@@ -24,6 +24,7 @@ final: prev: {
       # no need to update gtk icon cache during packaging...
       sed -i 's/gtk-update-icon-cache/true/g' /build/source/meson_postinstall.py
     '';
+    # TODO: patch python binaries to refer to proper site-packages dir...
     buildInputs = [
       prev.glib
       prev.pkg-config

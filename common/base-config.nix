@@ -33,6 +33,7 @@
 
     # video shit
     pkgs.obs-studio
+    pkgs.obs-studio-plugins.advanced-scene-switcher
     pkgs.guvcview
     pkgs.v4l-utils
 
