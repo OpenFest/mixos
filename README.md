@@ -11,6 +11,11 @@ Every configuration has a corresponding directory in `configurations/`.
 
 - `zver`: base configuration targeting x86_64 machines with NVidia GPUs
 
+## Requirements
+
+run `nix develop`
+or if you use [direnv](https://direnv.net/) `direnv allow .`
+
 ## Quick start
 
 To build the distribution and burn a bootable drive (make sure to use a fast drive), do:
