@@ -1,8 +1,4 @@
-{
-  modulesPath,
-  lib,
-  ...
-}: {
+{ modulesPath, lib, ... }: {
   imports = [
     # turns out that the lxc-container profile is actually compatible
     # with nspawn

@@ -1,7 +1,6 @@
 { nixpkgs, lib, system, ... }:
 final: prev: {
-  jack_mixer = let
-    py = prev.python3Packages;
+  jack_mixer = let py = prev.python3Packages;
   in prev.stdenv.mkDerivation {
     pname = "jack_mixer";
     version = "19";
@@ -15,9 +14,7 @@ final: prev: {
     preConfigure = ''
       mesonFlagsArray+=(-Draysessiondir=$prefix/etc/xdg/raysession/client_templates/35_jackmixer)
     '';
-    nativeBuildInputs = [
-      prev.meson
-    ];
+    nativeBuildInputs = [ prev.meson ];
     preInstall = ''
       patchShebangs --build /build/source/meson_postinstall.py
 

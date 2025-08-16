@@ -5,9 +5,7 @@
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
   nix.settings.require-sigs = false;
 
-  imports = [
-    (import ./audio-config.nix)
-  ];
+  imports = [ (import ./audio-config.nix) ];
 
   # Let 'nixos-version --json' know about the Git revision
   # of this flake.
@@ -17,9 +15,7 @@
     "dm-crypt" # to be able to mount encrypted hard drives
   ];
 
-  boot.kernelParams = [
-    "mitigations=off"
-  ];
+  boot.kernelParams = [ "mitigations=off" ];
 
   environment.systemPackages = [
     # absolutely essential
@@ -51,7 +47,7 @@
     pkgs.pcm
 
     # sigplan sandbox
-    pkgs.cryptsetup   # for integritysetup
+    pkgs.cryptsetup # for integritysetup
   ];
 
   time.timeZone = "Europe/Sofia";
@@ -61,17 +57,13 @@
 
   security.sudo = {
     enable = true;
-    extraRules = [
-      {
-        commands = [
-          {
-            command = "ALL";
-            options = [ "NOPASSWD" ];
-          }
-        ];
-        groups = [ "wheel" ];
-      }
-    ];
+    extraRules = [{
+      commands = [{
+        command = "ALL";
+        options = [ "NOPASSWD" ];
+      }];
+      groups = [ "wheel" ];
+    }];
   };
 
   services.displayManager = {
@@ -102,9 +94,7 @@
     uid = 1000;
     password = "asdf";
   };
-  users.groups.human = {
-    gid = 1000;
-  };
+  users.groups.human = { gid = 1000; };
 
   # TODO: configuration data (users, networking) should not be in this file/repo
   # maybe see https://nixos.wiki/wiki/Agenix or similar for secret management
@@ -117,5 +107,6 @@
     "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCyE0L8ivXyEMysyBiEUvc5xTmDyC4OpaljKvwPKsiZ16PvxM61IHumssaPUGaWYBxpkdQwVqeQigtI3yTz6xHV+Y05Po7ptqBs6LuXFWJ8dExTASq48deYh48M/hoELy6f9Ascs2/WZ39TK4X/Ok3/YH47K1A/o+qu3lfGswAJ393xQ4HioTMETPFag0NigwRPwSaBTJZHkKoMdsOWYPBUwE5l0wjoLLqkWTs0fD/78cxk5ctMaKWiqTq/iEt0Enw7L001rlN2ew24fnKOpkFEC7Wa3MYc3EXH1O0iVQSGC+rFF3hM+D7/m2NIGAvhnWmoBiCOZCUJl9RWehe8LQ1H gotha"
   ];
 
-  users.users.human.openssh.authorizedKeys.keys = users.users.root.openssh.authorizedKeys.keys;
+  users.users.human.openssh.authorizedKeys.keys =
+    users.users.root.openssh.authorizedKeys.keys;
 }

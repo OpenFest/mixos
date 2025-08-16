@@ -1,6 +1,4 @@
 {
-  permittedInsecurePackages = [
-    "olm-3.2.16"
-  ];
+  permittedInsecurePackages = [ "olm-3.2.16" ];
   allowUnfree = true;
 }

@@ -1,10 +1,8 @@
-{ lib, flake, ... }: let
-  hostname = "zver";
+{ lib, flake, ... }:
+let hostname = "zver";
 in {
   system = "x86_64-linux";
-  deployment = {
-    ssh = "root@${hostname}";
-  };
+  deployment = { ssh = "root@${hostname}"; };
   imageBuilder = "raw";
   modules = [
     (import ../../common/raw-efi.nix)
@@ -14,15 +12,10 @@ in {
       inherit flake lib;
       config = {
         inherit hostname;
-        firewall = {
-          allowedTCPPorts = [22 5900];
-        };
+        firewall = { allowedTCPPorts = [ 22 5900 ]; };
       };
     })
 
-    ({ pkgs, ... }: rec {
-      environment.systemPackages = [
-      ];
-    })
+    ({ pkgs, ... }: rec { environment.systemPackages = [ ]; })
   ];
 }

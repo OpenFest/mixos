@@ -1,5 +1,5 @@
-{ pkgs, config, ... }: let
-  audio_quant = 32;   # start from 32, go higher if it causes problems
+{ pkgs, config, ... }:
+let audio_quant = 32; # start from 32, go higher if it causes problems
 in rec {
   environment.systemPackages = [
     pkgs.qpwgraph
@@ -7,7 +7,7 @@ in rec {
     pkgs.pavucontrol
     pkgs.jackmix
     pkgs.lsp-plugins
-    pkgs.guitarix   # absolutely essential lol
+    pkgs.guitarix # absolutely essential lol
     pkgs.pulseaudio # for pactl, fixme
     pkgs.audacity
 
@@ -16,7 +16,7 @@ in rec {
 
   security.rtkit.enable = true;
 
-  boot.kernelParams = ["threadirqs"];
+  boot.kernelParams = [ "threadirqs" ];
 
   services.pipewire = {
     enable = true;
@@ -32,15 +32,13 @@ in rec {
         "default.clock.min-quantum" = audio_quant;
         "default.clock.max-quantum" = audio_quant;
       };
-      "context.modules" = [
-        {
-          name = "libpipewire-module-rt";
-          args = {
-            "nice.level" = -11;
-            "rt.prio" = 19;
-          };
-        }
-      ];
+      "context.modules" = [{
+        name = "libpipewire-module-rt";
+        args = {
+          "nice.level" = -11;
+          "rt.prio" = 19;
+        };
+      }];
     };
   };
 

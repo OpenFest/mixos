@@ -1,12 +1,5 @@
-{
-  config,
-  lib,
-  options,
-  pkgs,
-  modulesPath,
-  ...
-}: {
-  imports = [./raw.nix];
+{ config, lib, options, pkgs, modulesPath, ... }: {
+  imports = [ ./raw.nix ];
 
   fileSystems."/boot" = {
     device = "/dev/disk/by-label/ESP";
@@ -21,9 +14,9 @@
 
   boot = {
     growPartition = true;
-    kernelParams = [];
+    kernelParams = [ ];
     loader.timeout = lib.mkDefault 0;
-    initrd.availableKernelModules = ["uas"];
+    initrd.availableKernelModules = [ "uas" ];
     loader.grub = {
       device = "nodev";
       efiSupport = true;
@@ -31,10 +24,11 @@
     };
   };
 
-  system.build.raw = lib.mkOverride 99 (import "${toString modulesPath}/../lib/make-disk-image.nix" {
-    inherit lib config pkgs;
-    partitionTableType = "efi";
-    inherit (config.virtualisation) diskSize;
-    format = "raw";
-  });
+  system.build.raw = lib.mkOverride 99
+    (import "${toString modulesPath}/../lib/make-disk-image.nix" {
+      inherit lib config pkgs;
+      partitionTableType = "efi";
+      inherit (config.virtualisation) diskSize;
+      format = "raw";
+    });
 }
