@@ -68,7 +68,12 @@
           hostsData);
 
         devShells.default = hostPkgs.mkShell {
-          buildInputs = with hostPkgs; [ findutils rsync ];
+          buildInputs = with hostPkgs; [
+            findutils
+            gnumake
+            nixfmt-classic
+            rsync
+          ];
         };
 
         apps = (builtins.mapAttrs (host-name: data:

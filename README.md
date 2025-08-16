@@ -16,6 +16,18 @@ Every configuration has a corresponding directory in `configurations/`.
 run `nix develop`
 or if you use [direnv](https://direnv.net/) `direnv allow .`
 
+install git hook/s to check nix linting rules:
+
+```sh
+make git-hooks
+```
+
+fix linting errors in nix:
+
+```sh
+make nixfmt
+```
+
 ## Quick start
 
 To build the distribution and burn a bootable drive (make sure to use a fast drive), do:
