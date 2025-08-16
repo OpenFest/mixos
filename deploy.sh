@@ -16,7 +16,7 @@ function die {
 }
 
 function list_configurations {
-    find "${cdir}"/hosts -mindepth 1 -maxdepth 1 -type d -printf '%f\n'
+    find "${cdir}"/configurations -mindepth 1 -maxdepth 1 -type d -printf '%f\n'
 }
 
 function usage {
