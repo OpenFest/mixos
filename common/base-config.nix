@@ -24,6 +24,7 @@
   environment.systemPackages = [
     # absolutely essential
     pkgs.rsync
+    pkgs.sshfs
     pkgs.git
     pkgs.neovim
     pkgs.coreutils-full
