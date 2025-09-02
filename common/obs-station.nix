@@ -1,4 +1,7 @@
 { config, lib, pkgs, ... }: {
+  imports = [
+    ./video-capture-mapping.nix
+  ];
 
   environment.systemPackages = [
     # video shit
