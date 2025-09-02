@@ -28,11 +28,20 @@
     };
   };
 
-  programs.sway = {
+  programs.sway = let
+    swayData = ((import ../configs/sway) { inherit pkgs lib; });
+  in {
     enable = true;
     extraOptions = [
       "--unsupported-gpu" # my next GPU will not be nvidia
+      "--config" "${swayData.packages.sway-user-data}/config"
     ];
+    extraSessionCommands = ''
+      {
+        echo "sourcing ${swayData.packages.sway-session-script}/bin/sway-session-script"
+        source "${swayData.packages.sway-session-script}/bin/sway-session-script"
+      } &> /tmp/session_log
+    '';
   };
 
   services.xserver = {
