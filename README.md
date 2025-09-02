@@ -28,19 +28,19 @@ fix linting errors in nix:
 make nixfmt
 ```
 
-## Quick start
+## Build
 
-To build the distribution and burn a bootable drive (make sure to use a fast drive), do:
-
-```bash
-$ ./deploy.sh image-on <configuration> /dev/sdX
+```sh
+nix build .#packages.x86_64-linux.hala
 ```
 
-To deploy changes to an already-running machine, do:
+## Run in QEMU
 
-```bash
-$ ./deploy.sh sync <configuration> <hostname or IP address>
+```sh
+nix build nixpkgs#OVMF.fd
+./run-quemu.sh
 ```
 
-If you want to build everything locally instead of on the target machine,
-use `remote` instead of `sync`.
+## Deploy on remote machine over SSH
+
+@todo - WIP
