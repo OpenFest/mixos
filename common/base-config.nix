@@ -29,25 +29,13 @@
     pkgs.tmux
 
     # video shit
-    pkgs.obs-studio
-    pkgs.obs-studio-plugins.advanced-scene-switcher
-    pkgs.guvcview
     pkgs.v4l-utils
-
-    # gui shit
-    pkgs.firefox
-    pkgs.tigervnc
-    pkgs.alacritty
-    pkgs.fuzzel
 
     # utils
     pkgs.usbutils
     pkgs.lshw
     pkgs.usbtop
     pkgs.pcm
-
-    # sigplan sandbox
-    pkgs.cryptsetup # for integritysetup
   ];
 
   time.timeZone = "Europe/Sofia";
@@ -64,24 +52,6 @@
       }];
       groups = [ "wheel" ];
     }];
-  };
-
-  services.displayManager = {
-    # defaultSession = "fluxbox";
-    autoLogin.enable = true;
-    autoLogin.user = "human";
-    sddm = {
-      enable = true;
-      wayland = {
-        enable = false; # fixme
-      };
-    };
-  };
-  programs.niri.enable = true;
-
-  services.xserver = {
-    enable = true; # fixme
-    windowManager.fluxbox.enable = true;
   };
 
   users.users.human = {

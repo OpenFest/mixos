@@ -8,6 +8,7 @@ in {
     (import ../../common/raw-efi.nix)
     (import ../../common/nvidia.nix)
     ((import ../../common/base-config.nix) { inherit flake lib; })
+    (import ../../common/obs-station.nix)
     ((import ../../common/networking-dhcp.nix) {
       inherit flake lib;
       config = {
