@@ -47,4 +47,22 @@
   services.xserver = {
     enable = false;
   };
+
+  services.pipewire.extraConfig.pipewire = {
+    "55-obs-monitor-sink" = {
+      "context.objects" = [
+        {
+          factory = "adapter";
+          args = {
+            "factory.name" = "support.null-audio-sink";
+            "media.class" = "Audio/Sink";
+            "node.name" = "obs_monitor";
+            "node.nick" = "obsMonitor";
+            "node.description" = "OBS Monitor";
+            "audio.position" = "[ FL FR ]";
+          };
+        }
+      ];
+    };
+  };
 }
