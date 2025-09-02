@@ -27,6 +27,8 @@ function usage {
     msg "${0} image     <configuration>                      # build a bootable disk image and put it in result/"
     msg "${0} image-on  <configuration> <device>             # build a bootable disk image and burn it to given device (will call sudo automatically when needed)"
     msg
+    msg "${0} sync-back <remote ssh host>                    # sync this repo from the remote host (if you did 'sync' and then modified stuff there)"
+    msg
     msg "<configuration> is one of:"
     msg "$(list_configurations)"
     die
@@ -64,8 +66,13 @@ function require_nix {
 function deploy_with_sync {
     require_rsync
     ssh_to=human@"${1}"
-    rsync -rvzza --progress --info=progress2 "${cdir}"/ "${ssh_to}":mixos/
+    rsync --delete -rvzza --progress --info=progress2 "${cdir}"/ "${ssh_to}":mixos/
     ssh "${ssh_to}" "sudo bash ~/mixos/deploy.sh local '${conf_name}'"
+}
+
+function sync_back {
+    ssh_to=human@"${1}"
+    rsync -rvzza --progress --info=progress2 "${ssh_to}":mixos/ "${cdir}"/
 }
 
 function deploy_local {
@@ -109,6 +116,10 @@ case "${action}" in
     sync)
         [[ ${#} -ne 3 ]] && usage || true
         deploy_with_sync "${3}"
+        ;;
+    sync-back)
+        [[ ${#} -ne 2 ]] && usage || true
+        sync_back "${2}"
         ;;
     remote)
         [[ ${#} -ne 3 ]] && usage || true
