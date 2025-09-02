@@ -1062,12 +1062,12 @@
             "id": "scene",
             "versioned_id": "scene",
             "settings": {
-                "id_counter": 4,
+                "id_counter": 5,
                 "custom_size": false,
                 "items": [
                     {
-                        "name": "Lecturer dummy",
-                        "source_uuid": "8d154265-e546-45e4-b1ad-786e266943f4",
+                        "name": "lecturer capture",
+                        "source_uuid": "377f184f-3bbe-499a-b4be-f313d0d331b9",
                         "visible": true,
                         "locked": false,
                         "rot": 0.0,
@@ -1083,15 +1083,15 @@
                         "crop_top": 0,
                         "crop_right": 0,
                         "crop_bottom": 0,
-                        "id": 4,
+                        "id": 5,
                         "group_item_backup": false,
                         "pos": {
-                            "x": 594.0,
-                            "y": 452.0
+                            "x": 0.0,
+                            "y": 0.0
                         },
                         "pos_rel": {
-                            "x": -0.6777777671813965,
-                            "y": -0.16296297311782837
+                            "x": -1.7777777910232544,
+                            "y": -1.0
                         },
                         "scale": {
                             "x": 1.0,
@@ -1135,8 +1135,8 @@
             "push-to-talk-delay": 0,
             "hotkeys": {
                 "OBSBasic.SelectScene": [],
-                "libobs.show_scene_item.4": [],
-                "libobs.hide_scene_item.4": []
+                "libobs.show_scene_item.5": [],
+                "libobs.hide_scene_item.5": []
             },
             "deinterlace_mode": 0,
             "deinterlace_field_order": 0,
@@ -1151,12 +1151,12 @@
             "id": "scene",
             "versioned_id": "scene",
             "settings": {
-                "id_counter": 1,
+                "id_counter": 2,
                 "custom_size": false,
                 "items": [
                     {
-                        "name": "Closeup dummy",
-                        "source_uuid": "950b7f4f-9d1b-43d7-aaa6-4a57afc23184",
+                        "name": "closeup capture",
+                        "source_uuid": "7c3e5bdf-abe9-404c-a43c-a4a12a6c99a8",
                         "visible": true,
                         "locked": false,
                         "rot": 0.0,
@@ -1172,15 +1172,15 @@
                         "crop_top": 0,
                         "crop_right": 0,
                         "crop_bottom": 0,
-                        "id": 1,
+                        "id": 2,
                         "group_item_backup": false,
                         "pos": {
-                            "x": 160.0,
-                            "y": 348.0
+                            "x": 0.0,
+                            "y": 0.0
                         },
                         "pos_rel": {
-                            "x": -1.4814814329147339,
-                            "y": -0.35555553436279297
+                            "x": -1.7777777910232544,
+                            "y": -1.0
                         },
                         "scale": {
                             "x": 1.0,
@@ -1224,8 +1224,8 @@
             "push-to-talk-delay": 0,
             "hotkeys": {
                 "OBSBasic.SelectScene": [],
-                "libobs.show_scene_item.1": [],
-                "libobs.hide_scene_item.1": []
+                "libobs.show_scene_item.2": [],
+                "libobs.hide_scene_item.2": []
             },
             "deinterlace_mode": 0,
             "deinterlace_field_order": 0,
@@ -1329,12 +1329,12 @@
             "id": "scene",
             "versioned_id": "scene",
             "settings": {
-                "id_counter": 2,
+                "id_counter": 3,
                 "custom_size": false,
                 "items": [
                     {
-                        "name": "Overview dummy",
-                        "source_uuid": "d7d7c0ac-ab7d-462b-a4eb-671b3bd2af81",
+                        "name": "overview capture",
+                        "source_uuid": "e92a2a62-c88f-48c3-a6a5-1a6e26303bd5",
                         "visible": true,
                         "locked": false,
                         "rot": 0.0,
@@ -1350,15 +1350,15 @@
                         "crop_top": 0,
                         "crop_right": 0,
                         "crop_bottom": 0,
-                        "id": 2,
+                        "id": 3,
                         "group_item_backup": false,
                         "pos": {
-                            "x": 339.0,
-                            "y": 338.0
+                            "x": 0.0,
+                            "y": 0.0
                         },
                         "pos_rel": {
-                            "x": -1.149999976158142,
-                            "y": -0.3740741014480591
+                            "x": -1.7777777910232544,
+                            "y": -1.0
                         },
                         "scale": {
                             "x": 1.0,
@@ -1402,65 +1402,13 @@
             "push-to-talk-delay": 0,
             "hotkeys": {
                 "OBSBasic.SelectScene": [],
-                "libobs.show_scene_item.2": [],
-                "libobs.hide_scene_item.2": []
+                "libobs.show_scene_item.3": [],
+                "libobs.hide_scene_item.3": []
             },
             "deinterlace_mode": 0,
             "deinterlace_field_order": 0,
             "monitoring_type": 0,
             "canvas_uuid": "6c69626f-6273-4c00-9d88-c5136d61696e",
-            "private_settings": {}
-        },
-        {
-            "prev_ver": 520159234,
-            "name": "Closeup dummy",
-            "uuid": "950b7f4f-9d1b-43d7-aaa6-4a57afc23184",
-            "id": "text_ft2_source",
-            "versioned_id": "text_ft2_source_v2",
-            "settings": {
-                "text": "Closeup cam"
-            },
-            "mixers": 0,
-            "sync": 0,
-            "flags": 0,
-            "volume": 1.0,
-            "balance": 0.5,
-            "enabled": true,
-            "muted": false,
-            "push-to-mute": false,
-            "push-to-mute-delay": 0,
-            "push-to-talk": false,
-            "push-to-talk-delay": 0,
-            "hotkeys": {},
-            "deinterlace_mode": 0,
-            "deinterlace_field_order": 0,
-            "monitoring_type": 0,
-            "private_settings": {}
-        },
-        {
-            "prev_ver": 520159234,
-            "name": "Overview dummy",
-            "uuid": "d7d7c0ac-ab7d-462b-a4eb-671b3bd2af81",
-            "id": "text_ft2_source",
-            "versioned_id": "text_ft2_source_v2",
-            "settings": {
-                "text": "Overview\ncamera"
-            },
-            "mixers": 0,
-            "sync": 0,
-            "flags": 0,
-            "volume": 1.0,
-            "balance": 0.5,
-            "enabled": true,
-            "muted": false,
-            "push-to-mute": false,
-            "push-to-mute-delay": 0,
-            "push-to-talk": false,
-            "push-to-talk-delay": 0,
-            "hotkeys": {},
-            "deinterlace_mode": 0,
-            "deinterlace_field_order": 0,
-            "monitoring_type": 0,
             "private_settings": {}
         },
         {
@@ -1618,32 +1566,6 @@
             "versioned_id": "text_ft2_source_v2",
             "settings": {
                 "text": "Audience\ncamera"
-            },
-            "mixers": 0,
-            "sync": 0,
-            "flags": 0,
-            "volume": 1.0,
-            "balance": 0.5,
-            "enabled": true,
-            "muted": false,
-            "push-to-mute": false,
-            "push-to-mute-delay": 0,
-            "push-to-talk": false,
-            "push-to-talk-delay": 0,
-            "hotkeys": {},
-            "deinterlace_mode": 0,
-            "deinterlace_field_order": 0,
-            "monitoring_type": 0,
-            "private_settings": {}
-        },
-        {
-            "prev_ver": 520159234,
-            "name": "Lecturer dummy",
-            "uuid": "8d154265-e546-45e4-b1ad-786e266943f4",
-            "id": "text_ft2_source",
-            "versioned_id": "text_ft2_source_v2",
-            "settings": {
-                "text": "Slides"
             },
             "mixers": 0,
             "sync": 0,
@@ -2039,7 +1961,7 @@
                             "y": 455.0
                         },
                         "pos_rel": {
-                            "x": -1.564814805984497,
+                            "x": -1.5648148059844971,
                             "y": -0.15740740299224854
                         },
                         "scale": {
@@ -2094,6 +2016,96 @@
             "monitoring_type": 0,
             "canvas_uuid": "6c69626f-6273-4c00-9d88-c5136d61696e",
             "private_settings": {}
+        },
+        {
+            "prev_ver": 520159234,
+            "name": "lecturer capture",
+            "uuid": "377f184f-3bbe-499a-b4be-f313d0d331b9",
+            "id": "v4l2_input",
+            "versioned_id": "v4l2_input",
+            "settings": {
+                "device_id": "/dev/video-lecturer",
+                "input": 0,
+                "pixelformat": 1448695129,
+                "resolution": 8246337209400,
+                "framerate": 60
+            },
+            "mixers": 0,
+            "sync": 0,
+            "flags": 0,
+            "volume": 1.0,
+            "balance": 0.5,
+            "enabled": true,
+            "muted": false,
+            "push-to-mute": false,
+            "push-to-mute-delay": 0,
+            "push-to-talk": false,
+            "push-to-talk-delay": 0,
+            "hotkeys": {},
+            "deinterlace_mode": 0,
+            "deinterlace_field_order": 0,
+            "monitoring_type": 0,
+            "private_settings": {}
+        },
+        {
+            "prev_ver": 520159234,
+            "name": "closeup capture",
+            "uuid": "7c3e5bdf-abe9-404c-a43c-a4a12a6c99a8",
+            "id": "v4l2_input",
+            "versioned_id": "v4l2_input",
+            "settings": {
+                "device_id": "/dev/video-closeup",
+                "input": 0,
+                "pixelformat": 1448695129,
+                "resolution": 8246337209400,
+                "framerate": 60
+            },
+            "mixers": 0,
+            "sync": 0,
+            "flags": 0,
+            "volume": 1.0,
+            "balance": 0.5,
+            "enabled": true,
+            "muted": false,
+            "push-to-mute": false,
+            "push-to-mute-delay": 0,
+            "push-to-talk": false,
+            "push-to-talk-delay": 0,
+            "hotkeys": {},
+            "deinterlace_mode": 0,
+            "deinterlace_field_order": 0,
+            "monitoring_type": 0,
+            "private_settings": {}
+        },
+        {
+            "prev_ver": 520159234,
+            "name": "overview capture",
+            "uuid": "e92a2a62-c88f-48c3-a6a5-1a6e26303bd5",
+            "id": "v4l2_input",
+            "versioned_id": "v4l2_input",
+            "settings": {
+                "device_id": "/dev/video-overview",
+                "input": 0,
+                "pixelformat": 1448695129,
+                "resolution": 8246337209400,
+                "framerate": 60
+            },
+            "mixers": 0,
+            "sync": 0,
+            "flags": 0,
+            "volume": 1.0,
+            "balance": 0.5,
+            "enabled": true,
+            "muted": false,
+            "push-to-mute": false,
+            "push-to-mute-delay": 0,
+            "push-to-talk": false,
+            "push-to-talk-delay": 0,
+            "hotkeys": {},
+            "deinterlace_mode": 0,
+            "deinterlace_field_order": 0,
+            "monitoring_type": 0,
+            "private_settings": {}
         }
     ],
     "groups": [],
@@ -2127,7 +2139,7 @@
     "transition_duration": 300,
     "preview_locked": false,
     "scaling_enabled": false,
-    "scaling_level": -13,
+    "scaling_level": -27,
     "scaling_off_x": 0.0,
     "scaling_off_y": 0.0,
     "modules": {
