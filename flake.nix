@@ -10,9 +10,12 @@
 
     home-manager.url = "github:nix-community/home-manager/master";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
+
+    deploy-rs.url = "github:serokell/deploy-rs";
+    deploy-rs.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs = { nixpkgs, nixos-generators, home-manager, ... }:
+  outputs = { self, nixpkgs, nixos-generators, home-manager, deploy-rs, ... }:
     let
       forAllSystems = nixpkgs.lib.genAttrs [ "aarch64-darwin" "x86_64-linux" ];
     in {
@@ -37,7 +40,7 @@
           ./common/raw-efi.nix
           ./common/base-config.nix
           ./common/audio-config.nix
-          ./common/nvidia.nix
+          #./common/nvidia.nix
           ./common/grow-root.nix
         ];
       };
@@ -80,6 +83,34 @@
           })
         ];
       };
+
+      deploy = {
+        magicRollback = true; # optional but nice to have
+        nodes = {
+          hala = {
+            hostname = "localhost";
+            sshUser = "human";
+
+            remoteBuild = false; # build on the target instead of locally
+            fastConnection = true; # skip store verification for faster deploys
+            sshOpts = [ "-p" "2222" ];
+
+            profiles.system = {
+              user = "root";
+              path = deploy-rs.lib.x86_64-linux.activate.nixos
+                self.nixosConfigurations.hala;
+            };
+          };
+        };
+      };
+
+      # tiny helper so you can run `nix run .#deploy -- .#hala`
+      apps = forAllSystems (system: {
+        deploy = {
+          type = "app";
+          program = "${deploy-rs.packages.${system}.deploy-rs}/bin/deploy";
+        };
+      });
 
     };
 }
