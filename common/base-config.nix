@@ -60,8 +60,6 @@ in {
   time.timeZone = "Europe/Sofia";
 
   services.sshd.enable = true;
-  # @todo - re-evaluate this
-  #services.openssh.settings.PermitRootLogin = lib.mkDefault "yes";
 
   security.sudo = {
     enable = true;
@@ -100,6 +98,7 @@ in {
     shell = pkgs.zsh;
     packages = with pkgs; [
       bc
+      htop
       killall
       less
       lsof

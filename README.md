@@ -38,7 +38,7 @@ nix build .#packages.x86_64-linux.hala
 
 ```sh
 nix build nixpkgs#OVMF.fd
-./run-quemu.sh
+./run-qemu.sh
 ```
 
 ## Deploy on remote machine over SSH
