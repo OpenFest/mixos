@@ -1,5 +1,4 @@
-{ lib, config, ... }:
-{ pkgs, ... }: {
+{ lib, config, ... }: {
   networking = rec {
     hostName = config.hostname;
     domain = "video.fosdem.org";
