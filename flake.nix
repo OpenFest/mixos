@@ -15,9 +15,31 @@
     deploy-rs.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs = { self, nixpkgs, nixos-generators, home-manager, deploy-rs, ... }:
+  outputs =
+    { self, nixpkgs, nixos-generators, home-manager, deploy-rs, ... }@inputs:
     let
+      lib = nixpkgs.lib;
       forAllSystems = nixpkgs.lib.genAttrs [ "aarch64-darwin" "x86_64-linux" ];
+      targetSystem = "x86_64-linux";
+      machinesDir = ./machines;
+      machineNames = lib.attrNames
+        (lib.filterAttrs (_: type: type == "directory")
+          (builtins.readDir machinesDir));
+      special = { inherit inputs; };
+      mkNixos = name:
+        nixpkgs.lib.nixosSystem {
+          system = targetSystem;
+          specialArgs = special;
+          modules = [ (machinesDir + "/${name}") ];
+        };
+
+      mkImage = name:
+        nixos-generators.nixosGenerate {
+          system = targetSystem;
+          format = "raw";
+          specialArgs = special;
+          modules = [ (machinesDir + "/${name}") ];
+        };
     in {
 
       devShells = forAllSystems (system:
@@ -34,55 +56,16 @@
           };
         });
 
-      nixosConfigurations.zver = nixpkgs.lib.nixosSystem {
-        system = "x86_64-linux";
-        modules = [
-          ./common/raw-efi.nix
-          ./common/base-config.nix
-          ./common/audio-config.nix
-          #./common/nvidia.nix
-          ./common/grow-root.nix
-        ];
-      };
+      nixosConfigurations = builtins.listToAttrs (map (name: {
+        inherit name;
+        value = mkNixos name;
+      }) machineNames);
 
-      nixosConfigurations.hala = nixpkgs.lib.nixosSystem {
-        system = "x86_64-linux";
-        modules = [
-          ./common/raw-efi.nix
-          ./common/base-config.nix
-          ./common/audio-config.nix
-          ./common/virtio-initrd.nix
-          home-manager.nixosModules.home-manager
-          ({ config, pkgs, ... }: {
-            home-manager.useGlobalPkgs = true;
-            home-manager.useUserPackages = true;
-            home-manager.users.human = {
-              imports = [ ./common/home-manager.nix ];
-              home.stateVersion = "25.05";
-            };
-          })
-        ];
-      };
-
-      packages.x86_64-linux.hala = nixos-generators.nixosGenerate {
-        system = "x86_64-linux";
-        format = "raw";
-        modules = [
-          ./common/raw-efi.nix
-          ./common/base-config.nix
-          ./common/audio-config.nix
-          ./common/virtio-initrd.nix
-          home-manager.nixosModules.home-manager
-          ({ config, pkgs, ... }: {
-            home-manager.useGlobalPkgs = true;
-            home-manager.useUserPackages = true;
-            home-manager.users.human = {
-              imports = [ ./common/home-manager.nix ];
-              home.stateVersion = "25.05";
-            };
-          })
-        ];
-      };
+      # e.g. self.packages.x86_64-linux.hala, self.packages.x86_64-linux.zver, ...
+      packages.${targetSystem} = builtins.listToAttrs (map (name: {
+        inherit name;
+        value = mkImage name;
+      }) machineNames);
 
       deploy = {
         magicRollback = true; # optional but nice to have
