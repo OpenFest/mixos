@@ -46,16 +46,18 @@
 
   xdg.portal = {
     enable = true;
-    config = {
-      common = {
-        default = [
-          "gtk"
-        ];
-      };
-    };
+    # config = {
+    #   common = {
+    #     default = [
+    #       "gtk"
+    #     ];
+    #   };
+    # };
     wlr = {
       enable = true;
     };
+    extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
+    xdgOpenUsePortal = true;
   };
 
   services.xserver = {
