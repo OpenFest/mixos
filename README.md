@@ -7,9 +7,8 @@ It is based on NixOS (atomic immutable deploys are quite suited for this usecase
 
 ## Configurations
 
-Every configuration has a corresponding directory in `configurations/`.
-
 - `zver`: base configuration targeting x86_64 machines with NVidia GPUs
+- `hala`: dev config meant to be run in QEMU
 
 ## Requirements
 
@@ -28,19 +27,25 @@ fix linting errors in nix:
 make nixfmt
 ```
 
-## Quick start
+## Build
 
-To build the distribution and burn a bootable drive (make sure to use a fast drive), do:
-
-```bash
-$ ./deploy.sh image-on <configuration> /dev/sdX
+```sh
+nix build .#packages.x86_64-linux.hala
 ```
 
-To deploy changes to an already-running machine, do:
+## Run in QEMU
 
-```bash
-$ ./deploy.sh sync <configuration> <hostname or IP address>
+this will run the latest image found in `./result` inside QEMU VM
+
+```sh
+nix build nixpkgs#OVMF.fd
+./run-qemu.sh
 ```
 
-If you want to build everything locally instead of on the target machine,
-use `remote` instead of `sync`.
+## Deploy on remote machine over SSH
+
+Make sure the `deploy.nodes.hala.hostname` in `flake.nix` is correct and run:
+
+```sh
+nix run .#deploy -- .#hala
+```

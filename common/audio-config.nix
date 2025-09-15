@@ -1,17 +1,18 @@
-{ pkgs, config, ... }:
+{ pkgs, ... }:
 let audio_quant = 32; # start from 32, go higher if it causes problems
-in rec {
-  environment.systemPackages = [
-    pkgs.qpwgraph
-    pkgs.pwvucontrol
-    pkgs.pavucontrol
-    pkgs.jackmix
-    pkgs.lsp-plugins
-    pkgs.guitarix # absolutely essential lol
-    pkgs.pulseaudio # for pactl, fixme
-    pkgs.audacity
+in {
+  environment.systemPackages = with pkgs; [
+    qpwgraph
+    pwvucontrol
+    pavucontrol
+    jackmix
+    lsp-plugins
+    guitarix # absolutely essential lol
+    pulseaudio # for pactl, fixme
+    audacity
 
-    pkgs.jack_mixer
+    # @todo - fix jack_mixer is missing for some reason
+    #jack_mixer
   ];
 
   security.rtkit.enable = true;
