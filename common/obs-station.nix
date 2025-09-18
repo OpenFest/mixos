@@ -1,7 +1,5 @@
 { config, lib, pkgs, ... }: {
-  imports = [
-    ./video-capture-mapping.nix
-  ];
+  imports = [ ./video-capture-mapping.nix ];
 
   environment.systemPackages = [
     # video shit
@@ -22,27 +20,26 @@
     autoLogin.user = "human";
     sddm = {
       enable = true;
-      wayland = {
-        enable = true;
-      };
+      wayland = { enable = true; };
     };
   };
 
-  programs.sway = let
-    swayData = ((import ../configs/sway) { inherit pkgs lib; });
-  in {
-    enable = true;
-    extraOptions = [
-      "--unsupported-gpu" # my next GPU will not be nvidia
-      "--config" "${swayData.packages.sway-user-data}/config"
-    ];
-    extraSessionCommands = ''
-      {
-        echo "sourcing ${swayData.packages.sway-session-script}/bin/sway-session-script"
-        source "${swayData.packages.sway-session-script}/bin/sway-session-script"
-      } &> /tmp/session_log
-    '';
-  };
+  programs.sway =
+    let swayData = ((import ../configs/sway) { inherit pkgs lib; });
+    in {
+      enable = true;
+      extraOptions = [
+        "--unsupported-gpu" # my next GPU will not be nvidia
+        "--config"
+        "${swayData.packages.sway-user-data}/config"
+      ];
+      extraSessionCommands = ''
+        {
+          echo "sourcing ${swayData.packages.sway-session-script}/bin/sway-session-script"
+          source "${swayData.packages.sway-session-script}/bin/sway-session-script"
+        } &> /tmp/session_log
+      '';
+    };
 
   xdg.portal = {
     enable = true;
@@ -53,32 +50,26 @@
     #     ];
     #   };
     # };
-    wlr = {
-      enable = true;
-    };
+    wlr = { enable = true; };
     extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
     xdgOpenUsePortal = true;
   };
 
-  services.xserver = {
-    enable = false;
-  };
+  services.xserver = { enable = false; };
 
   services.pipewire.extraConfig.pipewire = {
     "55-obs-monitor-sink" = {
-      "context.objects" = [
-        {
-          factory = "adapter";
-          args = {
-            "factory.name" = "support.null-audio-sink";
-            "media.class" = "Audio/Sink";
-            "node.name" = "obs_monitor";
-            "node.nick" = "obsMonitor";
-            "node.description" = "OBS Monitor";
-            "audio.position" = "[ FL FR ]";
-          };
-        }
-      ];
+      "context.objects" = [{
+        factory = "adapter";
+        args = {
+          "factory.name" = "support.null-audio-sink";
+          "media.class" = "Audio/Sink";
+          "node.name" = "obs_monitor";
+          "node.nick" = "obsMonitor";
+          "node.description" = "OBS Monitor";
+          "audio.position" = "[ FL FR ]";
+        };
+      }];
     };
   };
 }

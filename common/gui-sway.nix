@@ -1,6 +1,5 @@
 { pkgs, lib, ... }:
-let
-  swayCfg = (import ../configs/sway) { inherit pkgs lib; };
+let swayCfg = (import ../configs/sway) { inherit pkgs lib; };
 in {
   home.packages = with pkgs; [
     alacritty

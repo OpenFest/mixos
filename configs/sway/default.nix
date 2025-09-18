@@ -94,26 +94,18 @@ let
       "${mod}+Shift+0" = "move container to workspace number 10";
     };
 
-    output."*" = {
-      background = "${sway-user-data}/wallpaper.jpg fill";
-    };
+    output."*" = { background = "${sway-user-data}/wallpaper.jpg fill"; };
   };
 
   sway-user-data = pkgs.stdenvNoCC.mkDerivation rec {
     name = "sway-user-data";
     meta.description = "Extra user files for sway";
     src = ./data;
-    buildInputs = [
-      pkgs.coreutils
-      pkgs.pkg-config
-    ];
-    phases = ["unpackPhase" "installPhase"];
+    buildInputs = [ pkgs.coreutils pkgs.pkg-config ];
+    phases = [ "unpackPhase" "installPhase" ];
     installPhase = ''
       mkdir -p $out
       cp -vfT wallpaper.jpg $out/wallpaper.jpg
     '';
   };
-in
-  {
-    inherit config;
-  }
+in { inherit config; }

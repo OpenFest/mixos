@@ -1,14 +1,9 @@
-{ config, lib, pkgs, ... }: let
+{ config, lib, pkgs, ... }:
+let
   videoCaptureMap = {
-    "pci-0000:03:00.0-usbv3-0:1:1.0" = {
-      name = "video-lecturer";
-    };
-    "pci-0000:03:00.0-usbv3-0:2:1.0" = {
-      name = "video-overview";
-    };
-    "pci-0000:03:00.0-usbv3-0:3:1.0" = {
-      name = "video-closeup";
-    };
+    "pci-0000:03:00.0-usbv3-0:1:1.0" = { name = "video-lecturer"; };
+    "pci-0000:03:00.0-usbv3-0:2:1.0" = { name = "video-overview"; };
+    "pci-0000:03:00.0-usbv3-0:3:1.0" = { name = "video-closeup"; };
   };
 
   audioDevMap = {
@@ -22,21 +17,17 @@
     };
   };
 
-  makeV4LNameRule = path: data:
-    ''
-      KERNEL=="video*", \
-      ENV{ID_PATH_WITH_USB_REVISION}=="${path}", \
-      SYMLINK+="${data.name}"
-    '';
+  makeV4LNameRule = path: data: ''
+    KERNEL=="video*", \
+    ENV{ID_PATH_WITH_USB_REVISION}=="${path}", \
+    SYMLINK+="${data.name}"
+  '';
   makeV4LNameRules = linkMap: lib.mapAttrsToList makeV4LNameRule linkMap;
-  makeV4LNameRuleStr = linkMap: builtins.concatStringsSep "\n" (makeV4LNameRules linkMap);
+  makeV4LNameRuleStr = linkMap:
+    builtins.concatStringsSep "\n" (makeV4LNameRules linkMap);
 
   makeWireplumberMatcher = devpath: data: {
-    matches = [
-      {
-        "device.bus-path" = devpath;
-      }
-    ];
+    matches = [{ "device.bus-path" = devpath; }];
     actions = {
       update-props = {
         "device.profile" = "pro-audio";
@@ -50,16 +41,10 @@ in {
   services.udev.extraRules = makeV4LNameRuleStr videoCaptureMap;
   services.pipewire.wireplumber.extraConfig = {
     "50-disable-devices-by-default" = {
-      "monitor.alsa.rules" = [
-        {
-          matches = [ { "device.api" = "alsa"; } ];
-          actions = {
-            update-props = {
-              "device.disabled" = true;
-            };
-          };
-        }
-      ];
+      "monitor.alsa.rules" = [{
+        matches = [{ "device.api" = "alsa"; }];
+        actions = { update-props = { "device.disabled" = true; }; };
+      }];
     };
 
     "51-capture-mapping" = {

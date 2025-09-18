@@ -1,20 +1,14 @@
-{ ... }: [
-  rec {
-    hostname = "zver";
-    system = "x86_64-linux";
-    image = {
-      format = "raw";
-    };
-    moduleArgs = {
-      inherit hostname;
-    };
-    deploy = {
-      hostname = "${hostname}.pit.protopit.eu";
-      sshUser = "human";
+{ ... }: [rec {
+  hostname = "zver";
+  system = "x86_64-linux";
+  image = { format = "raw"; };
+  moduleArgs = { inherit hostname; };
+  deploy = {
+    hostname = "${hostname}.pit.protopit.eu";
+    sshUser = "human";
 
-      remoteBuild = false;
-      fastConnection = true;
-      sshOpts = [ "-p" "2222" ];
-    };
-  }
-]
+    remoteBuild = false;
+    fastConnection = true;
+    sshOpts = [ "-p" "2222" ];
+  };
+}]
