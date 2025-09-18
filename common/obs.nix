@@ -1,12 +1,31 @@
-{ config, lib, pkgs, ... }: {
-  environment.systemPackages = [
+{ lib, pkgs, ... }:
+let
+  obsConfig = (import ../configs/obs) { inherit pkgs lib; };
+in {
+  users.users.human.packages = [
     # video shit
     pkgs.obs-studio
     pkgs.obs-studio-plugins.advanced-scene-switcher
     pkgs.guvcview
+
+    obsConfig.obs-config-reset
   ];
 
-  home-manager.users.human.imports = [ ./gui-sway.nix ];
+  systemd.services.obs-config-create = {
+    enable = true;
+    description = "create obs config dir if it does not exist";
+    serviceConfig = {
+      Type = "oneshot";
+      ExecStart = "${obsConfig.obs-config-reset}/bin/obs-config-reset -n";
+      User = "human";
+      Group = "human";
+    };
+    wantedBy = [ "multi-user.target" ];
+  };
+
+  home-manager.users.human = {
+    imports = [ ./gui-sway.nix ];
+  };
 
   services.pipewire.extraConfig.pipewire = {
     "55-obs-monitor-sink" = {

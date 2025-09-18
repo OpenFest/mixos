@@ -101,7 +101,7 @@ let
     name = "sway-user-data";
     meta.description = "Extra user files for sway";
     src = ./data;
-    buildInputs = [ pkgs.coreutils pkgs.pkg-config ];
+    buildInputs = [ pkgs.coreutils ];
     phases = [ "unpackPhase" "installPhase" ];
     installPhase = ''
       mkdir -p $out
