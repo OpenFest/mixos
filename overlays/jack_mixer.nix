@@ -1,10 +1,9 @@
-{ nixpkgs, lib, system, ... }:
-final: prev: {
-  jack_mixer = let py = prev.python3Packages;
-  in prev.stdenv.mkDerivation {
+self: super: {
+  jack_mixer = let py = super.python3Packages;
+  in super.stdenv.mkDerivation {
     pname = "jack_mixer";
     version = "19";
-    src = prev.fetchFromGitHub {
+    src = super.fetchFromGitHub {
       # owner = "jack-mixer";
       owner = "dexterlb";
       repo = "jack_mixer";
@@ -14,7 +13,7 @@ final: prev: {
     preConfigure = ''
       mesonFlagsArray+=(-Draysessiondir=$prefix/etc/xdg/raysession/client_templates/35_jackmixer)
     '';
-    nativeBuildInputs = [ prev.meson ];
+    nativeBuildInputs = [ super.meson ];
     preInstall = ''
       patchShebangs --build /build/source/meson_postinstall.py
 
@@ -23,25 +22,16 @@ final: prev: {
     '';
     # TODO: patch python binaries to refer to proper site-packages dir...
     buildInputs = [
-      prev.glib
-      prev.pkg-config
-      prev.jack2
-      prev.python3
-      prev.ninja
+      super.glib
+      super.pkg-config
+      super.jack2
+      super.python3
+      super.ninja
       py.pycairo
       py.pygobject3
       py.platformdirs
       py.cython
       py.docutils
     ];
-  };
-
-  obs-studio = prev.obs-studio.overrideAttrs {
-    # pipewire support is buggy on wayland compositors like sway
-    # and causes obs to hang for 1min on startup
-    pipewireSupport = false;
-
-    # enable this only if we start packaging decklink stuff…
-    decklinkSupport = false;
   };
 }

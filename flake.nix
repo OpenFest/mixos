@@ -16,39 +16,27 @@
   };
 
   outputs =
-    { self, nixpkgs, nixos-generators, home-manager, deploy-rs, ... }@inputs:
+    { self, nixpkgs, nixos-generators, deploy-rs, ... }@inputs:
     let
-      mapValues = f: attrset: builtins.mapAttrs (_: x: f x) attrset;
-      mapValuesIf = f: attrset: lib.filterAttrs (_: x: x != null) (mapValues f attrset);
-      templateHosts = name: let
-        hostsFunc = import "${templatesDir}/${name}/hosts.nix";
-        hostsData = hostsFunc { inherit nixpkgs; };
-      in
-        map (data: data // { templateName = name; }) hostsData;
-
-      lib = nixpkgs.lib;
-      forAllSystems = nixpkgs.lib.genAttrs [ "aarch64-darwin" "x86_64-linux" ];
       templatesDir = ./templates;
-      templateNames = lib.attrNames
-        (lib.filterAttrs (_: type: type == "directory")
-          (builtins.readDir templatesDir));
+      overlaysDir = ./overlays;
+
+      # get all templates, and from there get all hosts (≥1 hosts per template, usually 1)
+      templateNames = dirsInDir templatesDir;
       hostList = builtins.concatLists (map templateHosts templateNames);
       hosts = builtins.listToAttrs (map (host: { name = host.hostname; value = host; }) hostList);
-      nixosSystemArgs = host: {
-        system = host.system;
-        specialArgs = { inherit inputs; } // (if host ? moduleArgs then host.moduleArgs else {});
-        modules = [ (templatesDir + "/${host.templateName}") ];
-      };
 
-      special = { inherit inputs; };
+      # build a nixos configuration for the given host
       mkNixos = host:
-        nixpkgs.lib.nixosSystem (nixosSystemArgs host);
+        lib.nixosSystem (nixosSystemArgs host);
 
+      # build a bootable disk image for the host, if configured
       mkImage = host:
         if host ? image then
           nixos-generators.nixosGenerate (host.image // (nixosSystemArgs host))
         else null;
 
+      # build a deploy-rs recipe for the host, if configured
       mkDeployment = host:
         if host ? deploy then
           {
@@ -59,9 +47,44 @@
             };
           } // host.deploy
         else null;
+
+      nixosSystemArgs = host: {
+        system = host.system;
+        specialArgs = {
+          inherit inputs;
+        } // (if host ? moduleArgs then host.moduleArgs else {});
+        modules = [
+          (templatesDir + "/${host.templateName}")
+          { nixpkgs.overlays = overlays; }
+        ];
+      };
+
+      # the usual shit
+      lib = nixpkgs.lib;
+      forAllSystems = lib.genAttrs [ "aarch64-darwin" "x86_64-linux" ];
+
+      # nixpkgs overlays (used for custom package overrides)
+      overlays = map (src: import "${overlaysDir}/${src}") overlaySources;
+      overlaySources = lib.attrNames
+        (lib.filterAttrs (name: type: type == "directory" || lib.hasSuffix ".nix" name)
+          (builtins.readDir overlaysDir));
+
+      # gives a list of hosts from a single template
+      templateHosts = name: let
+        hostsFunc = import "${templatesDir}/${name}/hosts.nix";
+        hostsData = hostsFunc { inherit nixpkgs; }; # maybe pass some other convenient stuff here
+      in
+        map (data: data // { templateName = name; }) hostsData;
+
+      # util functions
+      mapValues = f: attrset: builtins.mapAttrs (_: x: f x) attrset;
+      mapValuesIf = f: attrset: lib.filterAttrs (_: x: x != null) (mapValues f attrset);
+      dirsInDir = dirname: lib.attrNames
+        (lib.filterAttrs (_: type: type == "directory")
+          (builtins.readDir dirname));
     in {
       devShells = forAllSystems (system:
-        let pkgs = import nixpkgs { inherit system; };
+        let pkgs = import nixpkgs { inherit system overlays; };
         in {
           default = pkgs.mkShell {
             packages = with pkgs; [
@@ -93,6 +116,5 @@
           program = "${deploy-rs.packages.${system}.deploy-rs}/bin/deploy";
         };
       });
-
     };
 }
