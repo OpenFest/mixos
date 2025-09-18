@@ -57,7 +57,7 @@
         } // (if host ? moduleArgs then host.moduleArgs else { });
         modules = [
           (templatesDir + "/${host.templateName}")
-          { nixpkgs.overlays = overlays; }
+          { nixpkgs.overlays = overlays; nixpkgs.config = nixpkgsConfig; }
         ];
       };
 
@@ -70,6 +70,8 @@
       overlaySources = lib.attrNames (lib.filterAttrs
         (name: type: type == "directory" || lib.hasSuffix ".nix" name)
         (builtins.readDir overlaysDir));
+
+      nixpkgsConfig = (import ./nixpkgs-global-config.nix);
 
       # gives a list of hosts from a single template
       templateHosts = name:
@@ -89,7 +91,7 @@
           (builtins.readDir dirname));
     in {
       devShells = forAllSystems (system:
-        let pkgs = import nixpkgs { inherit system overlays; };
+        let pkgs = import nixpkgs { inherit system overlays; config = nixpkgsConfig; };
         in {
           default = pkgs.mkShell {
             packages = with pkgs; [
