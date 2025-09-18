@@ -15,6 +15,7 @@ in {
     wl-clipboard
     wob
     waybar
+    xwayland
   ];
 
   home.file.".zprofile".text = ''
