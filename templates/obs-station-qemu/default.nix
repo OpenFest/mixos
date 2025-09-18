@@ -5,6 +5,6 @@
     ../../common/audio-config.nix
     ../../common/virtio-initrd.nix
     ../../common/networking-dhcp.nix
-    ../../common/obs-station.nix
+    ../../common/obs.nix
   ];
 }

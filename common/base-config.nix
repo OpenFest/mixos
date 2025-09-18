@@ -27,14 +27,20 @@ in {
 
   environment.systemPackages = with pkgs; [
     # absolutely essential
-    rsync
-    sshfs
-    git
-    neovim
+    bc
     coreutils-full
+    git
+    htop
+    killall
+    less
+    lsof
     moreutils
+    neovim
+    rsync
     sl
+    sshfs
     tmux
+    tree
 
     # video shit
     v4l-utils
@@ -72,20 +78,6 @@ in {
     uid = 1000;
     password = "asdf";
     shell = pkgs.zsh;
-    packages = with pkgs; [
-      # FIXME: some of these packages are also listed in gui-sway.nix
-      # which is the correct place?
-      bc
-      htop
-      killall
-      less
-      lsof
-      nix-search-cli
-      tree
-      waybar
-      wl-clipboard
-      xwayland
-    ];
   };
   users.groups.human = { gid = 1000; };
 
