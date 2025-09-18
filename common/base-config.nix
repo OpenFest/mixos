@@ -105,5 +105,13 @@ in {
   '';
   programs.zsh.promptInit = ""; # otherwise it'll override the grml prompt
 
+  users.users.root.openssh.authorizedKeys.keys = ring-bearers;
   users.users.human.openssh.authorizedKeys.keys = ring-bearers;
+  services.openssh = {
+    enable = true;
+    settings = {
+      PermitRootLogin = "yes";
+      PasswordAuthentication = false;
+    };
+  };
 }
