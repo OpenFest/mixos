@@ -104,10 +104,14 @@
         mapValuesIf mkImage hosts
       );
 
+      # deploy-rs nodes
       deploy = {
         magicRollback = true;
         nodes = mapValuesIf mkDeployment hosts;
       };
+
+      # deploy-rs checks
+      checks = builtins.mapAttrs (system: deployLib: deployLib.deployChecks self.deploy) deploy-rs.lib;
 
       # tiny helper so you can run `nix run .#deploy -- .#hala`
       apps = forAllSystems (system: {

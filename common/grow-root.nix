@@ -53,6 +53,7 @@ in {
     description =
       "Grow root partition and filesystem to full disk (first boot only)";
     wantedBy = [ "multi-user.target" ];
+    requires = [ "network-online.target" ];
     after = [ "local-fs.target" "network-online.target" ];
     serviceConfig = {
       Type = "oneshot";
