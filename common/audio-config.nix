@@ -11,8 +11,7 @@ in {
     pulseaudio # for pactl, fixme
     audacity
 
-    # @todo - fix jack_mixer is missing for some reason
-    #jack_mixer
+    jack_mixer
   ];
 
   security.rtkit.enable = true;

@@ -5,10 +5,19 @@ for live audio/video mixing. Very much work in progress.
 
 It is based on NixOS (atomic immutable deploys are quite suited for this usecase).
 
-## Configurations
+## Templates and hosts
 
-- `zver`: base configuration targeting x86_64 machines with NVidia GPUs
-- `hala`: dev config meant to be run in QEMU
+The configuration is split into templates for different kinds of machines.
+Each template is instantiated into one or more hosts.
+
+- `obs-station-qemu`: for running an OBS workstation under qemu for testing
+    - `hala`: development host for running locally
+- `obs-station-nvidia`: for running an OBS workstation on machines with NVIDIA gpus
+    - `zver`: an nvidia-based machine currently located in the protopit office
+- `fosdem-box`: for headless mixing on [fosdem boxes](https://github.com/fosdem/video)
+    - `fosdem-box-101`: one of the testing boxes
+    - `fosdem-box-102`: one of the testing boxes
+    - `fosdem-box-103`: one of the testing boxes
 
 ## Requirements
 

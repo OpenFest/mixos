@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, inputs, ... }:
 let
   # TODO: configuration data (users, networking) should not be in this file/repo
   # maybe see https://nixos.wiki/wiki/Agenix or similar for secret management
@@ -12,6 +12,8 @@ let
     "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQC//hCcxBoM3l06lagxvdJ/3bnckP2xtX93B5Pv1D2BGcGvjOgtiqJMY8HfrlbHj2KuG2SiMR6HBbm/utZF4mMBnvGscNjr8lb8tfdbj6ZRroig1ngTdRyZxXVoE0UXH/1Xz15ezuf+mTSaUV/GXPte1a2Xo1izp0bbdg6WYImD3aGf+XawZaS09Vsh4xqoXRd4cPXMiCFOz8iwq3L0ycep6MasNAYT6BOZ1qWECUn0IgrNJtM9Iaxk0nEarHAi3qEi/XTBIOtejLmz3vk1C5dPXHZk/C2qDMNawPoVQAJ9MhjH+HWSx9L/MMzjpknApovMiJ5pppGp80e5L5oHJjwqla+dunedO9GSkg2fW2Vlabk1DMRmUGEyYhLCTD4vop9xxLLq4e3jazgRI/l26yhxYJhrrQVCNJcCMitSoPeJJGhFUjNKgftGWyTHk2ICMlcpwtMoolecChstiHXnZsrrs1pREzt6dWZeOILHVUQ64eBbPhUrNjtuZCTkB/FPHaJVNJP/uiqC9NTpk3zVxycK7cqYeNsWAXlXcLjFAwXj2VOdOQz8XrW6zpeDPak/+v4I5q1dIh/1VeN7ESO/6h7wEzkNJd5YhZrVThjgxIbGy+OZfi2IslQX7GAf9rBbA/5jK0WCaJYvIt+zRXPxMfeAJcMn3sWYo7/jR1viB7YApQ== vasil@nymphadora"
   ];
 in {
+  imports = [ inputs.home-manager.nixosModules.home-manager ];
+
   system.stateVersion = "25.05";
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
@@ -36,25 +38,12 @@ in {
 
     # video shit
     v4l-utils
-    obs-studio
-    obs-studio-plugins.advanced-scene-switcher
-    guvcview
-    v4l-utils
-
-    # gui shit
-    firefox
-    tigervnc
-    alacritty
-    fuzzel
 
     # utils
     usbutils
     lshw
     usbtop
     pcm
-
-    # sigplan sandbox
-    cryptsetup # for integritysetup
   ];
 
   time.timeZone = "Europe/Sofia";
@@ -73,19 +62,6 @@ in {
     }];
   };
 
-  #services.displayManager = {
-  #  # defaultSession = "fluxbox";
-  #  autoLogin.enable = true;
-  #  autoLogin.user = "human";
-  #  sddm = {
-  #    enable = true;
-  #    wayland = {
-  #      enable = false; # fixme
-  #    };
-  #  };
-  #};
-  #programs.niri.enable = true;
-
   users.users.human = {
     home = "/home/human";
     description = "human";
@@ -97,6 +73,8 @@ in {
     password = "asdf";
     shell = pkgs.zsh;
     packages = with pkgs; [
+      # FIXME: some of these packages are also listed in gui-sway.nix
+      # which is the correct place?
       bc
       htop
       killall
@@ -110,6 +88,19 @@ in {
     ];
   };
   users.groups.human = { gid = 1000; };
+
+  home-manager = {
+    useGlobalPkgs = true;
+    useUserPackages = true;
+
+    users.human = {
+      home.stateVersion = "25.05";
+      home.username = "human";
+      home.homeDirectory = "/home/human";
+    };
+  };
+
+  services.getty.autologinUser = "human";
 
   programs.sway.enable = true;
 
