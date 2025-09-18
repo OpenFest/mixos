@@ -20,24 +20,24 @@
     let
       mapValues = f: attrset: builtins.mapAttrs (_: x: f x) attrset;
       mapValuesIf = f: attrset: lib.filterAttrs (_: x: x != null) (mapValues f attrset);
-      foreskinHosts = name: let
-        hostsFunc = import "${foreskinsDir}/${name}/hosts.nix";
+      templateHosts = name: let
+        hostsFunc = import "${templatesDir}/${name}/hosts.nix";
         hostsData = hostsFunc { inherit nixpkgs; };
       in
-        map (data: data // { foreskinName = name; }) hostsData;
+        map (data: data // { templateName = name; }) hostsData;
 
       lib = nixpkgs.lib;
       forAllSystems = nixpkgs.lib.genAttrs [ "aarch64-darwin" "x86_64-linux" ];
-      foreskinsDir = ./foreskins;
-      foreskinNames = lib.attrNames
+      templatesDir = ./templates;
+      templateNames = lib.attrNames
         (lib.filterAttrs (_: type: type == "directory")
-          (builtins.readDir foreskinsDir));
-      hostList = builtins.concatLists (map foreskinHosts foreskinNames);
+          (builtins.readDir templatesDir));
+      hostList = builtins.concatLists (map templateHosts templateNames);
       hosts = builtins.listToAttrs (map (host: { name = host.hostname; value = host; }) hostList);
       nixosSystemArgs = host: {
         system = host.system;
         specialArgs = { inherit inputs; } // (if host ? moduleArgs then host.moduleArgs else {});
-        modules = [ (foreskinsDir + "/${host.foreskinName}") ];
+        modules = [ (templatesDir + "/${host.templateName}") ];
       };
 
       special = { inherit inputs; };
