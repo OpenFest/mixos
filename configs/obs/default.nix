@@ -33,7 +33,7 @@ let
       fi
 
       mkdir -p "$HOME/.config"
-      rsync -rva --delete ${configdir}/obs-studio/ "$HOME/.config/obs-studio/"
+      rsync -rva --chown="$USER" --delete ${configdir}/obs-studio/ "$HOME/.config/obs-studio/"
     '';
   };
 in { inherit configdir obs-config-reset; }
