@@ -125,14 +125,15 @@
       checks = forAllSystems
         (system: deploy-rs.lib.${system}.deployChecks self.deploy);
 
-      # tiny helper so you can run `nix run .#deploy -- .#hala`
       apps = forAllSystems (system: let
           pkgs = pkgsFor system;
         in {
+          # tiny helper so you can run `nix run .#deploy -- .#hala`
           deploy = {
             type = "app";
             program = "${deploy-rs.packages.${system}.deploy-rs}/bin/deploy";
           };
+          # helper so you can do nixos-rebuild switch locally on the target machine
           nixos-rebuild = {
             type = "app";
             program = "${pkgs.nixos-rebuild}/bin/nixos-rebuild";
