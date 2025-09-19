@@ -63,6 +63,7 @@
       lib = nixpkgs.lib;
       allSystems = lib.lists.unique (map (host: host.system) hostList);
       forAllSystems = lib.genAttrs allSystems;
+      pkgsFor = system: import nixpkgs { inherit system overlays; config = nixpkgsConfig; };
 
       # nixpkgs overlays (used for custom package overrides)
       overlays = map (src: import "${overlaysDir}/${src}") overlaySources;
@@ -94,7 +95,7 @@
           (builtins.readDir dirname));
     in {
       devShells = forAllSystems (system:
-        let pkgs = import nixpkgs { inherit system overlays; config = nixpkgsConfig; };
+        let pkgs = pkgsFor system;
         in {
           default = pkgs.mkShell {
             packages = with pkgs; [
@@ -125,11 +126,17 @@
         (system: deploy-rs.lib.${system}.deployChecks self.deploy);
 
       # tiny helper so you can run `nix run .#deploy -- .#hala`
-      apps = forAllSystems (system: {
-        deploy = {
-          type = "app";
-          program = "${deploy-rs.packages.${system}.deploy-rs}/bin/deploy";
-        };
+      apps = forAllSystems (system: let
+          pkgs = pkgsFor system;
+        in {
+          deploy = {
+            type = "app";
+            program = "${deploy-rs.packages.${system}.deploy-rs}/bin/deploy";
+          };
+          nixos-rebuild = {
+            type = "app";
+            program = "${pkgs.nixos-rebuild}/bin/nixos-rebuild";
+          };
       });
     };
 }
