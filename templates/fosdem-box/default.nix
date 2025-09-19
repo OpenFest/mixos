@@ -3,6 +3,5 @@
     ../../common/raw-efi.nix
     ../../common/base-config.nix
     ../../common/audio-config.nix
-    ../../common/grow-root.nix
   ];
 }
