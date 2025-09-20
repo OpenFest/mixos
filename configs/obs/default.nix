@@ -9,19 +9,21 @@ let
     installPhase = ''
       mkdir -p $out
       rsync -rva ./ $out/obs-studio/
+      find . -type f | sort | xargs cat | sha256sum | cut -d ' ' -f 1 > $out/obs-studio/.version
     '';
   };
   obs-config-reset = pkgs.writeShellApplication {
     name = "obs-config-reset";
     runtimeInputs = [
       pkgs.rsync
+      pkgs.procps
     ];
     text = ''
       set -euo pipefail
 
       if [[ $# -ge 1 ]]; then
         if [[ "$1" == "-n" ]]; then
-          if [[ -d "$HOME/.config/obs-studio" ]]; then
+          if [[ -d "$HOME/.config/obs-studio" ]] && cmp ${configdir}/obs-studio/.version "$HOME/obs-studio/.version"; then
             exit 0
           fi
         else
@@ -32,8 +34,14 @@ let
         fi
       fi
 
+      pkill '.obs-wrapped' || true && echo 'killed obs because it was running'
+
       mkdir -p "$HOME/.config"
-      rsync -rva --chown="$USER" --delete ${configdir}/obs-studio/ "$HOME/.config/obs-studio/"
+      rsync -rva \
+        --chown="$USER" \
+        --chmod=D755,F644 \
+        --delete \
+        ${configdir}/obs-studio/ "$HOME/.config/obs-studio/"
     '';
   };
 in { inherit configdir obs-config-reset; }

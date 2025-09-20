@@ -10,17 +10,14 @@ let
     terminal = "alacritty";
     bars = [{
       command = "${pkgs.waybar}/bin/waybar";
-      # position = "top";
     }];
 
     startup = [
-      { command = "${pkgs.alacritty}/bin/alacritty"; }
-      { command = "${pkgs.firefox}/bin/firefox"; }
+      { command = "${pkgs.wayvnc}/bin/wayvnc '::' &> /tmp/wayvnc.log"; }
     ];
 
     assigns = {
-      "1" = [{ app_id = "firefox"; }];
-      "2" = [{ app_id = "Alacritty"; }];
+      "1" = [{ app_id = "obs"; }];
     };
 
     keybindings = {

@@ -25,6 +25,9 @@ in {
 
   home-manager.users.human = {
     imports = [ ./gui-sway.nix ];
+    wayland.windowManager.sway.config.startup = [
+      { command = "${pkgs.obs-studio}/bin/obs"; }
+    ];
   };
 
   services.pipewire.extraConfig.pipewire = {
