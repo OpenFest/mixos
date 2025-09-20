@@ -20,6 +20,8 @@ let
       "1" = [{ app_id = "obs"; }];
     };
 
+    workspaceLayout = "tabbed";
+
     keybindings = {
       # Basics
       "${mod}+Return" = "exec ${term}";
