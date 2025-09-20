@@ -15,6 +15,7 @@ in {
     wl-clipboard
     wob
     waybar
+    wayvnc
     xwayland
   ];
 
@@ -29,5 +30,9 @@ in {
     enable = true;
 
     config = swayCfg.config;
+
+    extraSessionCommands = ''
+      wayvnc '::' &> /tmp/wayvnc.log &
+    '';
   };
 }
