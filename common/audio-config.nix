@@ -2,10 +2,8 @@
 let audio_quant = 32; # start from 32, go higher if it causes problems
 in {
   environment.systemPackages = with pkgs; [
-    qpwgraph
     pwvucontrol
     pavucontrol
-    jackmix
     lsp-plugins
     guitarix # absolutely essential lol
     pulseaudio # for pactl, fixme

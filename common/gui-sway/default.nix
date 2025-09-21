@@ -4,12 +4,12 @@ let
   term = "alacritty";
   menu = "rofi -show combi -show-icons";
 
-  config = {
+  swayCfg = {
     modifier = "${mod}";
 
     terminal = "alacritty";
     bars = [{
-      command = "${pkgs.waybar}/bin/waybar";
+      command = "waybar";
     }];
 
     startup = [
@@ -107,4 +107,75 @@ let
       cp -vfT wallpaper.jpg $out/wallpaper.jpg
     '';
   };
-in { inherit config; }
+in {
+  home.packages = with pkgs; [
+    alacritty
+    brightnessctl
+    firefox
+    grim
+    playerctl
+    pulseaudio # pactl comes from pulseaudio
+    rofi-wayland
+    swaylock
+    swayidle
+    slurp
+    wl-clipboard
+    wob
+    waybar
+    xwayland
+
+    nerd-fonts.noto
+    nerd-fonts.droid-sans-mono
+    font-awesome
+  ];
+
+  home.file.".zprofile".text = ''
+    # Auto-start sway on first VT if not already under Wayland
+    if [ -z "''${WAYLAND_DISPLAY}" ] && [ "''${XDG_VTNR: -0}" -eq 1 ]; then
+      exec sway --unsupported-gpu
+    fi
+  '';
+
+  wayland.windowManager.sway = {
+    enable = true;
+
+    config = swayCfg;
+  };
+
+  programs.waybar = {
+    enable = true;
+
+    # settings = {
+    #   mainBar = {
+    #     layer = "top";
+    #     position = "top";
+    #     height = 28;
+
+    #     modules-left = [ "sway/workspaces" "sway/mode" ];
+    #     modules-center = [ "clock" ];
+    #     modules-right = [ "pulseaudio" "network" "cpu" "memory" "battery" "tray" ];
+
+    #     clock = {
+    #       format = "{:%Y-%m-%d %H:%M}";
+    #     };
+    #   };
+    # };
+
+    # This sets the CSS styling (usually ~/.config/waybar/style.css)
+    style = ''
+      * {
+        font-family: "Noto Sans", "Font Awesome 6 Free", "Noto Color Emoji";
+        font-size: 12px;
+      }
+
+      // window#waybar {
+      //   background: #1e1e2e;
+      //   color: #cdd6f4;
+      // }
+
+      // #clock {
+      //   padding: 0 10px;
+      // }
+    '';
+  };
+}

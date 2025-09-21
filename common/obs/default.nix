@@ -1,7 +1,7 @@
-{ pkgs, lib, ... }:
+{ lib, pkgs, ... }:
 let
   configdir = pkgs.stdenvNoCC.mkDerivation rec {
-    name = "sway-user-data";
+    name = "obs-config-dir";
     meta.description = "obs config directory";
     src = ./obs-studio;
     buildInputs = [ pkgs.coreutils pkgs.rsync ];
@@ -44,4 +44,48 @@ let
         ${configdir}/obs-studio/ "$HOME/.config/obs-studio/"
     '';
   };
-in { inherit configdir obs-config-reset; }
+in {
+  users.users.human.packages = [
+    # video shit
+    pkgs.obs-studio
+    pkgs.obs-studio-plugins.advanced-scene-switcher
+    pkgs.guvcview
+
+    obs-config-reset
+  ];
+
+  systemd.services.obs-config-create = {
+    enable = true;
+    description = "create obs config dir if it does not exist";
+    serviceConfig = {
+      Type = "oneshot";
+      ExecStart = "${obs-config-reset}/bin/obs-config-reset -n";
+      User = "human";
+      Group = "human";
+    };
+    wantedBy = [ "multi-user.target" ];
+  };
+
+  home-manager.users.human = {
+    imports = [ ../gui-sway ];
+    wayland.windowManager.sway.config.startup = [
+      { command = "${pkgs.obs-studio}/bin/obs"; }
+    ];
+  };
+
+  services.pipewire.extraConfig.pipewire = {
+    "55-obs-monitor-sink" = {
+      "context.objects" = [{
+        factory = "adapter";
+        args = {
+          "factory.name" = "support.null-audio-sink";
+          "media.class" = "Audio/Sink";
+          "node.name" = "obs_monitor";
+          "node.nick" = "obsMonitor";
+          "node.description" = "OBS Monitor";
+          "audio.position" = "[ FL FR ]";
+        };
+      }];
+    };
+  };
+}

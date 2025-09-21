@@ -1,0 +1,14 @@
+<!DOCTYPE patchbay>
+<patchbay name="baba" version="0.9.5">
+ <items>
+  <item node-type="pipewire" port-type="pipewire-audio">
+   <output node="Blue Snowball Mono" port="Blue Snowball:capture_MONO"/>
+   <input node="Headphones L HD599" port="Headphones L HD599:playback_FR"/>
+  </item>
+  <item node-type="pipewire" port-type="pipewire-audio">
+   <output node="Blue Snowball Mono" port="Blue Snowball:capture_MONO"/>
+   <input node="Headphones L HD599" port="Headphones L HD599:playback_FL"/>
+  </item>
+ </items>
+</patchbay>
+
