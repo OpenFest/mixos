@@ -1,8 +1,5 @@
-{ lib, pkgs, ... }:
-{
-  imports = [
-    ../../common/dev-mapper.nix
-  ];
+{ lib, pkgs, ... }: {
+  imports = [ ../../common/dev-mapper.nix ];
 
   mixos.videoOutputs = {
     main = "Virtual-1";

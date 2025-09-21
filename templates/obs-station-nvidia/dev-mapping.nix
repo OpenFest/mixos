@@ -1,8 +1,11 @@
-{ lib, pkgs, ... }:
-{
-  imports = [
-    ../../common/dev-mapper.nix
-  ];
+{ lib, pkgs, ... }: {
+  imports = [ ../../common/dev-mapper.nix ];
+
+  mixos.videoOutputs = {
+    main = "DisplayPort-1";
+    multiview = "DisplayPort-2";
+    projector = "HDMI-A-1";
+  };
 
   mixos.devMap = {
     videoCapture = {
@@ -12,12 +15,8 @@
     };
 
     audio = {
-      "pci-0000:03:00.0-usb-0:1:1.2" = {
-        name = "capture-lecturer";
-      };
-      "pci-0000:03:00.0-usb-0:2:1.2" = {
-        name = "capture-overview";
-      };
+      "pci-0000:03:00.0-usb-0:1:1.2" = { name = "capture-lecturer"; };
+      "pci-0000:03:00.0-usb-0:2:1.2" = { name = "capture-overview"; };
     };
   };
 }

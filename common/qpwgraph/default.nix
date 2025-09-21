@@ -14,10 +14,7 @@ let
   };
   qpwgraph-reset = pkgs.writeShellApplication {
     name = "qpwgraph-reset";
-    runtimeInputs = [
-      pkgs.rsync
-      pkgs.procps
-    ];
+    runtimeInputs = [ pkgs.rsync pkgs.procps ];
     text = ''
       set -euo pipefail
 
@@ -52,14 +49,12 @@ in {
 
   options.mixos.qpwgraph.patchbay = lib.mkOption {
     type = lib.types.str;
-    description = "Name of qpwgraph patchbay that will be used as main patchbay and loaded on startup";
+    description =
+      "Name of qpwgraph patchbay that will be used as main patchbay and loaded on startup";
   };
 
   config = {
-    users.users.human.packages = [
-      pkgs.qpwgraph
-      qpwgraph-reset
-    ];
+    users.users.human.packages = [ pkgs.qpwgraph qpwgraph-reset ];
 
     systemd.services.qpwgraph-init = {
       enable = true;
@@ -74,9 +69,8 @@ in {
     };
 
     home-manager.users.human = {
-      wayland.windowManager.sway.config.startup = [
-        { command = "${pkgs.qpwgraph}/bin/qpwgraph"; }
-      ];
+      wayland.windowManager.sway.config.startup =
+        [{ command = "${pkgs.qpwgraph}/bin/qpwgraph"; }];
     };
   };
 }

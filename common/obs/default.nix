@@ -14,10 +14,7 @@ let
   };
   obs-config-reset = pkgs.writeShellApplication {
     name = "obs-config-reset";
-    runtimeInputs = [
-      pkgs.rsync
-      pkgs.procps
-    ];
+    runtimeInputs = [ pkgs.rsync pkgs.procps ];
     text = ''
       set -euo pipefail
 
@@ -69,9 +66,8 @@ in {
   };
 
   home-manager.users.human = {
-    wayland.windowManager.sway.config.startup = [
-      { command = "${pkgs.obs-studio}/bin/obs"; }
-    ];
+    wayland.windowManager.sway.config.startup =
+      [{ command = "${pkgs.obs-studio}/bin/obs"; }];
   };
 
   services.pipewire.extraConfig.pipewire = {

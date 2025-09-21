@@ -28,7 +28,8 @@ let
     };
 
     "51-capture-mapping" = {
-      "monitor.alsa.rules" = lib.mapAttrsToList makeWireplumberMatcher audioDevMap;
+      "monitor.alsa.rules" =
+        lib.mapAttrsToList makeWireplumberMatcher audioDevMap;
     };
   };
 in {
@@ -42,7 +43,7 @@ in {
           };
         };
       });
-      default = {};
+      default = { };
       description = ''
         Mapping of video capture device IDs to configuration.
         Keys are device IDs (e.g. "pci-0000:03:00.0-usbv3-0:1:1.0").
@@ -58,7 +59,7 @@ in {
           };
         };
       });
-      default = {};
+      default = { };
       description = ''
         Mapping of audio device IDs to configuration.
         Keys are device IDs (e.g. "pci-0000:03:00.0-usbv3-0:1:1.0").
@@ -68,7 +69,9 @@ in {
   };
 
   config = {
-    services.udev.extraRules = makeV4LNameRuleStr config.mixos.devMap.videoCapture;
-    services.pipewire.wireplumber.extraConfig = makeWireplumberCfg config.mixos.devMap.audio;
+    services.udev.extraRules =
+      makeV4LNameRuleStr config.mixos.devMap.videoCapture;
+    services.pipewire.wireplumber.extraConfig =
+      makeWireplumberCfg config.mixos.devMap.audio;
   };
 }

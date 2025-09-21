@@ -12,18 +12,21 @@ let
       # {
       #   command = "swaybar";
       # }
-      {
-        statusCommand = "${pkgs.i3status}/bin/i3status";
-      }
+      { statusCommand = "${pkgs.i3status}/bin/i3status"; }
     ];
 
-    startup = [
-      { command = "${pkgs.wayvnc}/bin/wayvnc '::' &> /tmp/wayvnc.log"; }
-    ];
+    startup =
+      [{ command = "${pkgs.wayvnc}/bin/wayvnc '::' &> /tmp/wayvnc.log"; }];
 
     assigns = {
-      "projector" = [{ title = ".*Projector - Scene:.*"; app_id = "com.obsproject.Studio"; }];
-      "multiview" = [{ title = ".*Projector - Multiview"; app_id = "com.obsproject.Studio"; }];
+      "projector" = [{
+        title = ".*Projector - Scene:.*";
+        app_id = "com.obsproject.Studio";
+      }];
+      "multiview" = [{
+        title = ".*Projector - Multiview";
+        app_id = "com.obsproject.Studio";
+      }];
     };
 
     workspaceLayout = "tabbed";
@@ -105,9 +108,7 @@ let
       pos = "5000 0";
       bg = "#ebac54 solid_color";
     };
-    output."${config.mixos.videoOutputs.multiview}" = {
-      pos = "10000 0";
-    };
+    output."${config.mixos.videoOutputs.multiview}" = { pos = "10000 0"; };
 
     workspaceOutputAssign = [
       {
@@ -139,7 +140,7 @@ let
 in {
   options.mixos.videoOutputs = lib.mkOption {
     type = lib.types.attrsOf (lib.types.str);
-    default = {};
+    default = { };
     description = ''
       Mapping of video friendly video output names to their
       respective hardware names
@@ -162,7 +163,6 @@ in {
         wl-clipboard
         wob
         xwayland
-
 
         nerd-fonts.noto
         nerd-fonts.droid-sans-mono

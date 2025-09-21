@@ -24,7 +24,8 @@
       templateNames = dirsInDir templatesDir;
       hostList = builtins.concatLists (map templateHosts templateNames);
       hosts = mkHostMap hostList;
-      hostsBySystem = system: mkHostMap (builtins.filter (host: host.system == system) hostList);
+      hostsBySystem = system:
+        mkHostMap (builtins.filter (host: host.system == system) hostList);
 
       # build a nixos configuration for the given host
       mkNixos = host: lib.nixosSystem (nixosSystemArgs host);
@@ -55,7 +56,10 @@
         } // (if host ? moduleArgs then host.moduleArgs else { });
         modules = [
           (templatesDir + "/${host.templateName}")
-          { nixpkgs.overlays = overlays; nixpkgs.config = nixpkgsConfig; }
+          {
+            nixpkgs.overlays = overlays;
+            nixpkgs.config = nixpkgsConfig;
+          }
         ];
       };
 
@@ -63,7 +67,11 @@
       lib = nixpkgs.lib;
       allSystems = lib.lists.unique (map (host: host.system) hostList);
       forAllSystems = lib.genAttrs allSystems;
-      pkgsFor = system: import nixpkgs { inherit system overlays; config = nixpkgsConfig; };
+      pkgsFor = system:
+        import nixpkgs {
+          inherit system overlays;
+          config = nixpkgsConfig;
+        };
 
       # nixpkgs overlays (used for custom package overrides)
       overlays = map (src: import "${overlaysDir}/${src}") overlaySources;
@@ -83,10 +91,11 @@
         in map (data: data // { templateName = name; }) hostsData;
 
       # util functions
-      mkHostMap = hostList: builtins.listToAttrs (map (host: {
-        name = host.hostname;
-        value = host;
-      }) hostList);
+      mkHostMap = hostList:
+        builtins.listToAttrs (map (host: {
+          name = host.hostname;
+          value = host;
+        }) hostList);
       mapValues = f: attrset: builtins.mapAttrs (_: x: f x) attrset;
       mapValuesIf = f: attrset:
         lib.filterAttrs (_: x: x != null) (mapValues f attrset);
@@ -111,9 +120,8 @@
       nixosConfigurations = mapValues mkNixos hosts;
 
       # expose disk images as packages
-      packages = forAllSystems
-        (system:
-          mapValuesIf mkImage (hostsBySystem system));
+      packages =
+        forAllSystems (system: mapValuesIf mkImage (hostsBySystem system));
 
       # deploy-rs nodes
       deploy = {
@@ -125,8 +133,8 @@
       checks = forAllSystems
         (system: deploy-rs.lib.${system}.deployChecks self.deploy);
 
-      apps = forAllSystems (system: let
-          pkgs = pkgsFor system;
+      apps = forAllSystems (system:
+        let pkgs = pkgsFor system;
         in {
           # tiny helper so you can run `nix run .#deploy -- .#hala`
           deploy = {
@@ -138,6 +146,6 @@
             type = "app";
             program = "${pkgs.nixos-rebuild}/bin/nixos-rebuild";
           };
-      });
+        });
     };
 }
