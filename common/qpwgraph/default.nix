@@ -48,6 +48,8 @@ let
     '';
   };
 in {
+  imports = [ ../gui-sway ];
+
   options.mixos.qpwgraph.patchbay = lib.mkOption {
     type = lib.types.str;
     description = "Name of qpwgraph patchbay that will be used as main patchbay and loaded on startup";
@@ -72,7 +74,6 @@ in {
     };
 
     home-manager.users.human = {
-      imports = [ ../gui-sway ];
       wayland.windowManager.sway.config.startup = [
         { command = "${pkgs.qpwgraph}/bin/qpwgraph"; }
       ];

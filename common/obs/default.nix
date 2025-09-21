@@ -45,6 +45,8 @@ let
     '';
   };
 in {
+  imports = [ ../gui-sway ];
+
   users.users.human.packages = [
     # video shit
     pkgs.obs-studio
@@ -67,7 +69,6 @@ in {
   };
 
   home-manager.users.human = {
-    imports = [ ../gui-sway ];
     wayland.windowManager.sway.config.startup = [
       { command = "${pkgs.obs-studio}/bin/obs"; }
     ];
