@@ -8,9 +8,14 @@ let
     modifier = "${mod}";
 
     terminal = "alacritty";
-    bars = [{
-      command = "waybar";
-    }];
+    bars = [
+      # {
+      #   command = "swaybar";
+      # }
+      {
+        statusCommand = "${pkgs.i3status}/bin/i3status";
+      }
+    ];
 
     startup = [
       { command = "${pkgs.wayvnc}/bin/wayvnc '::' &> /tmp/wayvnc.log"; }
@@ -122,8 +127,8 @@ in {
     slurp
     wl-clipboard
     wob
-    waybar
     xwayland
+
 
     nerd-fonts.noto
     nerd-fonts.droid-sans-mono
@@ -143,41 +148,40 @@ in {
     config = swayCfg;
   };
 
-  programs.waybar = {
-    enable = true;
+  # programs.waybar = {
+  #   enable = false;
 
-    # settings = {
-    #   mainBar = {
-    #     layer = "top";
-    #     position = "top";
-    #     height = 28;
+  #   settings = {
+  #     mainBar = {
+  #       layer = "top";
+  #       position = "top";
+  #       height = 28;
 
-    #     modules-left = [ "sway/workspaces" "sway/mode" ];
-    #     modules-center = [ "clock" ];
-    #     modules-right = [ "pulseaudio" "network" "cpu" "memory" "battery" "tray" ];
+  #       modules-left = [ "sway/workspaces" "sway/mode" ];
+  #       modules-center = [ "clock" ];
+  #       modules-right = [ "pulseaudio" "network" "cpu" "memory" "battery" "tray" ];
 
-    #     clock = {
-    #       format = "{:%Y-%m-%d %H:%M}";
-    #     };
-    #   };
-    # };
+  #       clock = {
+  #         format = "{:%Y-%m-%d %H:%M}";
+  #       };
+  #     };
+  #   };
 
-    # This sets the CSS styling (usually ~/.config/waybar/style.css)
-    style = ''
-      * {
-        font-family: "Noto Sans", "Font Awesome 6 Free", "Noto Color Emoji";
-        font-size: 12px;
-      }
-    '';
-    # ''
-    #   // window#waybar {
-    #   //   background: #1e1e2e;
-    #   //   color: #cdd6f4;
-    #   // }
+  #   # This sets the CSS styling (usually ~/.config/waybar/style.css)
+  #   style = ''
+  #     * {
+  #       font-family: "Noto Sans", "Font Awesome 6 Free", "Noto Color Emoji";
+  #       font-size: 12px;
+  #     }
 
-    #   // #clock {
-    #   //   padding: 0 10px;
-    #   // }
-    # '';
-  };
+  #     window#waybar {
+  #       background: #1e1e2e;
+  #       color: #cdd6f4;
+  #     }
+
+  #     #clock {
+  #       padding: 0 10px;
+  #     }
+  #   '';
+  # };
 }
