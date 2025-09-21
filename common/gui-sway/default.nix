@@ -17,7 +17,8 @@ let
     ];
 
     assigns = {
-      "1" = [{ app_id = "obs"; }];
+      "projector" = [{ title = ".*Projector - Scene:.*"; app_id = "com.obsproject.Studio"; }];
+      "multiview" = [{ title = ".*Projector - Multiview"; app_id = "com.obsproject.Studio"; }];
     };
 
     workspaceLayout = "tabbed";
@@ -167,15 +168,16 @@ in {
         font-family: "Noto Sans", "Font Awesome 6 Free", "Noto Color Emoji";
         font-size: 12px;
       }
-
-      // window#waybar {
-      //   background: #1e1e2e;
-      //   color: #cdd6f4;
-      // }
-
-      // #clock {
-      //   padding: 0 10px;
-      // }
     '';
+    # ''
+    #   // window#waybar {
+    #   //   background: #1e1e2e;
+    #   //   color: #cdd6f4;
+    #   // }
+
+    #   // #clock {
+    #   //   padding: 0 10px;
+    #   // }
+    # '';
   };
 }

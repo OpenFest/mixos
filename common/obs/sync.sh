@@ -15,6 +15,7 @@ function sync_from_home {
         --exclude=/profiler_data \
         --exclude=/plugin_config/obs-browser \
         --exclude='*.bak' \
+        --exclude=".version" \
         "${HOME}"/.config/obs-studio/ \
         "${cdir}"/obs-studio/
 }

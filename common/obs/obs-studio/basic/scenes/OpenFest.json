@@ -1,6 +1,6 @@
 {
-    "current_scene": "Break",
-    "current_program_scene": "Break",
+    "current_scene": "[svc][media] Break",
+    "current_program_scene": "[svc][media] Break",
     "scene_order": [
         {
             "name": "Intermezzo"
@@ -2133,13 +2133,27 @@
         }
     ],
     "transitions": [],
-    "saved_projectors": [],
+    "saved_projectors": [
+        {
+            "name": "[svc] Project me",
+            "monitor": -1,
+            "type": 1,
+            "geometry": "AdnQywADAAAAAAABAAAAGQAABPwAAAL/AAAAAQAAABkAAAT8AAAC/wAAAAAAAAAABQAAAAABAAAAGQAABPwAAAL/",
+            "alwaysOnTopOverridden": false
+        },
+        {
+            "monitor": -1,
+            "type": 4,
+            "geometry": "AdnQywADAAAAAAABAAAAGQAABPwAAAL/AAAAAQAAABkAAAT8AAAC/wAAAAAAAAAABQAAAAABAAAAGQAABPwAAAL/",
+            "alwaysOnTopOverridden": false
+        }
+    ],
     "canvases": [],
     "current_transition": "Fade",
     "transition_duration": 300,
     "preview_locked": false,
     "scaling_enabled": false,
-    "scaling_level": -27,
+    "scaling_level": -21,
     "scaling_off_x": 0.0,
     "scaling_off_y": 0.0,
     "modules": {
