@@ -1,27 +1,36 @@
-{ pkgs, lib, ... }:
+{ config, pkgs, lib, ... }:
 let
   mod = "Mod4";
   term = "alacritty";
   menu = "rofi -show combi -show-icons";
 
-  config = {
+  swayCfg = {
     modifier = "${mod}";
 
     terminal = "alacritty";
-    bars = [{
-      command = "${pkgs.waybar}/bin/waybar";
-      # position = "top";
-    }];
-
-    startup = [
-      { command = "${pkgs.alacritty}/bin/alacritty"; }
-      { command = "${pkgs.firefox}/bin/firefox"; }
+    bars = [
+      # {
+      #   command = "swaybar";
+      # }
+      { statusCommand = "${pkgs.i3status}/bin/i3status"; }
     ];
 
+    startup =
+      [{ command = "${pkgs.wayvnc}/bin/wayvnc '::' &> /tmp/wayvnc.log"; }];
+
     assigns = {
-      "1" = [{ app_id = "firefox"; }];
-      "2" = [{ app_id = "Alacritty"; }];
+      "projector" = [{
+        title = ".*Projector - Scene:.*";
+        app_id = "com.obsproject.Studio";
+      }];
+      "multiview" = [{
+        title = ".*Projector - Multiview";
+        app_id = "com.obsproject.Studio";
+      }];
     };
+
+    workspaceLayout = "tabbed";
+    defaultWorkspace = "workspace number 1";
 
     keybindings = {
       # Basics
@@ -95,6 +104,26 @@ let
     };
 
     output."*" = { background = "${sway-user-data}/wallpaper.jpg fill"; };
+    output."${config.mixos.videoOutputs.projector}" = {
+      pos = "5000 0";
+      bg = "#ebac54 solid_color";
+    };
+    output."${config.mixos.videoOutputs.multiview}" = { pos = "10000 0"; };
+
+    workspaceOutputAssign = [
+      {
+        workspace = "projector";
+        output = config.mixos.videoOutputs.projector;
+      }
+      {
+        workspace = "multiview";
+        output = config.mixos.videoOutputs.multiview;
+      }
+      {
+        workspace = "1";
+        output = config.mixos.videoOutputs.main;
+      }
+    ];
   };
 
   sway-user-data = pkgs.stdenvNoCC.mkDerivation rec {
@@ -108,4 +137,87 @@ let
       cp -vfT wallpaper.jpg $out/wallpaper.jpg
     '';
   };
-in { inherit config; }
+in {
+  options.mixos.videoOutputs = lib.mkOption {
+    type = lib.types.attrsOf (lib.types.str);
+    default = { };
+    description = ''
+      Mapping of video friendly video output names to their
+      respective hardware names
+    '';
+  };
+
+  config = {
+    home-manager.users.human = {
+      home.packages = with pkgs; [
+        alacritty
+        brightnessctl
+        firefox
+        grim
+        playerctl
+        pulseaudio # pactl comes from pulseaudio
+        rofi-wayland
+        swaylock
+        swayidle
+        slurp
+        wl-clipboard
+        wob
+        xwayland
+
+        nerd-fonts.noto
+        nerd-fonts.droid-sans-mono
+        font-awesome
+      ];
+
+      home.file.".zprofile".text = ''
+        # Auto-start sway on first VT if not already under Wayland
+        if [ -z "''${WAYLAND_DISPLAY}" ] && [ "''${XDG_VTNR: -0}" -eq 1 ]; then
+          exec sway --unsupported-gpu
+        fi
+      '';
+
+      wayland.windowManager.sway = {
+        enable = true;
+
+        config = swayCfg;
+      };
+
+      # programs.waybar = {
+      #   enable = false;
+
+      #   settings = {
+      #     mainBar = {
+      #       layer = "top";
+      #       position = "top";
+      #       height = 28;
+
+      #       modules-left = [ "sway/workspaces" "sway/mode" ];
+      #       modules-center = [ "clock" ];
+      #       modules-right = [ "pulseaudio" "network" "cpu" "memory" "battery" "tray" ];
+
+      #       clock = {
+      #         format = "{:%Y-%m-%d %H:%M}";
+      #       };
+      #     };
+      #   };
+
+      #   # This sets the CSS styling (usually ~/.config/waybar/style.css)
+      #   style = ''
+      #     * {
+      #       font-family: "Noto Sans", "Font Awesome 6 Free", "Noto Color Emoji";
+      #       font-size: 12px;
+      #     }
+
+      #     window#waybar {
+      #       background: #1e1e2e;
+      #       color: #cdd6f4;
+      #     }
+
+      #     #clock {
+      #       padding: 0 10px;
+      #     }
+      #   '';
+      # };
+    };
+  };
+}

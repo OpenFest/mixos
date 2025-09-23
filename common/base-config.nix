@@ -41,6 +41,7 @@ in {
     sshfs
     tmux
     tree
+    nettools
 
     # video shit
     v4l-utils

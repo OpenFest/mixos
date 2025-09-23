@@ -3,7 +3,7 @@
     ./dev-mapping.nix
 
     ../../common/raw-efi.nix
-    ../../common/nvidia.nix
+    ../../common/amdgpu.nix
     ../../common/networking-dhcp.nix
 
     ../../common/workstation-obs-and-external-audio-mixer.nix

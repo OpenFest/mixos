@@ -23,10 +23,9 @@
       # get all templates, and from there get all hosts (≥1 hosts per template, usually 1)
       templateNames = dirsInDir templatesDir;
       hostList = builtins.concatLists (map templateHosts templateNames);
-      hosts = builtins.listToAttrs (map (host: {
-        name = host.hostname;
-        value = host;
-      }) hostList);
+      hosts = mkHostMap hostList;
+      hostsBySystem = system:
+        mkHostMap (builtins.filter (host: host.system == system) hostList);
 
       # build a nixos configuration for the given host
       mkNixos = host: lib.nixosSystem (nixosSystemArgs host);
@@ -57,13 +56,22 @@
         } // (if host ? moduleArgs then host.moduleArgs else { });
         modules = [
           (templatesDir + "/${host.templateName}")
-          { nixpkgs.overlays = overlays; nixpkgs.config = nixpkgsConfig; }
+          {
+            nixpkgs.overlays = overlays;
+            nixpkgs.config = nixpkgsConfig;
+          }
         ];
       };
 
       # the usual shit
       lib = nixpkgs.lib;
-      forAllSystems = lib.genAttrs [ "aarch64-darwin" "x86_64-linux" ];
+      allSystems = lib.lists.unique (map (host: host.system) hostList);
+      forAllSystems = lib.genAttrs allSystems;
+      pkgsFor = system:
+        import nixpkgs {
+          inherit system overlays;
+          config = nixpkgsConfig;
+        };
 
       # nixpkgs overlays (used for custom package overrides)
       overlays = map (src: import "${overlaysDir}/${src}") overlaySources;
@@ -83,6 +91,11 @@
         in map (data: data // { templateName = name; }) hostsData;
 
       # util functions
+      mkHostMap = hostList:
+        builtins.listToAttrs (map (host: {
+          name = host.hostname;
+          value = host;
+        }) hostList);
       mapValues = f: attrset: builtins.mapAttrs (_: x: f x) attrset;
       mapValuesIf = f: attrset:
         lib.filterAttrs (_: x: x != null) (mapValues f attrset);
@@ -91,7 +104,7 @@
           (builtins.readDir dirname));
     in {
       devShells = forAllSystems (system:
-        let pkgs = import nixpkgs { inherit system overlays; config = nixpkgsConfig; };
+        let pkgs = pkgsFor system;
         in {
           default = pkgs.mkShell {
             packages = with pkgs; [
@@ -106,10 +119,9 @@
 
       nixosConfigurations = mapValues mkNixos hosts;
 
-      # e.g. self.packages.x86_64-linux.hala, self.packages.x86_64-linux.zver, ...
-      packages = forAllSystems
-        (_: # FIXME: should this be the target system? I think we don't care
-          mapValuesIf mkImage hosts);
+      # expose disk images as packages
+      packages =
+        forAllSystems (system: mapValuesIf mkImage (hostsBySystem system));
 
       # deploy-rs nodes
       deploy = {
@@ -118,15 +130,22 @@
       };
 
       # deploy-rs checks
-      checks = builtins.mapAttrs
-        (system: deployLib: deployLib.deployChecks self.deploy) deploy-rs.lib;
+      checks = forAllSystems
+        (system: deploy-rs.lib.${system}.deployChecks self.deploy);
 
-      # tiny helper so you can run `nix run .#deploy -- .#hala`
-      apps = forAllSystems (system: {
-        deploy = {
-          type = "app";
-          program = "${deploy-rs.packages.${system}.deploy-rs}/bin/deploy";
-        };
-      });
+      apps = forAllSystems (system:
+        let pkgs = pkgsFor system;
+        in {
+          # tiny helper so you can run `nix run .#deploy -- .#hala`
+          deploy = {
+            type = "app";
+            program = "${deploy-rs.packages.${system}.deploy-rs}/bin/deploy";
+          };
+          # helper so you can do nixos-rebuild switch locally on the target machine
+          nixos-rebuild = {
+            type = "app";
+            program = "${pkgs.nixos-rebuild}/bin/nixos-rebuild";
+          };
+        });
     };
 }
