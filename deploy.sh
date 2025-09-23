@@ -55,7 +55,7 @@ function require_nix {
     fi
     msg "this script requires nix to be installed."
     if user_wants "do you want to install it now? "; then
-        sh <(curl --proto '=https' --tlsv1.2 -L https://nixos.org/nix/install) --daemon
+        sh <(curl --proto '=https' --tlsv1.2 -sSf -L https://install.determinate.systems/nix | sh -s -- install) --daemon
         require_nix
         return
     fi
