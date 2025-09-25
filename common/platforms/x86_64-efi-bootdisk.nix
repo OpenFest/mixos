@@ -1,6 +1,4 @@
 { config, lib, options, pkgs, modulesPath, ... }: {
-  imports = [ ./raw.nix ];
-
   fileSystems."/boot" = {
     device = "/dev/disk/by-label/ESP";
     fsType = "vfat";

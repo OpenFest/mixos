@@ -2,8 +2,8 @@
   imports = [
     ./dev-mapping.nix
 
-    ../../common/raw-efi.nix
-    ../../common/amdgpu.nix
+    ../../common/platforms/x86_64-efi-bootdisk.nix
+    ../../common/gpu-support/amdgpu.nix
     ../../common/networking-dhcp.nix
 
     ../../common/workstation-obs-and-external-audio-mixer.nix

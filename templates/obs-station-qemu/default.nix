@@ -2,8 +2,7 @@
   imports = [
     ./dev-mapping.nix
 
-    ../../common/raw-efi.nix
-    ../../common/virtio-initrd.nix
+    ../../common/platforms/x86_64-virtio-qemu-img.nix
     ../../common/networking-dhcp.nix
 
     ../../common/workstation-obs-and-external-audio-mixer.nix

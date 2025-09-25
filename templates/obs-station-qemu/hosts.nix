@@ -1,7 +1,7 @@
 { ... }: [rec {
   hostname = "hala";
   system = "x86_64-linux";
-  image = { format = "raw"; };
+  image = { format = "qcow-efi"; };
   moduleArgs = { inherit hostname; };
   deploy = {
     hostname = "localhost";
