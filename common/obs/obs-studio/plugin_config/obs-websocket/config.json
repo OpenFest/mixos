@@ -1,8 +1,8 @@
 {
   "alerts_enabled": false,
-  "auth_required": true,
+  "auth_required": false,
   "first_load": false,
-  "server_enabled": false,
-  "server_password": "MDIqOHeqUkYADJs9",
+  "server_enabled": true,
+  "server_password": "",
   "server_port": 4455
 }
