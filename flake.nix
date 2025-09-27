@@ -13,9 +13,12 @@
 
     deploy-rs.url = "github:serokell/deploy-rs";
     deploy-rs.inputs.nixpkgs.follows = "nixpkgs";
+
+    nixos-hardware.url = "github:NixOS/nixos-hardware";
   };
 
-  outputs = { self, nixpkgs, nixos-generators, deploy-rs, ... }@inputs:
+  outputs =
+    { self, nixpkgs, nixos-generators, deploy-rs, nixos-hardware, ... }@inputs:
     let
       templatesDir = ./templates;
       overlaysDir = ./overlays;
