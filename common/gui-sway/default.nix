@@ -27,6 +27,10 @@ let
         title = ".*Projector - Multiview";
         app_id = "com.obsproject.Studio";
       }];
+      "1" = [{
+        app_id = "^com\\.obsproject\\.Studio$";
+        title = "^(?!.*Projector - (Scene:|Multiview)).*";
+      }];
     };
 
     workspaceLayout = "tabbed";
