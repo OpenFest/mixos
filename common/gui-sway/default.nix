@@ -83,11 +83,12 @@ let
     }));
 
     output."*" = { background = "${sway-user-data}/wallpaper.jpg fill"; };
+    output."${config.mixos.videoOutputs.main}" = { pos = "0 0"; };
     output."${config.mixos.videoOutputs.projector}" = {
-      pos = "5000 0";
+      pos = "-5000 0";
       bg = "#ebac54 solid_color";
     };
-    output."${config.mixos.videoOutputs.multiview}" = { pos = "10000 0"; };
+    output."${config.mixos.videoOutputs.multiview}" = { pos = "5000 0"; };
 
     workspaceOutputAssign = [
       {
