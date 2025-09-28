@@ -1,9 +1,32 @@
 {
   "nodes": {
+    "deploy-o-matic": {
+      "inputs": {
+        "deploy-rs": "deploy-rs",
+        "nixos-generators": "nixos-generators",
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1759050889,
+        "narHash": "sha256-zrU3PgJhRM9BxWjJtXTqwvYnB6niT0iMFjqiY9i99Xg=",
+        "owner": "dexterlb",
+        "repo": "deploy-o-matic",
+        "rev": "30b6e36868b0110173fdff063948331d37827b43",
+        "type": "github"
+      },
+      "original": {
+        "owner": "dexterlb",
+        "repo": "deploy-o-matic",
+        "type": "github"
+      }
+    },
     "deploy-rs": {
       "inputs": {
         "flake-compat": "flake-compat",
         "nixpkgs": [
+          "deploy-o-matic",
           "nixpkgs"
         ],
         "utils": "utils"
@@ -78,6 +101,7 @@
       "inputs": {
         "nixlib": "nixlib",
         "nixpkgs": [
+          "deploy-o-matic",
           "nixpkgs"
         ]
       },
@@ -113,9 +137,8 @@
     },
     "root": {
       "inputs": {
-        "deploy-rs": "deploy-rs",
+        "deploy-o-matic": "deploy-o-matic",
         "home-manager": "home-manager",
-        "nixos-generators": "nixos-generators",
         "nixpkgs": "nixpkgs"
       }
     },
