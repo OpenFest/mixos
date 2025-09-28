@@ -4,6 +4,8 @@ self: super: {
     # and causes obs to hang for 1min on startup
     pipewireSupport = false;
 
+    cudaSupport = false;
+
     # enable this only if we start packaging decklink stuff…
     decklinkSupport = false;
   };

@@ -46,12 +46,15 @@ in {
 
   users.users.human.packages = [
     # video shit
-    pkgs.obs-studio
-    pkgs.obs-studio-plugins.advanced-scene-switcher
     pkgs.guvcview
 
     obs-config-reset
   ];
+
+  programs.obs-studio = {
+    enable = true;
+    plugins = [ pkgs.obs-studio-plugins.advanced-scene-switcher ];
+  };
 
   systemd.services.obs-config-create = {
     enable = true;
@@ -66,8 +69,7 @@ in {
   };
 
   home-manager.users.human = {
-    wayland.windowManager.sway.config.startup =
-      [{ command = "${pkgs.obs-studio}/bin/obs"; }];
+    wayland.windowManager.sway.config.startup = [{ command = "obs"; }];
   };
 
   services.pipewire.extraConfig.pipewire = {
