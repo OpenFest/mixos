@@ -1,6 +1,6 @@
 { inputs, lib, config, pkgs, ... }: {
   imports = [
-    ../../common/platforms/x86_64-efi-bootdisk.nix
+    ../../common/platforms/aarch64-rpi-bootdisk.nix
     ../../common/base-config.nix
     ../../common/audio-config.nix
   ];

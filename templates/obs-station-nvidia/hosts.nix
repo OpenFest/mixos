@@ -9,6 +9,5 @@
 
     remoteBuild = false;
     fastConnection = true;
-    sshOpts = [ "-p" "2222" ];
   };
 }]

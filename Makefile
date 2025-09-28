@@ -1,6 +1,6 @@
 git-hooks:
 	@echo ">>> checking nix linting rules ..."
-	cp .config/.git/hooks/pre-commit .git/hooks/pre-commit
+	cp .config/git/hooks/pre-commit .git/hooks/pre-commit
 
 nixfmt:
 	@echo ">>> formatting nix files ..."

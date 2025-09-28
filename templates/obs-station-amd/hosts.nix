@@ -1,14 +1,13 @@
 { ... }: [rec {
-  hostname = "hala";
+  hostname = "lamya";
   system = "x86_64-linux";
-  image = { format = "qcow-efi"; };
+  image = { format = "raw"; };
   moduleArgs = { inherit hostname; };
   deploy = {
-    hostname = "localhost";
+    hostname = "${hostname}.pit.protopit.eu";
     sshUser = "human";
 
     remoteBuild = false;
     fastConnection = true;
-    sshOpts = [ "-p" "2222" ];
   };
 }]

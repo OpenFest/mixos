@@ -1,10 +1,10 @@
 { inputs, lib, pkgs, ... }: {
   imports = [
-    ../../common/raw-efi.nix
-    ../../common/base-config.nix
-    ../../common/audio-config.nix
-    ../../common/virtio-initrd.nix
+    ./dev-mapping.nix
+
+    ../../common/platforms/x86_64-virtio-qemu-img.nix
     ../../common/networking-dhcp.nix
-    ../../common/obs-station.nix
+
+    ../../common/workstation-obs-and-external-audio-mixer.nix
   ];
 }

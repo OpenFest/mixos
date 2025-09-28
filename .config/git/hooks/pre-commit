@@ -1,0 +1,29 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+# Get a list of staged .nix files
+STAGED_FILES=$(git diff --cached --name-only --diff-filter=ACM | grep '\.nix$' || true)
+
+if [ -z "$STAGED_FILES" ]; then
+  exit 0
+fi
+
+# Check formatting
+FAILURES=()
+for file in $STAGED_FILES; do
+  if ! nixfmt --check "$file"; then
+    FAILURES+=("$file")
+  fi
+done
+
+# If any file failed formatting, block the commit
+if [ "${#FAILURES[@]}" -ne 0 ]; then
+  echo "❌ The following files are not formatted correctly:"
+  for f in "${FAILURES[@]}"; do
+    echo "  - $f"
+  done
+  echo "💡 Run \`nixfmt\` to format them."
+  exit 1
+fi
+
+exit 0
