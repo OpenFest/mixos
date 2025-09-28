@@ -1,16 +1,26 @@
 { config, lib, pkgs, ... }:
 let
-  makeV4LNameRule = path: data: ''
+  makeV4LPathRule = path: data: ''
     KERNEL=="video*", \
     ENV{ID_PATH_WITH_USB_REVISION}=="${path}", \
     SYMLINK+="${data.name}"
   '';
-  makeV4LNameRules = linkMap: lib.mapAttrsToList makeV4LNameRule linkMap;
-  makeV4LNameRuleStr = linkMap:
-    builtins.concatStringsSep "\n" (makeV4LNameRules linkMap);
+  makeV4LPathRules = linkMap: lib.mapAttrsToList makeV4LPathRule linkMap;
+  makeV4LRuleStr = cfg:
+    builtins.concatStringsSep "\n" (makeV4LPathRules cfg.by-path);
 
-  makeWireplumberMatcher = devpath: data: {
+  makeWireplumberPathMatcher = devpath: data: {
     matches = [{ "device.bus-path" = devpath; }];
+    actions = {
+      update-props = {
+        "device.profile" = "pro-audio";
+        "device.description" = data.name;
+        "device.disabled" = false;
+      };
+    };
+  };
+  makeWireplumberNameMatcher = name: data: {
+    matches = [{ "device.name" = name; }];
     actions = {
       update-props = {
         "device.profile" = "pro-audio";
@@ -29,12 +39,13 @@ let
 
     "51-capture-mapping" = {
       "monitor.alsa.rules" =
-        lib.mapAttrsToList makeWireplumberMatcher audioDevMap;
+        (lib.mapAttrsToList makeWireplumberPathMatcher audioDevMap.by-path)
+        ++ (lib.mapAttrsToList makeWireplumberNameMatcher audioDevMap.by-name);
     };
   };
 in {
   options.mixos.devMap = {
-    videoCapture = lib.mkOption {
+    videoCapture.by-path = lib.mkOption {
       type = lib.types.attrsOf (lib.types.submodule {
         options = {
           name = lib.mkOption {
@@ -50,7 +61,7 @@ in {
         Each entry must specify at least a `name`.
       '';
     };
-    audio = lib.mkOption {
+    audio.by-path = lib.mkOption {
       type = lib.types.attrsOf (lib.types.submodule {
         options = {
           name = lib.mkOption {
@@ -66,11 +77,26 @@ in {
         Each entry must specify at least a `name`.
       '';
     };
+    audio.by-name = lib.mkOption {
+      type = lib.types.attrsOf (lib.types.submodule {
+        options = {
+          name = lib.mkOption {
+            type = lib.types.str;
+            description = "Logical name assigned to this audio device.";
+          };
+        };
+      });
+      default = { };
+      description = ''
+        Mapping of audio device names to configuration.
+        Keys are device names (e.g. "mySoundCard.alsa0").
+        Each entry must specify at least a `name`.
+      '';
+    };
   };
 
   config = {
-    services.udev.extraRules =
-      makeV4LNameRuleStr config.mixos.devMap.videoCapture;
+    services.udev.extraRules = makeV4LRuleStr config.mixos.devMap.videoCapture;
     services.pipewire.wireplumber.extraConfig =
       makeWireplumberCfg config.mixos.devMap.audio;
   };
