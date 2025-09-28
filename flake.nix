@@ -8,9 +8,12 @@
 
     deploy-o-matic.url = "github:dexterlb/deploy-o-matic";
     deploy-o-matic.inputs.nixpkgs.follows = "nixpkgs";
+
+    nixos-hardware.url = "github:NixOS/nixos-hardware";
+    nixos-hardware.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs = { self, nixpkgs, deploy-o-matic, ... }@inputs:
+  outputs = { self, nixpkgs, nixos-hardware, deploy-o-matic, ... }@inputs:
     let
       dom = deploy-o-matic.lib.deployOMatic {
         templatesDir = ./templates;
