@@ -4,6 +4,21 @@ let
   term = "alacritty";
   menu = "rofi -show combi -show-icons";
 
+  workspaceAssigns = {
+    "projector" = [{
+      title = ".*Projector - Scene:.*";
+      app_id = "com.obsproject.Studio";
+    }];
+    "multiview" = [{
+      title = ".*Projector - Multiview";
+      app_id = "com.obsproject.Studio";
+    }];
+  };
+  windowMatchers = ''
+    for_window [app_id="^((?!com\.obsproject\.Studio).)*$"] move container to output ${config.mixos.videoOutputs.main}, focus;
+    for_window [app_id="^com\.obsproject\.Studio$" title="^((?!.*Projector -.*).)*$"] move container to output ${config.mixos.videoOutputs.main}, focus;
+  '';
+
   swayCfg = {
     modifier = "${mod}";
 
@@ -18,16 +33,7 @@ let
     startup =
       [{ command = "${pkgs.wayvnc}/bin/wayvnc '::' &> /tmp/wayvnc.log"; }];
 
-    assigns = {
-      "projector" = [{
-        title = ".*Projector - Scene:.*";
-        app_id = "com.obsproject.Studio";
-      }];
-      "multiview" = [{
-        title = ".*Projector - Multiview";
-        app_id = "com.obsproject.Studio";
-      }];
-    };
+    assigns = workspaceAssigns;
 
     workspaceLayout = "tabbed";
     defaultWorkspace = "workspace number 1";
@@ -72,11 +78,7 @@ let
       "${mod}+space" = "focus mode_toggle";
       "${mod}+a" = "focus parent";
 
-      # Scratchpad
-      "${mod}+Shift+minus" = "move scratchpad";
-      "${mod}+minus" = "scratchpad show";
       # Resize mode
-
       "${mod}+r" = "mode resize";
     } // (forEveryMainWorkspaceKV (n: {
       "${mod}+${n}" = "workspace number ${n}";
@@ -164,6 +166,9 @@ in {
         enable = true;
 
         config = swayCfg;
+        extraConfig = ''
+          ${windowMatchers}
+        '';
       };
 
       # programs.waybar = {
