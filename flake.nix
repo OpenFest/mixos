@@ -13,8 +13,7 @@
     nixos-hardware.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs =
-    { self, nixpkgs, nixos-hardware, ... }@inputs:
+  outputs = { self, nixpkgs, nixos-hardware, deploy-o-matic, ... }@inputs:
     let
       dom = deploy-o-matic.lib.deployOMatic {
         templatesDir = ./templates;
