@@ -4,19 +4,18 @@ let
   term = "alacritty";
   menu = "rofi -show combi -show-icons";
 
-  workspaceAssigns = {
-    "projector" = [{
-      title = ".*Projector - Scene:.*";
-      app_id = "com.obsproject.Studio";
-    }];
-    "multiview" = [{
-      title = ".*Projector - Multiview";
-      app_id = "com.obsproject.Studio";
-    }];
-  };
   windowMatchers = ''
-    for_window [app_id="^((?!com\.obsproject\.Studio).)*$"] move container to output ${config.mixos.videoOutputs.main}, focus;
-    for_window [app_id="^com\.obsproject\.Studio$" title="^((?!.*Projector -.*).)*$"] move container to output ${config.mixos.videoOutputs.main}, focus;
+    for_window [app_id="^com\.obsproject\.Studio$" title=".*Projector - Scene:.*"] \
+      move container to workspace projector, fullscreen enable;
+
+    for_window [app_id="^com\.obsproject\.Studio$" title=".*Projector - Multiview"] \
+      move container to workspace multiview, fullscreen enable;
+
+    for_window [app_id="^((?!com\.obsproject\.Studio).)*$"] \
+      move container to output ${config.mixos.videoOutputs.main}, focus;
+
+    for_window [app_id="^com\.obsproject\.Studio$" title="^((?!.*Projector -.*).)*$"] \
+      move container to output ${config.mixos.videoOutputs.main}, focus;
   '';
 
   swayCfg = {
@@ -32,8 +31,6 @@ let
 
     startup =
       [{ command = "${pkgs.wayvnc}/bin/wayvnc '::' &> /tmp/wayvnc.log"; }];
-
-    assigns = workspaceAssigns;
 
     workspaceLayout = "tabbed";
     defaultWorkspace = "workspace number 1";
