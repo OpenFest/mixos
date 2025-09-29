@@ -4,6 +4,20 @@ let
   term = "alacritty";
   menu = "rofi -show combi -show-icons";
 
+  windowMatchers = ''
+    for_window [app_id="^com\.obsproject\.Studio$" title=".*Projector - Scene:.*"] \
+      move container to workspace projector, fullscreen enable;
+
+    for_window [app_id="^com\.obsproject\.Studio$" title=".*Projector - Multiview"] \
+      move container to workspace multiview, fullscreen enable;
+
+    for_window [app_id="^((?!com\.obsproject\.Studio).)*$"] \
+      move container to output ${config.mixos.videoOutputs.main}, focus;
+
+    for_window [app_id="^com\.obsproject\.Studio$" title="^((?!.*Projector -.*).)*$"] \
+      move container to output ${config.mixos.videoOutputs.main}, focus;
+  '';
+
   swayCfg = {
     modifier = "${mod}";
 
@@ -17,17 +31,6 @@ let
 
     startup =
       [{ command = "${pkgs.wayvnc}/bin/wayvnc '::' &> /tmp/wayvnc.log"; }];
-
-    assigns = {
-      "projector" = [{
-        title = ".*Projector - Scene:.*";
-        app_id = "com.obsproject.Studio";
-      }];
-      "multiview" = [{
-        title = ".*Projector - Multiview";
-        app_id = "com.obsproject.Studio";
-      }];
-    };
 
     workspaceLayout = "tabbed";
     defaultWorkspace = "workspace number 1";
@@ -72,43 +75,20 @@ let
       "${mod}+space" = "focus mode_toggle";
       "${mod}+a" = "focus parent";
 
-      # Scratchpad
-      "${mod}+Shift+minus" = "move scratchpad";
-      "${mod}+minus" = "scratchpad show";
       # Resize mode
-
       "${mod}+r" = "mode resize";
-      # Workspaces 1–10 (switch)
-      "${mod}+1" = "workspace number 1";
-      "${mod}+2" = "workspace number 2";
-      "${mod}+3" = "workspace number 3";
-      "${mod}+4" = "workspace number 4";
-      "${mod}+5" = "workspace number 5";
-      "${mod}+6" = "workspace number 6";
-      "${mod}+7" = "workspace number 7";
-      "${mod}+8" = "workspace number 8";
-      "${mod}+9" = "workspace number 9";
-      "${mod}+0" = "workspace number 10";
-
-      # Move focused container to workspace 1–10
-      "${mod}+Shift+1" = "move container to workspace number 1";
-      "${mod}+Shift+2" = "move container to workspace number 2";
-      "${mod}+Shift+3" = "move container to workspace number 3";
-      "${mod}+Shift+4" = "move container to workspace number 4";
-      "${mod}+Shift+5" = "move container to workspace number 5";
-      "${mod}+Shift+6" = "move container to workspace number 6";
-      "${mod}+Shift+7" = "move container to workspace number 7";
-      "${mod}+Shift+8" = "move container to workspace number 8";
-      "${mod}+Shift+9" = "move container to workspace number 9";
-      "${mod}+Shift+0" = "move container to workspace number 10";
-    };
+    } // (forEveryMainWorkspaceKV (n: {
+      "${mod}+${n}" = "workspace number ${n}";
+      "${mod}+Shift+${n}" = "move container to workspace number ${n}";
+    }));
 
     output."*" = { background = "${sway-user-data}/wallpaper.jpg fill"; };
+    output."${config.mixos.videoOutputs.main}" = { pos = "0 0"; };
     output."${config.mixos.videoOutputs.projector}" = {
-      pos = "5000 0";
+      pos = "-5000 0";
       bg = "#ebac54 solid_color";
     };
-    output."${config.mixos.videoOutputs.multiview}" = { pos = "10000 0"; };
+    output."${config.mixos.videoOutputs.multiview}" = { pos = "5000 0"; };
 
     workspaceOutputAssign = [
       {
@@ -119,11 +99,10 @@ let
         workspace = "multiview";
         output = config.mixos.videoOutputs.multiview;
       }
-      {
-        workspace = "1";
-        output = config.mixos.videoOutputs.main;
-      }
-    ];
+    ] ++ (forEveryMainWorkspace (n: {
+      workspace = "${n}";
+      output = config.mixos.videoOutputs.main;
+    }));
   };
 
   sway-user-data = pkgs.stdenvNoCC.mkDerivation rec {
@@ -137,6 +116,11 @@ let
       cp -vfT wallpaper.jpg $out/wallpaper.jpg
     '';
   };
+
+  forEveryMainWorkspace = f:
+    builtins.map f (builtins.map toString (lib.lists.range 1 9));
+  forEveryMainWorkspaceKV = f:
+    lib.attrsets.mergeAttrsList (forEveryMainWorkspace f);
 in {
   options.mixos.videoOutputs = lib.mkOption {
     type = lib.types.attrsOf (lib.types.str);
@@ -180,6 +164,9 @@ in {
         enable = true;
 
         config = swayCfg;
+        extraConfig = ''
+          ${windowMatchers}
+        '';
       };
 
       # programs.waybar = {
