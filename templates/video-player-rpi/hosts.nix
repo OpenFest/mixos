@@ -4,7 +4,7 @@ let
   mkHost = hostname: rec {
     inherit hostname;
     system = "aarch64-linux";
-    image = { format = "sd-aarch64"; };
+    image = { format = "sdImage"; };
     moduleArgs = { inherit hostname; };
   };
 in map mkHost hostnames
