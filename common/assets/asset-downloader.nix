@@ -23,20 +23,6 @@ let
     };
 
   assetsPkg = getAssets config.mixos.assets;
-
-  symlink-assets-at-home = pkgs.writeShellApplication {
-    name = "symlink-assets-at-home";
-    runtimeInputs = [ ];
-    text = ''
-      set -euo pipefail
-
-      if [[ -e "$HOME/assets" ]]; then
-        rm "$HOME/assets"
-      fi
-
-      ln -svf "${assetsPkg}" "$HOME/assets"
-    '';
-  };
 in {
   options.mixos.assets = lib.mkOption {
     type = lib.types.listOf (lib.types.submodule {
@@ -62,17 +48,5 @@ in {
     '';
   };
 
-  config = {
-    systemd.services.symlink-assets-at-home = {
-      enable = true;
-      description = "symlink assets in home dir";
-      serviceConfig = {
-        Type = "oneshot";
-        ExecStart = "${symlink-assets-at-home}/bin/symlink-assets-at-home";
-        User = "human";
-        Group = "human";
-      };
-      wantedBy = [ "multi-user.target" ];
-    };
-  };
+  config.home-manager.users.human.home.file.assets.source = assetsPkg;
 }
