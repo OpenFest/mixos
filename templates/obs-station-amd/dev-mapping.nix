@@ -7,6 +7,8 @@
     projector = "HDMI-A-1";
   };
 
+  mixos.macro-keyboards.numpad.match = "145f:0239";
+
   mixos.devMap = {
     videoCapture.by-path = {
       "pci-0000:05:00.0-usbv3-0:1:1.0" = { name = "video-lecturer"; };
