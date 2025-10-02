@@ -19,24 +19,29 @@
 
       kpenter = cut;
 
+      calc = setScene "Cows";
+      mail = setScene "Vader";
+
       kp0 = setScene "Intermezzo";
-      kpdot = setScene "Cows";
 
-      kp1 = setScene "Fullscreen slides";
-      kp2 = setScene "Fullscreen closeup";
-      kp3 = setScene "Fullscreen overview";
-      kp4 = setScene "Slides + Lecturer";
-      kp5 = setScene "Lecturer + Slides";
-      # kp6 =
-      kp7 = setScene "Fullscreen Audience";
-      kp8 = setScene "Audience + Slides";
-      kp9 = setScene "Audience + Closeup";
+      kp1 = setScene "Fullscreen Slides";
+      kp2 = setScene "Slides + Lecturer";
+      kp3 = setScene "Lecturer + Slides";
 
-      # kpplus =
+      kp4 = setScene "Fullscreen Closeup";
+      kp5 = setScene "Fullscreen Overview";
+      kp6 = setScene "Fullscreen Audience";
 
-      kpminus = setScene "Break";
-      kpdiv = setScene "Herald closeup";
-      kpmul = setScene "Herald overview";
+      kp7 = setScene "Herald Closeup";
+      kp8 = setScene "Herald Overview";
+
+      kp9 = setScene "Audience + Slides";
+      kpminus = setScene "Audience + Closeup";
+
+      homepage = setScene "Break";
+
+      # unused keys:
+      # tab kpslash kpasterisk backspace kpplus space kpdot
     };
   };
 }
