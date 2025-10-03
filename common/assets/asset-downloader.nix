@@ -12,17 +12,9 @@ let
 
       installPhase = ''
         mkdir -p "$(dirname $out/"${name}")"
-        case "${convert}" in
-          none)
-            cp -vf $src $out/"${name}"
-            ;;
-          ffmpeg)
-            ${pkgs.ffmpeg}/bin/ffmpeg -i $src $out/"${name}"
-            ;;
-          inkscape)
-            ${pkgs.inkscape}/bin/inkscape --export-filename=$out/"${name}" $src
-            ;;
-        esac
+        outf="$out/${name}"
+        inf="$src"
+        ${convert}
       '';
     };
 
@@ -51,10 +43,11 @@ in {
             "Filename to save the asset to (might contain slashes for deeper paths)";
         };
         convert = lib.mkOption {
-          type = lib.types.enum [ "none" "ffmpeg" "inkscape" ];
-          default = "none";
+          type = lib.types.str;
+          default = ''cp -vf "$inf" "$outf"'';
           description = ''
-            Whether to convert the media somehow
+            Command to execute to convert the media. $inf and $outf will contain
+            the input and output files. Simply copies by default
           '';
         };
       };
