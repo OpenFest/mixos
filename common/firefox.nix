@@ -57,6 +57,11 @@ in {
           PreventInstalls = true;
         };
 
+        DownloadDirectory = {
+          Path = "/tmp";
+          AskWhereToSave = true;
+        };
+
         # ---- PREFERENCES ----
         # Check about:config for options.
         Preferences = {
