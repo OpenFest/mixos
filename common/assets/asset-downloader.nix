@@ -1,6 +1,6 @@
 { pkgs, config, lib, ... }:
 let
-  getAsset = { url, name, sha256 }:
+  getAsset = { url, name, sha256, convert }:
     pkgs.stdenvNoCC.mkDerivation {
       name = "asset-${name}";
       meta.description = "asset: ${name}";
@@ -12,7 +12,9 @@ let
 
       installPhase = ''
         mkdir -p "$(dirname $out/"${name}")"
-        cp -vf $src $out/"${name}"
+        outf="$out/${name}"
+        inf="$src"
+        ${convert}
       '';
     };
 
@@ -39,6 +41,14 @@ in {
           type = lib.types.str;
           description =
             "Filename to save the asset to (might contain slashes for deeper paths)";
+        };
+        convert = lib.mkOption {
+          type = lib.types.str;
+          default = ''cp -vf "$inf" "$outf"'';
+          description = ''
+            Command to execute to convert the media. $inf and $outf will contain
+            the input and output files. Simply copies by default
+          '';
         };
       };
     });

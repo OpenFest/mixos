@@ -650,9 +650,9 @@
             "id": "ffmpeg_source",
             "versioned_id": "ffmpeg_source",
             "settings": {
-                "local_file": "/home/human/test_videos/cows.mp4",
+                "local_file": "/home/human/assets/test_videos/cows.mp4",
                 "hw_decode": true,
-                "input": "https://rnd.qtrp.org/test_videos/cows.mp4",
+                "input": "/home/human/assets/test_videos/cows.mp4",
                 "input_format": "",
                 "is_local_file": false,
                 "looping": true

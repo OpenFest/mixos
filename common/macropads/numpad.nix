@@ -27,6 +27,7 @@
       kp1 = setScene "Fullscreen Slides";
       kp2 = setScene "Slides + Lecturer";
       kp3 = setScene "Lecturer + Slides";
+      kpplus = setScene "Lectern View";
 
       kp4 = setScene "Fullscreen Closeup";
       kp5 = setScene "Fullscreen Overview";
@@ -41,7 +42,7 @@
       homepage = setScene "Break";
 
       # unused keys:
-      # tab kpslash kpasterisk backspace kpplus space kpdot
+      # tab kpslash kpasterisk backspace space kpdot
     };
   };
 }
