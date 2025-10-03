@@ -52,6 +52,11 @@ in {
           };
         };
 
+        SearchEngines = {
+          Default = "DuckDuckGo";
+          PreventInstalls = true;
+        };
+
         # ---- PREFERENCES ----
         # Check about:config for options.
         Preferences = {
