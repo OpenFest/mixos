@@ -8,11 +8,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1759251765,
-        "narHash": "sha256-hHRiHgWt6ydR/rLHYYhcnqI2ZHuhqaXO86s3P6XCM0k=",
+        "lastModified": 1759488183,
+        "narHash": "sha256-pu3fKhokEsj6msJ4MkkIgAM2utnWZ/2vhtkC24REni4=",
         "owner": "dexterlb",
         "repo": "deploy-o-matic",
-        "rev": "6c1573ae47de4241412800496b1cf31ce3d52dc8",
+        "rev": "aeab6eb9c4b1cd80c68006990b2e5ab0950bce20",
         "type": "github"
       },
       "original": {
