@@ -21,7 +21,7 @@ in {
     }
     {
       url = "https://rnd.qtrp.org/break.mp4";
-      sha256 = "sha256-uUNaaWjO8XZQiEjxdzcKKBQrSVcm2hVsZzVs6kf/7aY=";
+      sha256 = "sha256-664vgGNB4FI3+zTcdGNtmq6AQyCC7Tl4QP55SjKYO8c=";
       name = "break_video.mp4";
     }
     {
