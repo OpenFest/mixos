@@ -1,5 +1,8 @@
 { pkgs, ... }:
-let audio_quant = 32; # start from 32, go higher if it causes problems
+let
+  # start from 32, go higher if it causes problems
+  # fosdem audio board doesn't like less than 128
+  audio_quant = 128;
 in {
   environment.systemPackages = with pkgs; [
     pwvucontrol
