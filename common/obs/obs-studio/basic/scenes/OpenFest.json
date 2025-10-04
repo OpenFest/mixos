@@ -1,5 +1,5 @@
 {
-    "current_scene": "[svc] Project me",
+    "current_scene": "Cows",
     "current_program_scene": "Cows",
     "scene_order": [
         {
@@ -2114,7 +2114,7 @@
                 "input": 0,
                 "pixelformat": 1448695129,
                 "resolution": 8246337209400,
-                "framerate": 60
+                "framerate": -1
             },
             "mixers": 0,
             "sync": 0,
@@ -2144,7 +2144,7 @@
                 "input": 0,
                 "pixelformat": 1448695129,
                 "resolution": 8246337209400,
-                "framerate": 60
+                "framerate": -1
             },
             "mixers": 0,
             "sync": 0,
@@ -4763,7 +4763,7 @@
                 "input": 0,
                 "pixelformat": 1448695129,
                 "resolution": 8246337209400,
-                "framerate": 60
+                "framerate": -1
             },
             "mixers": 0,
             "sync": 0,
@@ -4813,18 +4813,18 @@
             "name": "[svc] Project me",
             "monitor": -1,
             "type": 1,
-            "geometry": "AdnQywADAAAAAAAAAAAAAAAABZ8AAAODAAAAAAAAAAAAAAWfAAADgwAAAAAABAAABaAAAAAAAAAAAAAABZ8AAAOD",
+            "geometry": "AdnQywADAAD//+x4AAAAAP//8hcAAAOD///seAAAAAD///IXAAADgwAAAAAABAAABaD//+x4AAAAAP//8hcAAAOD",
             "alwaysOnTopOverridden": false
         },
         {
             "monitor": -1,
             "type": 4,
-            "geometry": "AdnQywADAAAAAAAAAAAAAAAABZ8AAAODAAAAAAAAAAAAAAWfAAADgwAAAAEABAAABaAAAAAAAAAAAAAABZ8AAAOD",
+            "geometry": "AdnQywADAAAAABOIAAAAAAAAGScAAAODAAATiAAAAAAAABklAAADaQAAAAEABAAABaAAABOIAAAAAAAAGScAAAOD",
             "alwaysOnTopOverridden": false
         }
     ],
     "canvases": [],
-    "current_transition": "Fade",
+    "current_transition": "Cut",
     "transition_duration": 300,
     "preview_locked": false,
     "scaling_enabled": false,
@@ -4890,15 +4890,15 @@
                     },
                     "macroActionConditionSplitterPosition": [
                         {
-                            "pos": 247
+                            "pos": 192
                         },
                         {
-                            "pos": 247
+                            "pos": 191
                         }
                     ],
                     "macroElseActionSplitterPosition": [
                         {
-                            "pos": 215
+                            "pos": 159
                         },
                         {
                             "pos": 0
@@ -5073,15 +5073,15 @@
                     },
                     "macroActionConditionSplitterPosition": [
                         {
-                            "pos": 247
+                            "pos": 192
                         },
                         {
-                            "pos": 247
+                            "pos": 191
                         }
                     ],
                     "macroElseActionSplitterPosition": [
                         {
-                            "pos": 215
+                            "pos": 159
                         },
                         {
                             "pos": 0
@@ -5332,15 +5332,15 @@
                     },
                     "macroActionConditionSplitterPosition": [
                         {
-                            "pos": 247
+                            "pos": 192
                         },
                         {
-                            "pos": 247
+                            "pos": 191
                         }
                     ],
                     "macroElseActionSplitterPosition": [
                         {
-                            "pos": 215
+                            "pos": 159
                         },
                         {
                             "pos": 0
@@ -5377,12 +5377,12 @@
                                 "name": ""
                             },
                             "type": 60,
-                            "pattern": "^(?!Break$)(?!Intermezzo$).*$\n",
+                            "pattern": "^(?!Break$)(?!Intermezzo$)(?!Herald).*$\n",
                             "useTransitionTargetScene": true,
                             "regexConfig": {
                                 "enable": true,
-                                "partial": false,
-                                "options": 12
+                                "partial": true,
+                                "options": 13
                             },
                             "version": 1
                         }
@@ -5645,16 +5645,16 @@
                 }
             ],
             "saveWindowGeo": false,
-            "windowPosX": 20,
-            "windowPosY": 145,
-            "windowWidth": 1181,
-            "windowHeight": 760,
+            "windowPosX": 448,
+            "windowPosY": 173,
+            "windowWidth": 1000,
+            "windowHeight": 600,
             "macroListMacroEditSplitterPosition": [
                 {
-                    "pos": 353
+                    "pos": 136
                 },
                 {
-                    "pos": 781
+                    "pos": 838
                 }
             ],
             "version": "GITDIR-NOTFOUND",
