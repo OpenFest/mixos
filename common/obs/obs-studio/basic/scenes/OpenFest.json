@@ -1,6 +1,6 @@
 {
-    "current_scene": "[svc][media] Vader",
-    "current_program_scene": "Vader",
+    "current_scene": "Cows",
+    "current_program_scene": "Cows",
     "scene_order": [
         {
             "name": "Fullscreen Slides"
@@ -84,7 +84,7 @@
     "name": "OpenFest",
     "sources": [
         {
-            "prev_ver": 536870913,
+            "prev_ver": 520159234,
             "name": "Fullscreen Closeup",
             "uuid": "075ec011-c115-48d0-8687-05425aacaa1e",
             "id": "scene",
@@ -230,7 +230,7 @@
             "private_settings": {}
         },
         {
-            "prev_ver": 536870913,
+            "prev_ver": 520159234,
             "name": "Fullscreen Audience",
             "uuid": "25b2b3b6-f618-473c-a926-16a8f63cf4fd",
             "id": "scene",
@@ -376,7 +376,7 @@
             "private_settings": {}
         },
         {
-            "prev_ver": 536870913,
+            "prev_ver": 520159234,
             "name": "Fullscreen Overview",
             "uuid": "bd62bb5c-b2c0-4dad-b2e2-7b1941916b04",
             "id": "scene",
@@ -522,7 +522,7 @@
             "private_settings": {}
         },
         {
-            "prev_ver": 536870913,
+            "prev_ver": 520159234,
             "name": "Break",
             "uuid": "c0cdd715-5426-45cb-9b01-e6fe94b403bd",
             "id": "scene",
@@ -572,7 +572,7 @@
                             "y": 1080.0
                         },
                         "bounds_rel": {
-                            "x": 3.555555582046509,
+                            "x": 3.5555555820465088,
                             "y": 2.0
                         },
                         "scale_filter": "disable",
@@ -668,7 +668,7 @@
             "private_settings": {}
         },
         {
-            "prev_ver": 536870913,
+            "prev_ver": 520159234,
             "name": "Fullscreen Slides",
             "uuid": "53391888-260a-4ced-b44b-ce3f063cddf8",
             "id": "scene",
@@ -871,7 +871,7 @@
             "private_settings": {}
         },
         {
-            "prev_ver": 536870913,
+            "prev_ver": 520159234,
             "name": "[svc] Audio",
             "uuid": "2a96713d-7682-42d6-a25c-536f96db79c2",
             "id": "scene",
@@ -960,7 +960,7 @@
             "private_settings": {}
         },
         {
-            "prev_ver": 536870913,
+            "prev_ver": 520159234,
             "name": "[svc] Project me",
             "uuid": "3b2d48b1-b017-4308-9105-65b0c36cee8d",
             "id": "scene",
@@ -995,15 +995,15 @@
                         },
                         "pos_rel": {
                             "x": -1.6333333253860474,
-                            "y": -0.8277777433395386
+                            "y": -0.82777774333953857
                         },
                         "scale": {
-                            "x": 0.7848958373069763,
-                            "y": 0.7851851582527161
+                            "x": 0.78489583730697632,
+                            "y": 0.78518515825271606
                         },
                         "scale_rel": {
-                            "x": 0.7848958373069763,
-                            "y": 0.7851851582527161
+                            "x": 0.78489583730697632,
+                            "y": 0.78518515825271606
                         },
                         "bounds": {
                             "x": 0.0,
@@ -1065,7 +1065,7 @@
                             "y": 1080.0
                         },
                         "bounds_rel": {
-                            "x": 3.555555582046509,
+                            "x": 3.5555555820465088,
                             "y": 2.0
                         },
                         "scale_filter": "disable",
@@ -1175,7 +1175,7 @@
                             "y": 1080.0
                         },
                         "bounds_rel": {
-                            "x": 3.555555582046509,
+                            "x": 3.5555555820465088,
                             "y": 2.0
                         },
                         "scale_filter": "disable",
@@ -1220,7 +1220,7 @@
             "private_settings": {}
         },
         {
-            "prev_ver": 536870913,
+            "prev_ver": 520159234,
             "name": "[svc][input] Lecturer",
             "uuid": "244415db-dd7b-43a4-b18a-4f3c8f743032",
             "id": "scene",
@@ -1230,64 +1230,9 @@
                 "custom_size": false,
                 "items": [
                     {
-                        "name": "Test Image",
-                        "source_uuid": "65ccf8f8-56a6-49a4-a7e5-ce60dbc4ea68",
-                        "visible": true,
-                        "locked": false,
-                        "rot": 0.0,
-                        "scale_ref": {
-                            "x": 1920.0,
-                            "y": 1080.0
-                        },
-                        "align": 5,
-                        "bounds_type": 2,
-                        "bounds_align": 0,
-                        "bounds_crop": false,
-                        "crop_left": 0,
-                        "crop_top": 0,
-                        "crop_right": 0,
-                        "crop_bottom": 0,
-                        "id": 7,
-                        "group_item_backup": false,
-                        "pos": {
-                            "x": 0.0,
-                            "y": 0.0
-                        },
-                        "pos_rel": {
-                            "x": -1.7777777910232544,
-                            "y": -1.0
-                        },
-                        "scale": {
-                            "x": 1.0,
-                            "y": 1.0
-                        },
-                        "scale_rel": {
-                            "x": 1.0,
-                            "y": 1.0
-                        },
-                        "bounds": {
-                            "x": 1920.0,
-                            "y": 1080.0
-                        },
-                        "bounds_rel": {
-                            "x": 3.555555582046509,
-                            "y": 2.0
-                        },
-                        "scale_filter": "disable",
-                        "blend_method": "default",
-                        "blend_type": "normal",
-                        "show_transition": {
-                            "duration": 0
-                        },
-                        "hide_transition": {
-                            "duration": 0
-                        },
-                        "private_settings": {}
-                    },
-                    {
                         "name": "lecturer capture",
                         "source_uuid": "377f184f-3bbe-499a-b4be-f313d0d331b9",
-                        "visible": false,
+                        "visible": true,
                         "locked": false,
                         "rot": 0.0,
                         "scale_ref": {
@@ -1354,8 +1299,6 @@
             "push-to-talk-delay": 0,
             "hotkeys": {
                 "OBSBasic.SelectScene": [],
-                "libobs.show_scene_item.7": [],
-                "libobs.hide_scene_item.7": [],
                 "libobs.show_scene_item.5": [],
                 "libobs.hide_scene_item.5": []
             },
@@ -1366,7 +1309,7 @@
             "private_settings": {}
         },
         {
-            "prev_ver": 536870913,
+            "prev_ver": 520159234,
             "name": "[svc][input] Closeup",
             "uuid": "c26cf447-f1e8-40e3-ae11-a7abdfdea66c",
             "id": "scene",
@@ -1375,61 +1318,6 @@
                 "id_counter": 3,
                 "custom_size": false,
                 "items": [
-                    {
-                        "name": "Test Image",
-                        "source_uuid": "65ccf8f8-56a6-49a4-a7e5-ce60dbc4ea68",
-                        "visible": true,
-                        "locked": false,
-                        "rot": 0.0,
-                        "scale_ref": {
-                            "x": 1920.0,
-                            "y": 1080.0
-                        },
-                        "align": 5,
-                        "bounds_type": 2,
-                        "bounds_align": 0,
-                        "bounds_crop": false,
-                        "crop_left": 0,
-                        "crop_top": 0,
-                        "crop_right": 0,
-                        "crop_bottom": 0,
-                        "id": 3,
-                        "group_item_backup": false,
-                        "pos": {
-                            "x": 0.0,
-                            "y": 0.0
-                        },
-                        "pos_rel": {
-                            "x": -1.7777777910232544,
-                            "y": -1.0
-                        },
-                        "scale": {
-                            "x": 1.0,
-                            "y": 1.0
-                        },
-                        "scale_rel": {
-                            "x": 1.0,
-                            "y": 1.0
-                        },
-                        "bounds": {
-                            "x": 1920.0,
-                            "y": 1080.0
-                        },
-                        "bounds_rel": {
-                            "x": 3.555555582046509,
-                            "y": 2.0
-                        },
-                        "scale_filter": "disable",
-                        "blend_method": "default",
-                        "blend_type": "normal",
-                        "show_transition": {
-                            "duration": 0
-                        },
-                        "hide_transition": {
-                            "duration": 0
-                        },
-                        "private_settings": {}
-                    },
                     {
                         "name": "closeup capture",
                         "source_uuid": "7c3e5bdf-abe9-404c-a43c-a4a12a6c99a8",
@@ -1500,8 +1388,6 @@
             "push-to-talk-delay": 0,
             "hotkeys": {
                 "OBSBasic.SelectScene": [],
-                "libobs.show_scene_item.3": [],
-                "libobs.hide_scene_item.3": [],
                 "libobs.show_scene_item.2": [],
                 "libobs.hide_scene_item.2": []
             },
@@ -1512,73 +1398,18 @@
             "private_settings": {}
         },
         {
-            "prev_ver": 536870913,
+            "prev_ver": 520159234,
             "name": "[svc][input] Audience",
             "uuid": "30646db2-212b-4b5e-832c-0af46bf72292",
             "id": "scene",
             "versioned_id": "scene",
             "settings": {
-                "id_counter": 4,
+                "id_counter": 5,
                 "custom_size": false,
                 "items": [
                     {
-                        "name": "Test Image",
-                        "source_uuid": "65ccf8f8-56a6-49a4-a7e5-ce60dbc4ea68",
-                        "visible": true,
-                        "locked": false,
-                        "rot": 0.0,
-                        "scale_ref": {
-                            "x": 1920.0,
-                            "y": 1080.0
-                        },
-                        "align": 5,
-                        "bounds_type": 2,
-                        "bounds_align": 0,
-                        "bounds_crop": false,
-                        "crop_left": 0,
-                        "crop_top": 0,
-                        "crop_right": 0,
-                        "crop_bottom": 0,
-                        "id": 4,
-                        "group_item_backup": false,
-                        "pos": {
-                            "x": 0.0,
-                            "y": 0.0
-                        },
-                        "pos_rel": {
-                            "x": -1.7777777910232544,
-                            "y": -1.0
-                        },
-                        "scale": {
-                            "x": 1.0,
-                            "y": 1.0
-                        },
-                        "scale_rel": {
-                            "x": 1.0,
-                            "y": 1.0
-                        },
-                        "bounds": {
-                            "x": 1920.0,
-                            "y": 1080.0
-                        },
-                        "bounds_rel": {
-                            "x": 3.555555582046509,
-                            "y": 2.0
-                        },
-                        "scale_filter": "disable",
-                        "blend_method": "default",
-                        "blend_type": "normal",
-                        "show_transition": {
-                            "duration": 0
-                        },
-                        "hide_transition": {
-                            "duration": 0
-                        },
-                        "private_settings": {}
-                    },
-                    {
-                        "name": "Audience dummy",
-                        "source_uuid": "64e61028-936c-4d3c-8e71-93d56966f9ad",
+                        "name": "audience capture",
+                        "source_uuid": "86936f3c-436d-486d-8f61-7875b05dcd68",
                         "visible": true,
                         "locked": false,
                         "rot": 0.0,
@@ -1594,15 +1425,15 @@
                         "crop_top": 0,
                         "crop_right": 0,
                         "crop_bottom": 0,
-                        "id": 3,
+                        "id": 5,
                         "group_item_backup": false,
                         "pos": {
-                            "x": 448.0,
-                            "y": 285.0
+                            "x": 0.0,
+                            "y": 0.0
                         },
                         "pos_rel": {
-                            "x": -0.9481481313705444,
-                            "y": -0.4722222089767456
+                            "x": -1.7777777910232544,
+                            "y": -1.0
                         },
                         "scale": {
                             "x": 1.0,
@@ -1646,10 +1477,8 @@
             "push-to-talk-delay": 0,
             "hotkeys": {
                 "OBSBasic.SelectScene": [],
-                "libobs.show_scene_item.4": [],
-                "libobs.hide_scene_item.4": [],
-                "libobs.show_scene_item.3": [],
-                "libobs.hide_scene_item.3": []
+                "libobs.show_scene_item.5": [],
+                "libobs.hide_scene_item.5": []
             },
             "deinterlace_mode": 0,
             "deinterlace_field_order": 0,
@@ -1658,7 +1487,7 @@
             "private_settings": {}
         },
         {
-            "prev_ver": 536870913,
+            "prev_ver": 520159234,
             "name": "[svc][input] Overview",
             "uuid": "a09c0689-783d-4fcb-81e5-cdeddffb8315",
             "id": "scene",
@@ -1747,7 +1576,7 @@
             "private_settings": {}
         },
         {
-            "prev_ver": 536870913,
+            "prev_ver": 520159234,
             "name": "[svc] Audio lecturer",
             "uuid": "fd8213e8-1fc9-4768-a82e-1685a857ebf2",
             "id": "scene",
@@ -1836,7 +1665,7 @@
             "private_settings": {}
         },
         {
-            "prev_ver": 536870913,
+            "prev_ver": 520159234,
             "name": "Lecturer audio capture",
             "uuid": "4a2014eb-ba02-4707-bd00-28ef80c3ce13",
             "id": "jack_output_capture",
@@ -1865,7 +1694,7 @@
             "private_settings": {}
         },
         {
-            "prev_ver": 536870913,
+            "prev_ver": 520159234,
             "name": "Stream mix audio capture",
             "uuid": "4501c27c-95fd-48a3-81fd-c7bb3108a246",
             "id": "jack_output_capture",
@@ -1894,33 +1723,7 @@
             "private_settings": {}
         },
         {
-            "prev_ver": 536870913,
-            "name": "Audience dummy",
-            "uuid": "64e61028-936c-4d3c-8e71-93d56966f9ad",
-            "id": "text_ft2_source",
-            "versioned_id": "text_ft2_source_v2",
-            "settings": {
-                "text": "Audience\ncamera"
-            },
-            "mixers": 0,
-            "sync": 0,
-            "flags": 0,
-            "volume": 1.0,
-            "balance": 0.5,
-            "enabled": true,
-            "muted": false,
-            "push-to-mute": false,
-            "push-to-mute-delay": 0,
-            "push-to-talk": false,
-            "push-to-talk-delay": 0,
-            "hotkeys": {},
-            "deinterlace_mode": 0,
-            "deinterlace_field_order": 0,
-            "monitoring_type": 0,
-            "private_settings": {}
-        },
-        {
-            "prev_ver": 536870913,
+            "prev_ver": 520159234,
             "name": "[svc][media] Break",
             "uuid": "1078c379-fda0-4dbe-8691-2065b54eda5a",
             "id": "scene",
@@ -1970,7 +1773,7 @@
                             "y": 1080.0
                         },
                         "bounds_rel": {
-                            "x": 3.555555582046509,
+                            "x": 3.5555555820465088,
                             "y": 2.0
                         },
                         "scale_filter": "disable",
@@ -2066,7 +1869,7 @@
             "private_settings": {}
         },
         {
-            "prev_ver": 536870913,
+            "prev_ver": 520159234,
             "name": "Intermezzo",
             "uuid": "3a7b54ce-58ca-498c-9ad2-d9940d9c2ee4",
             "id": "scene",
@@ -2155,7 +1958,7 @@
             "private_settings": {}
         },
         {
-            "prev_ver": 536870913,
+            "prev_ver": 520159234,
             "name": "[svc][media] Intermezzo",
             "uuid": "82a6f08a-6b24-4b4a-9fb6-ca15bcd4710d",
             "id": "scene",
@@ -2205,7 +2008,7 @@
                             "y": 1080.0
                         },
                         "bounds_rel": {
-                            "x": 3.555555582046509,
+                            "x": 3.5555555820465088,
                             "y": 2.0
                         },
                         "scale_filter": "disable",
@@ -2301,7 +2104,7 @@
             "private_settings": {}
         },
         {
-            "prev_ver": 536870913,
+            "prev_ver": 520159234,
             "name": "lecturer capture",
             "uuid": "377f184f-3bbe-499a-b4be-f313d0d331b9",
             "id": "v4l2_input",
@@ -2331,7 +2134,7 @@
             "private_settings": {}
         },
         {
-            "prev_ver": 536870913,
+            "prev_ver": 520159234,
             "name": "closeup capture",
             "uuid": "7c3e5bdf-abe9-404c-a43c-a4a12a6c99a8",
             "id": "v4l2_input",
@@ -2361,7 +2164,7 @@
             "private_settings": {}
         },
         {
-            "prev_ver": 536870913,
+            "prev_ver": 520159234,
             "name": "overview capture",
             "uuid": "e92a2a62-c88f-48c3-a6a5-1a6e26303bd5",
             "id": "v4l2_input",
@@ -2391,7 +2194,7 @@
             "private_settings": {}
         },
         {
-            "prev_ver": 536870913,
+            "prev_ver": 520159234,
             "name": "Herald Overview",
             "uuid": "0b8311f3-b613-47a6-9483-f5d17930d084",
             "id": "scene",
@@ -2537,7 +2340,7 @@
             "private_settings": {}
         },
         {
-            "prev_ver": 536870913,
+            "prev_ver": 520159234,
             "name": "Herald Closeup",
             "uuid": "4f693f7c-c2c0-457c-8937-c2e5f879a4f4",
             "id": "scene",
@@ -2683,7 +2486,7 @@
             "private_settings": {}
         },
         {
-            "prev_ver": 536870913,
+            "prev_ver": 520159234,
             "name": "Slides + Lecturer",
             "uuid": "b1908bb1-d821-477a-85e0-23b662a69e25",
             "id": "scene",
@@ -2772,8 +2575,8 @@
                             "y": 572.0
                         },
                         "pos_rel": {
-                            "x": 0.8166666626930237,
-                            "y": 0.05925929546356201
+                            "x": 0.81666666269302368,
+                            "y": 0.059259295463562012
                         },
                         "scale": {
                             "x": 0.25,
@@ -2828,15 +2631,15 @@
                         },
                         "pos_rel": {
                             "x": -1.6537036895751953,
-                            "y": -0.8111110925674438
+                            "y": -0.81111109256744385
                         },
                         "scale": {
-                            "x": 0.6708333492279053,
-                            "y": 0.6712962985038757
+                            "x": 0.67083334922790527,
+                            "y": 0.67129629850387573
                         },
                         "scale_rel": {
-                            "x": 0.6708333492279053,
-                            "y": 0.6712962985038757
+                            "x": 0.67083334922790527,
+                            "y": 0.67129629850387573
                         },
                         "bounds": {
                             "x": 0.0,
@@ -2953,7 +2756,7 @@
                             "y": 1080.0
                         },
                         "bounds_rel": {
-                            "x": 3.555555582046509,
+                            "x": 3.5555555820465088,
                             "y": 2.0
                         },
                         "scale_filter": "disable",
@@ -3000,7 +2803,7 @@
             "private_settings": {}
         },
         {
-            "prev_ver": 536870913,
+            "prev_ver": 520159234,
             "name": "Lectern View",
             "uuid": "ced207d4-8b01-4543-8ce4-1ce864ff3509",
             "id": "scene",
@@ -3148,12 +2951,12 @@
                             "y": -1.0
                         },
                         "scale": {
-                            "x": 0.7557291388511658,
-                            "y": 0.7555555701255798
+                            "x": 0.75572913885116577,
+                            "y": 0.75555557012557983
                         },
                         "scale_rel": {
-                            "x": 0.7557291388511658,
-                            "y": 0.7555555701255798
+                            "x": 0.75572913885116577,
+                            "y": 0.75555557012557983
                         },
                         "bounds": {
                             "x": 0.0,
@@ -3215,7 +3018,7 @@
                             "y": 842.0
                         },
                         "bounds_rel": {
-                            "x": 2.711111068725586,
+                            "x": 2.7111110687255859,
                             "y": 1.559259295463562
                         },
                         "scale_filter": "disable",
@@ -3260,7 +3063,7 @@
             "private_settings": {}
         },
         {
-            "prev_ver": 536870913,
+            "prev_ver": 520159234,
             "name": "Audience + Closeup",
             "uuid": "5565f427-dbf1-4569-87b4-a4e393da7854",
             "id": "scene",
@@ -3349,8 +3152,8 @@
                             "y": 572.0
                         },
                         "pos_rel": {
-                            "x": 0.8166666626930237,
-                            "y": 0.05925929546356201
+                            "x": 0.81666666269302368,
+                            "y": 0.059259295463562012
                         },
                         "scale": {
                             "x": 0.25,
@@ -3405,15 +3208,15 @@
                         },
                         "pos_rel": {
                             "x": -1.6555556058883667,
-                            "y": -0.8111110925674438
+                            "y": -0.81111109256744385
                         },
                         "scale": {
-                            "x": 0.6713541746139526,
-                            "y": 0.6712962985038757
+                            "x": 0.67135417461395264,
+                            "y": 0.67129629850387573
                         },
                         "scale_rel": {
-                            "x": 0.6713541746139526,
-                            "y": 0.6712962985038757
+                            "x": 0.67135417461395264,
+                            "y": 0.67129629850387573
                         },
                         "bounds": {
                             "x": 0.0,
@@ -3475,7 +3278,7 @@
                             "y": 1080.0
                         },
                         "bounds_rel": {
-                            "x": 3.555555582046509,
+                            "x": 3.5555555820465088,
                             "y": 2.0
                         },
                         "scale_filter": "disable",
@@ -3520,7 +3323,7 @@
             "private_settings": {}
         },
         {
-            "prev_ver": 536870913,
+            "prev_ver": 520159234,
             "name": "Cows",
             "uuid": "f2da5b13-c83c-4062-a02b-524db003747d",
             "id": "scene",
@@ -3570,7 +3373,7 @@
                             "y": 1080.0
                         },
                         "bounds_rel": {
-                            "x": 3.555555582046509,
+                            "x": 3.5555555820465088,
                             "y": 2.0
                         },
                         "scale_filter": "disable",
@@ -3666,7 +3469,7 @@
             "private_settings": {}
         },
         {
-            "prev_ver": 536870913,
+            "prev_ver": 520159234,
             "name": "Vader",
             "uuid": "7386f186-9ac0-44db-a5b7-8948820053da",
             "id": "scene",
@@ -3716,7 +3519,7 @@
                             "y": 1080.0
                         },
                         "bounds_rel": {
-                            "x": 3.555555582046509,
+                            "x": 3.5555555820465088,
                             "y": 2.0
                         },
                         "scale_filter": "disable",
@@ -3755,7 +3558,7 @@
             "private_settings": {}
         },
         {
-            "prev_ver": 536870913,
+            "prev_ver": 520159234,
             "name": "Dual Frame Image",
             "uuid": "3e995e87-5adf-4f1c-a991-eae1ad2b199c",
             "id": "image_source",
@@ -3783,7 +3586,7 @@
             "private_settings": {}
         },
         {
-            "prev_ver": 536870913,
+            "prev_ver": 520159234,
             "name": "Lecturer + Slides",
             "uuid": "c539f041-61be-4dd0-873b-1543e59b238f",
             "id": "scene",
@@ -3873,15 +3676,15 @@
                         },
                         "pos_rel": {
                             "x": -1.6555556058883667,
-                            "y": -0.8111110925674438
+                            "y": -0.81111109256744385
                         },
                         "scale": {
-                            "x": 0.6713541746139526,
-                            "y": 0.6712962985038757
+                            "x": 0.67135417461395264,
+                            "y": 0.67129629850387573
                         },
                         "scale_rel": {
-                            "x": 0.6713541746139526,
-                            "y": 0.6712962985038757
+                            "x": 0.67135417461395264,
+                            "y": 0.67129629850387573
                         },
                         "bounds": {
                             "x": 0.0,
@@ -3927,8 +3730,8 @@
                             "y": 572.0
                         },
                         "pos_rel": {
-                            "x": 0.8166666626930237,
-                            "y": 0.05925929546356201
+                            "x": 0.81666666269302368,
+                            "y": 0.059259295463562012
                         },
                         "scale": {
                             "x": 0.25,
@@ -3998,7 +3801,7 @@
                             "y": 1080.0
                         },
                         "bounds_rel": {
-                            "x": 3.555555582046509,
+                            "x": 3.5555555820465088,
                             "y": 2.0
                         },
                         "scale_filter": "disable",
@@ -4053,7 +3856,7 @@
                             "y": 1080.0
                         },
                         "bounds_rel": {
-                            "x": 3.555555582046509,
+                            "x": 3.5555555820465088,
                             "y": 2.0
                         },
                         "scale_filter": "disable",
@@ -4100,33 +3903,7 @@
             "private_settings": {}
         },
         {
-            "prev_ver": 536870913,
-            "name": "Test Image",
-            "uuid": "65ccf8f8-56a6-49a4-a7e5-ce60dbc4ea68",
-            "id": "image_source",
-            "versioned_id": "image_source",
-            "settings": {
-                "file": "/home/human/assets/intermezzo.png"
-            },
-            "mixers": 0,
-            "sync": 0,
-            "flags": 0,
-            "volume": 1.0,
-            "balance": 0.5,
-            "enabled": true,
-            "muted": false,
-            "push-to-mute": false,
-            "push-to-mute-delay": 0,
-            "push-to-talk": false,
-            "push-to-talk-delay": 0,
-            "hotkeys": {},
-            "deinterlace_mode": 0,
-            "deinterlace_field_order": 0,
-            "monitoring_type": 0,
-            "private_settings": {}
-        },
-        {
-            "prev_ver": 536870913,
+            "prev_ver": 520159234,
             "name": "Banner Image",
             "uuid": "3ea9ceb7-170d-4ee4-bae1-9066a04d3ba8",
             "id": "image_source",
@@ -4152,7 +3929,7 @@
             "private_settings": {}
         },
         {
-            "prev_ver": 536870913,
+            "prev_ver": 520159234,
             "name": "Audience + Slides",
             "uuid": "2e7180bd-5a43-4a5e-9c94-34433e67ce41",
             "id": "scene",
@@ -4241,8 +4018,8 @@
                             "y": 572.0
                         },
                         "pos_rel": {
-                            "x": 0.8166666626930237,
-                            "y": 0.05925929546356201
+                            "x": 0.81666666269302368,
+                            "y": 0.059259295463562012
                         },
                         "scale": {
                             "x": 0.25,
@@ -4297,15 +4074,15 @@
                         },
                         "pos_rel": {
                             "x": -1.6555556058883667,
-                            "y": -0.8111110925674438
+                            "y": -0.81111109256744385
                         },
                         "scale": {
-                            "x": 0.6713541746139526,
-                            "y": 0.6712962985038757
+                            "x": 0.67135417461395264,
+                            "y": 0.67129629850387573
                         },
                         "scale_rel": {
-                            "x": 0.6713541746139526,
-                            "y": 0.6712962985038757
+                            "x": 0.67135417461395264,
+                            "y": 0.67129629850387573
                         },
                         "bounds": {
                             "x": 0.0,
@@ -4367,7 +4144,7 @@
                             "y": 1080.0
                         },
                         "bounds_rel": {
-                            "x": 3.555555582046509,
+                            "x": 3.5555555820465088,
                             "y": 2.0
                         },
                         "scale_filter": "disable",
@@ -4412,7 +4189,7 @@
             "private_settings": {}
         },
         {
-            "prev_ver": 536870913,
+            "prev_ver": 520159234,
             "name": "Cows Video",
             "uuid": "5f687255-1bec-4b7f-aa8b-0620add8667d",
             "id": "ffmpeg_source",
@@ -4450,7 +4227,7 @@
             "private_settings": {}
         },
         {
-            "prev_ver": 536870913,
+            "prev_ver": 520159234,
             "name": "Afterbreak",
             "uuid": "63e327ad-00b3-4956-98eb-bbb83283df43",
             "id": "browser_source",
@@ -4484,7 +4261,7 @@
             "private_settings": {}
         },
         {
-            "prev_ver": 536870913,
+            "prev_ver": 520159234,
             "name": "Break Video",
             "uuid": "8192383f-e036-4a6a-bce1-31bb9ee2dcf3",
             "id": "ffmpeg_source",
@@ -4521,7 +4298,7 @@
             "private_settings": {}
         },
         {
-            "prev_ver": 536870913,
+            "prev_ver": 520159234,
             "name": "Intermezzo Image",
             "uuid": "32ab97b9-23df-426c-bbd0-2e8a8811b1e4",
             "id": "image_source",
@@ -4547,7 +4324,7 @@
             "private_settings": {}
         },
         {
-            "prev_ver": 536870913,
+            "prev_ver": 520159234,
             "name": "[svc][media] Vader",
             "uuid": "757a072f-5f8d-479c-8839-f4de9e03d001",
             "id": "scene",
@@ -4652,7 +4429,7 @@
                             "y": 1080.0
                         },
                         "bounds_rel": {
-                            "x": 3.555555582046509,
+                            "x": 3.5555555820465088,
                             "y": 2.0
                         },
                         "scale_filter": "disable",
@@ -4736,12 +4513,12 @@
             "push-to-talk-delay": 0,
             "hotkeys": {
                 "OBSBasic.SelectScene": [],
+                "libobs.show_scene_item.6": [],
+                "libobs.hide_scene_item.6": [],
                 "libobs.show_scene_item.4": [],
                 "libobs.hide_scene_item.4": [],
                 "libobs.show_scene_item.2": [],
-                "libobs.hide_scene_item.2": [],
-                "libobs.show_scene_item.6": [],
-                "libobs.hide_scene_item.6": []
+                "libobs.hide_scene_item.2": []
             },
             "deinterlace_mode": 0,
             "deinterlace_field_order": 0,
@@ -4750,7 +4527,7 @@
             "private_settings": {}
         },
         {
-            "prev_ver": 536870913,
+            "prev_ver": 520159234,
             "name": "Thank You Video",
             "uuid": "80de9bb2-b02c-472b-8ada-5f006b860769",
             "id": "ffmpeg_source",
@@ -4787,7 +4564,7 @@
             "private_settings": {}
         },
         {
-            "prev_ver": 536870913,
+            "prev_ver": 520159234,
             "name": "[svc][media]Cows",
             "uuid": "09c92c17-49d4-4b48-bf53-d5172180d1b2",
             "id": "scene",
@@ -4837,7 +4614,7 @@
                             "y": 1080.0
                         },
                         "bounds_rel": {
-                            "x": 3.555555582046509,
+                            "x": 3.5555555820465088,
                             "y": 2.0
                         },
                         "scale_filter": "disable",
@@ -4876,7 +4653,7 @@
             "private_settings": {}
         },
         {
-            "prev_ver": 536870913,
+            "prev_ver": 520159234,
             "name": "Intermezzo Begin Video",
             "uuid": "e5d0b057-5d70-46d3-af81-97d24ca3e449",
             "id": "ffmpeg_source",
@@ -4913,7 +4690,7 @@
             "private_settings": {}
         },
         {
-            "prev_ver": 536870913,
+            "prev_ver": 520159234,
             "name": "Frame Image",
             "uuid": "bb1a9502-3ef0-4328-bf91-259128e768f5",
             "id": "image_source",
@@ -4939,7 +4716,7 @@
             "private_settings": {}
         },
         {
-            "prev_ver": 536870913,
+            "prev_ver": 520159234,
             "name": "Imperial March Audio",
             "uuid": "83d8deff-69f4-41a0-8ccb-e21c103f273a",
             "id": "ffmpeg_source",
@@ -4974,6 +4751,36 @@
             "deinterlace_field_order": 0,
             "monitoring_type": 1,
             "private_settings": {}
+        },
+        {
+            "prev_ver": 520159234,
+            "name": "audience capture",
+            "uuid": "86936f3c-436d-486d-8f61-7875b05dcd68",
+            "id": "v4l2_input",
+            "versioned_id": "v4l2_input",
+            "settings": {
+                "device_id": "/dev/video-audience",
+                "input": 0,
+                "pixelformat": 1448695129,
+                "resolution": 8246337209400,
+                "framerate": 60
+            },
+            "mixers": 0,
+            "sync": 0,
+            "flags": 0,
+            "volume": 1.0,
+            "balance": 0.5,
+            "enabled": true,
+            "muted": false,
+            "push-to-mute": false,
+            "push-to-mute-delay": 0,
+            "push-to-talk": false,
+            "push-to-talk-delay": 0,
+            "hotkeys": {},
+            "deinterlace_mode": 0,
+            "deinterlace_field_order": 0,
+            "monitoring_type": 0,
+            "private_settings": {}
         }
     ],
     "groups": [],
@@ -5007,12 +4814,9 @@
     "transition_duration": 300,
     "preview_locked": false,
     "scaling_enabled": false,
-    "scaling_level": -7,
+    "scaling_level": -13,
     "scaling_off_x": 0.0,
     "scaling_off_y": 0.0,
-    "virtual-camera": {
-        "type2": 3
-    },
     "modules": {
         "scripts-tool": [],
         "output-timer": {
@@ -5050,7 +4854,7 @@
                     "useCustomConditionCheckInterval": false,
                     "customConditionCheckInterval": {
                         "value": {
-                            "value": 0.3,
+                            "value": 0.29999999999999999,
                             "type": 0
                         },
                         "unit": 0,
@@ -5233,7 +5037,7 @@
                     "useCustomConditionCheckInterval": false,
                     "customConditionCheckInterval": {
                         "value": {
-                            "value": 0.3,
+                            "value": 0.29999999999999999,
                             "type": 0
                         },
                         "unit": 0,
@@ -5492,7 +5296,7 @@
                     "useCustomConditionCheckInterval": false,
                     "customConditionCheckInterval": {
                         "value": {
-                            "value": 0.3,
+                            "value": 0.29999999999999999,
                             "type": 0
                         },
                         "unit": 0,
@@ -5817,16 +5621,13 @@
                     "twitchConnectionTab": 16
                 },
                 {
-                    "mqttConnectionTab": 17
+                    "websocketConnectionTab": 17
                 },
                 {
-                    "websocketConnectionTab": 18
+                    "variableTab": 18
                 },
                 {
-                    "variableTab": 19
-                },
-                {
-                    "actionQueueTab": 20
+                    "actionQueueTab": 19
                 }
             ],
             "saveWindowGeo": false,
@@ -5842,9 +5643,8 @@
                     "pos": 781
                 }
             ],
-            "version": "bf7fe71ae39a9a0a782a224dedda14513b97dfc2",
+            "version": "GITDIR-NOTFOUND",
             "twitchConnections": [],
-            "mqttConnections": [],
             "websocketConnections": [],
             "actionQueues": []
         }
