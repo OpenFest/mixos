@@ -1,13 +1,29 @@
 <!DOCTYPE patchbay>
-<patchbay name="baba" version="0.9.5">
+<patchbay name="main" version="0.9.5">
  <items>
   <item node-type="pipewire" port-type="pipewire-audio">
-   <output node="Blue Snowball Mono" port="Blue Snowball:capture_MONO"/>
-   <input node="Headphones L HD599" port="Headphones L HD599:playback_FR"/>
+   <output node="capture-lecturer Pro" port="Hagibis:capture_AUX1"/>
+   <input node="OBS Studio: Lecturer audio capture" port="OBS Studio: Lecturer audio capture:in_2"/>
   </item>
   <item node-type="pipewire" port-type="pipewire-audio">
-   <output node="Blue Snowball Mono" port="Blue Snowball:capture_MONO"/>
-   <input node="Headphones L HD599" port="Headphones L HD599:playback_FL"/>
+   <output node="OBS Monitor" port="obsMonitor:monitor_FR"/>
+   <input node="out-streamcam Pro" port="Audio Board:playback_AUX1"/>
+  </item>
+  <item node-type="pipewire" port-type="pipewire-audio">
+   <output node="capture-overview Pro" port="Hagibis:capture_AUX0"/>
+   <input node="OBS Studio: Stream mix audio capture" port="OBS Studio: Stream mix audio capture:in_1"/>
+  </item>
+  <item node-type="pipewire" port-type="pipewire-audio">
+   <output node="capture-lecturer Pro" port="Hagibis:capture_AUX0"/>
+   <input node="OBS Studio: Lecturer audio capture" port="OBS Studio: Lecturer audio capture:in_1"/>
+  </item>
+  <item node-type="pipewire" port-type="pipewire-audio">
+   <output node="capture-overview Pro" port="Hagibis:capture_AUX1"/>
+   <input node="OBS Studio: Stream mix audio capture" port="OBS Studio: Stream mix audio capture:in_2"/>
+  </item>
+  <item node-type="pipewire" port-type="pipewire-audio">
+   <output node="OBS Monitor" port="obsMonitor:monitor_FL"/>
+   <input node="out-streamcam Pro" port="Audio Board:playback_AUX0"/>
   </item>
  </items>
 </patchbay>
