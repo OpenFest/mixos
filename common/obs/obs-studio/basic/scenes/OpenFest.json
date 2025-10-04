@@ -15,10 +15,10 @@
             "name": "Fullscreen Audience"
         },
         {
-            "name": "Slides + Lecturer"
+            "name": "Slides + Closeup"
         },
         {
-            "name": "Lecturer + Slides"
+            "name": "Closeup + Slides"
         },
         {
             "name": "Lectern View"
@@ -60,7 +60,7 @@
             "name": "[svc][media] Vader"
         },
         {
-            "name": "[svc][input] Lecturer"
+            "name": "[svc][input] Slides"
         },
         {
             "name": "[svc][input] Closeup"
@@ -75,7 +75,7 @@
             "name": "[svc] Audio"
         },
         {
-            "name": "[svc] Audio lecturer"
+            "name": "[svc] Audio slides"
         },
         {
             "name": "[svc][media]Cows"
@@ -733,7 +733,7 @@
                         "private_settings": {}
                     },
                     {
-                        "name": "[svc] Audio lecturer",
+                        "name": "[svc] Audio slides",
                         "source_uuid": "fd8213e8-1fc9-4768-a82e-1685a857ebf2",
                         "visible": true,
                         "locked": false,
@@ -788,7 +788,7 @@
                         "private_settings": {}
                     },
                     {
-                        "name": "[svc][input] Lecturer",
+                        "name": "[svc][input] Slides",
                         "source_uuid": "244415db-dd7b-43a4-b18a-4f3c8f743032",
                         "visible": true,
                         "locked": false,
@@ -1221,7 +1221,7 @@
         },
         {
             "prev_ver": 520159234,
-            "name": "[svc][input] Lecturer",
+            "name": "[svc][input] Slides",
             "uuid": "244415db-dd7b-43a4-b18a-4f3c8f743032",
             "id": "scene",
             "versioned_id": "scene",
@@ -1230,7 +1230,7 @@
                 "custom_size": false,
                 "items": [
                     {
-                        "name": "lecturer capture",
+                        "name": "slides capture",
                         "source_uuid": "377f184f-3bbe-499a-b4be-f313d0d331b9",
                         "visible": true,
                         "locked": false,
@@ -1577,7 +1577,7 @@
         },
         {
             "prev_ver": 520159234,
-            "name": "[svc] Audio lecturer",
+            "name": "[svc] Audio slides",
             "uuid": "fd8213e8-1fc9-4768-a82e-1685a857ebf2",
             "id": "scene",
             "versioned_id": "scene",
@@ -1586,7 +1586,7 @@
                 "custom_size": false,
                 "items": [
                     {
-                        "name": "Lecturer audio capture",
+                        "name": "Slides audio capture",
                         "source_uuid": "4a2014eb-ba02-4707-bd00-28ef80c3ce13",
                         "visible": true,
                         "locked": false,
@@ -1666,7 +1666,7 @@
         },
         {
             "prev_ver": 520159234,
-            "name": "Lecturer audio capture",
+            "name": "Slides audio capture",
             "uuid": "4a2014eb-ba02-4707-bd00-28ef80c3ce13",
             "id": "jack_output_capture",
             "versioned_id": "jack_output_capture",
@@ -2105,12 +2105,12 @@
         },
         {
             "prev_ver": 520159234,
-            "name": "lecturer capture",
+            "name": "slides capture",
             "uuid": "377f184f-3bbe-499a-b4be-f313d0d331b9",
             "id": "v4l2_input",
             "versioned_id": "v4l2_input",
             "settings": {
-                "device_id": "/dev/video-lecturer",
+                "device_id": "/dev/video-slides",
                 "input": 0,
                 "pixelformat": 1448695129,
                 "resolution": 8246337209400,
@@ -2490,7 +2490,7 @@
         },
         {
             "prev_ver": 520159234,
-            "name": "Slides + Lecturer",
+            "name": "Slides + Closeup",
             "uuid": "b1908bb1-d821-477a-85e0-23b662a69e25",
             "id": "scene",
             "versioned_id": "scene",
@@ -2499,7 +2499,7 @@
                 "custom_size": false,
                 "items": [
                     {
-                        "name": "[svc] Audio lecturer",
+                        "name": "[svc] Audio slides",
                         "source_uuid": "fd8213e8-1fc9-4768-a82e-1685a857ebf2",
                         "visible": true,
                         "locked": false,
@@ -2609,7 +2609,7 @@
                         "private_settings": {}
                     },
                     {
-                        "name": "[svc][input] Lecturer",
+                        "name": "[svc][input] Slides",
                         "source_uuid": "244415db-dd7b-43a4-b18a-4f3c8f743032",
                         "visible": true,
                         "locked": false,
@@ -2926,7 +2926,7 @@
                         "private_settings": {}
                     },
                     {
-                        "name": "[svc][input] Lecturer",
+                        "name": "[svc][input] Slides",
                         "source_uuid": "244415db-dd7b-43a4-b18a-4f3c8f743032",
                         "visible": true,
                         "locked": false,
@@ -3590,7 +3590,7 @@
         },
         {
             "prev_ver": 520159234,
-            "name": "Lecturer + Slides",
+            "name": "Closeup + Slides",
             "uuid": "c539f041-61be-4dd0-873b-1543e59b238f",
             "id": "scene",
             "versioned_id": "scene",
@@ -3599,7 +3599,7 @@
                 "custom_size": false,
                 "items": [
                     {
-                        "name": "[svc] Audio lecturer",
+                        "name": "[svc] Audio slides",
                         "source_uuid": "fd8213e8-1fc9-4768-a82e-1685a857ebf2",
                         "visible": true,
                         "locked": false,
@@ -3709,7 +3709,7 @@
                         "private_settings": {}
                     },
                     {
-                        "name": "[svc][input] Lecturer",
+                        "name": "[svc][input] Slides",
                         "source_uuid": "244415db-dd7b-43a4-b18a-4f3c8f743032",
                         "visible": true,
                         "locked": false,
@@ -3997,7 +3997,7 @@
                         "private_settings": {}
                     },
                     {
-                        "name": "[svc][input] Lecturer",
+                        "name": "[svc][input] Slides",
                         "source_uuid": "244415db-dd7b-43a4-b18a-4f3c8f743032",
                         "visible": true,
                         "locked": false,
