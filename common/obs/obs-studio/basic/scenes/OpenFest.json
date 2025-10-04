@@ -1,5 +1,5 @@
 {
-    "current_scene": "Cows",
+    "current_scene": "[svc] Project me",
     "current_program_scene": "Cows",
     "scene_order": [
         {
@@ -4808,7 +4808,21 @@
         }
     ],
     "transitions": [],
-    "saved_projectors": [],
+    "saved_projectors": [
+        {
+            "name": "[svc] Project me",
+            "monitor": -1,
+            "type": 1,
+            "geometry": "AdnQywADAAAAAAAAAAAAAAAABZ8AAAODAAAAAAAAAAAAAAWfAAADgwAAAAAABAAABaAAAAAAAAAAAAAABZ8AAAOD",
+            "alwaysOnTopOverridden": false
+        },
+        {
+            "monitor": -1,
+            "type": 4,
+            "geometry": "AdnQywADAAAAAAAAAAAAAAAABZ8AAAODAAAAAAAAAAAAAAWfAAADgwAAAAEABAAABaAAAAAAAAAAAAAABZ8AAAOD",
+            "alwaysOnTopOverridden": false
+        }
+    ],
     "canvases": [],
     "current_transition": "Fade",
     "transition_duration": 300,
