@@ -25,8 +25,8 @@
       kp0 = setScene "Intermezzo";
 
       kp1 = setScene "Fullscreen Slides";
-      kp2 = setScene "Slides + Lecturer";
-      kp3 = setScene "Lecturer + Slides";
+      kp2 = setScene "Slides + Closeup";
+      kp3 = setScene "Closeup + Slides";
       kpplus = setScene "Lectern View";
 
       kp4 = setScene "Fullscreen Closeup";
