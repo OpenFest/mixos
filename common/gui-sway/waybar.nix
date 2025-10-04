@@ -1,4 +1,5 @@
-{ pkgs, ... }: {
+{ pkgs, ... }:
+{
 
   home.packages = with pkgs; [ pavucontrol ];
 
@@ -7,12 +8,16 @@
 
     #systemd.enable = true;
 
-    settings = [{
+    settings.main = {
       height = 30;
       spacing = 4;
 
-      "modules-left" =
-        [ "sway/workspaces" "sway/mode" "sway/scratchpad" "sway/window" ];
+      "modules-left" = [
+        "sway/workspaces"
+        "sway/mode"
+        "sway/scratchpad"
+        "sway/window"
+      ];
       "modules-center" = [ ];
       "modules-right" = [
         "network"
@@ -43,12 +48,17 @@
         };
       };
 
-      "sway/mode" = { format = ''<span style="italic">{}</span>''; };
+      "sway/mode" = {
+        format = ''<span style="italic">{}</span>'';
+      };
 
       "sway/scratchpad" = {
         format = "{icon} {count}";
         "show-empty" = false;
-        "format-icons" = [ "" "" ];
+        "format-icons" = [
+          ""
+          ""
+        ];
         tooltip = true;
         "tooltip-format" = "{app}: {title}";
       };
@@ -70,18 +80,34 @@
         tooltip = true;
       };
 
-      memory = { format = "{}% "; };
+      memory = {
+        format = "{}% ";
+      };
 
       temperature = {
         "critical-threshold" = 80;
         format = "{temperatureC}°C {icon}";
-        "format-icons" = [ "" "" "" ];
+        "format-icons" = [
+          ""
+          ""
+          ""
+        ];
       };
 
       backlight = {
         # "device" = "acpi_video1";
         format = "{percent}% {icon}";
-        "format-icons" = [ "" "" "" "" "" "" "" "" "" ];
+        "format-icons" = [
+          ""
+          ""
+          ""
+          ""
+          ""
+          ""
+          ""
+          ""
+          ""
+        ];
       };
 
       battery = {
@@ -93,10 +119,18 @@
         "format-charging" = "{capacity}% ";
         "format-plugged" = "{capacity}% ";
         "format-alt" = "{time} {icon}";
-        "format-icons" = [ "" "" "" "" "" ];
+        "format-icons" = [
+          ""
+          ""
+          ""
+          ""
+          ""
+        ];
       };
 
-      "battery#bat2" = { bat = "BAT2"; };
+      "battery#bat2" = {
+        bat = "BAT2";
+      };
 
       network = {
         #interface = "enp6s0"; # adjust to your interface
@@ -113,10 +147,14 @@
         "format-muted" = " {format_source}";
         "format-source" = "{volume}% ";
         "format-source-muted" = "";
-        "format-icons".default = [ "" "" "" ];
+        "format-icons".default = [
+          ""
+          ""
+          ""
+        ];
         "on-click" = "pavucontrol";
       };
-    }];
+    };
   };
 
 }
