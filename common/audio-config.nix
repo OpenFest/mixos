@@ -10,6 +10,7 @@ in {
     audacity
 
     jack_mixer
+    x-air-edit
   ];
 
   security.rtkit.enable = true;

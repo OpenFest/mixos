@@ -6,6 +6,5 @@
     ../../common/networking-dhcp.nix
 
     ../../common/workstation-obs-and-external-audio-mixer.nix
-    ../../common/x-air-edit
   ];
 }
