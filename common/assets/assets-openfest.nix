@@ -20,8 +20,7 @@ in {
       name = "intermezzo_begin.mp4";
     }
     {
-      url =
-        "https://nc.openfest.org/shanovideo/Stream%20video%20for%20a%20loop.mp4";
+      url = "https://rnd.qtrp.org/break.mp4";
       sha256 = "sha256-uUNaaWjO8XZQiEjxdzcKKBQrSVcm2hVsZzVs6kf/7aY=";
       name = "break_video.mp4";
     }
