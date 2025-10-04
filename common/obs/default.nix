@@ -1,14 +1,23 @@
-{ lib, pkgs, ... }:
+{ lib, pkgs, streamInfo, ... }:
 let
   configdir = pkgs.stdenvNoCC.mkDerivation rec {
     name = "obs-config-dir";
     meta.description = "obs config directory";
     src = ./obs-studio;
-    buildInputs = [ pkgs.coreutils pkgs.rsync ];
+    buildInputs = [ pkgs.coreutils pkgs.moreutils pkgs.rsync pkgs.jq ];
     phases = [ "unpackPhase" "installPhase" ];
     installPhase = ''
       mkdir -p $out
       rsync -rva ./ $out/obs-studio/
+      for f in $out/obs-studio/basic/profiles/*/service.json; do
+        cat "$f" | jq '.settings.server = "${streamInfo.url}" | .settings.key = "${streamInfo.key}"' | sponge "$f"
+        cat "$f"
+        profile=yes
+      done
+      if [[ ! -v profile ]]; then
+        echo "did not find any obs profile"
+        exit 1
+      fi
       find . -type f | sort | xargs cat | sha256sum | cut -d ' ' -f 1 > $out/obs-studio/.version
     '';
   };
