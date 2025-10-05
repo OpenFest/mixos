@@ -1,5 +1,5 @@
 { lib, pkgs, ... }: {
-  imports = [ ../../common/dev-mapper.nix ];
+  imports = [ ../../common/dev-mapper.nix ../../common/automounter.nix ];
 
   mixos.videoOutputs = {
     main = "DP-1";
@@ -8,6 +8,11 @@
   };
 
   mixos.macro-keyboards.numpad.match = "145f:0239";
+
+  mixos.automount.by-label = [{
+    label = "OF-RECORDINGS";
+    mountpoint = "/mnt/rec_storage";
+  }];
 
   mixos.devMap = {
     videoCapture.by-path = {
