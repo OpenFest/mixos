@@ -3,6 +3,7 @@ let
   makeV4LPathRule = path: data: ''
     KERNEL=="video*", \
     ENV{ID_PATH_WITH_USB_REVISION}=="${path}", \
+    ENV{ID_V4L_CAPABILITIES}==":capture:", \
     SYMLINK+="${data.name}"
   '';
   makeV4LPathRules = linkMap: lib.mapAttrsToList makeV4LPathRule linkMap;
