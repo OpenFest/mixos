@@ -5,6 +5,7 @@ let
     runtimeInputs = [ pkgs.cage pkgs.mpv pkgs.cowsay ];
     text = ''
       function pre {
+        clear
         cowsay 'entertainment will commence shortly'
       }
 
