@@ -30,6 +30,11 @@ let
     workspaceLayout = "tabbed";
     defaultWorkspace = "workspace number 1";
 
+    gaps = {
+      inner = 4;
+      outer = 4;
+    };
+
     keybindings = {
       # Basics
       "${mod}+Return" = "exec ${term}";
@@ -153,6 +158,9 @@ in {
       home.file.".zprofile".text = ''
         # Auto-start sway on first VT if not already under Wayland
         if [ -z "''${WAYLAND_DISPLAY}" ] && [ "''${XDG_VTNR: -0}" -eq 1 ]; then
+          exec > /tmp/sway.log
+          exec 2>&1
+          echo "starting sway"
           exec sway --unsupported-gpu
         fi
       '';

@@ -8,7 +8,7 @@
     #systemd.enable = true;
 
     settings.main = {
-      height = 30;
+      height = 25;
       spacing = 4;
 
       "modules-left" =
@@ -117,6 +117,8 @@
         "on-click" = "pavucontrol";
       };
     };
+
+    style = (builtins.readFile ./waybar-style.css);
   };
 
 }
