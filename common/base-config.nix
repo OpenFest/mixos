@@ -26,33 +26,33 @@ in {
 
   boot.kernelParams = [ "mitigations=off" ];
 
-  environment.systemPackages = with pkgs; [
-    # absolutely essential
-    bc
-    coreutils-full
-    git
-    htop
-    killall
-    less
-    lsof
-    moreutils
-    neovim
-    rsync
-    sl
-    sshfs
-    tmux
-    tree
-    nettools
+  environment.systemPackages = with pkgs;
+    [
+      # absolutely essential
+      bc
+      coreutils-full
+      git
+      htop
+      killall
+      less
+      lsof
+      moreutils
+      neovim
+      rsync
+      sl
+      sshfs
+      tmux
+      tree
+      nettools
 
-    # video shit
-    v4l-utils
+      # video shit
+      v4l-utils
 
-    # utils
-    usbutils
-    lshw
-    usbtop
-    pcm
-  ];
+      # utils
+      usbutils
+      lshw
+      usbtop
+    ] ++ (if pkgs.system == "x86_64-linux" then [ pcm ] else [ ]);
 
   time.timeZone = "Europe/Sofia";
 

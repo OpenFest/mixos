@@ -2,6 +2,7 @@
   imports = [
     ./base-config.nix
     ./audio-config.nix
+    ./audio-gui-utils.nix
     ./obs
     ./qpwgraph
     ./macropads/numpad.nix

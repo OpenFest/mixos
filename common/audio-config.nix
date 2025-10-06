@@ -4,18 +4,6 @@ let
   # fosdem audio board doesn't like less than 128
   audio_quant = 128;
 in {
-  environment.systemPackages = with pkgs; [
-    pwvucontrol
-    pavucontrol
-    lsp-plugins
-    guitarix # absolutely essential lol
-    pulseaudio # for pactl, fixme
-    audacity
-
-    jack_mixer
-    x-air-edit
-  ];
-
   security.rtkit.enable = true;
 
   boot.kernelParams = [ "threadirqs" ];
