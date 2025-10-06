@@ -49,7 +49,11 @@ opts=(
   -netdev user,id=n0,hostfwd=tcp::2222-:22
 )
 
-if [[ ! -v QEMU_NO_VGA ]]; then
+if [[ -v QEMU_NO_VGA ]]; then
+  opts+=(
+    -vnc :4
+  )
+else
   opts+=(
     -display gtk -device virtio-vga
   )
