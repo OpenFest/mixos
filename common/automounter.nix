@@ -30,11 +30,17 @@ let
             mv -v "${mountpoint}" "${mountpoint}.$(date +'%Y%m%d%H%M%S')"
           fi
 
-          systemd-mount \
-            --no-block --automount=yes \
-            --collect --options=X-mount.mkdir \
-            --owner "${owner}" \
-            "$DEVNAME" "${mountpoint}"
+          opts=(
+            --no-block --automount=yes
+            --collect --options=X-mount.mkdir
+          )
+
+          owner="${owner}"
+          if [[ -n "$owner" ]]; then
+            opts+=(--owner "$owner")
+          fi
+
+          systemd-mount "''${opts[@]}" "$DEVNAME" "${mountpoint}"
         '';
       };
     in "${script}/bin/${name}";
@@ -62,6 +68,7 @@ in {
           owner = lib.mkOption {
             type = lib.types.str;
             description = "Username to chown device to";
+            default = "";
           };
           mountpoint = lib.mkOption {
             type = lib.types.str;
