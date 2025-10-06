@@ -52,7 +52,6 @@ let
         runtimeInputs = [ pkgs.systemd pkgs.coreutils ];
         text = ''
           systemd-umount --no-block "$DEVNAME" "${mountpoint}"
-          rmdir "${mountpoint}"
         '';
       };
     in "${script}/bin/${name}";
