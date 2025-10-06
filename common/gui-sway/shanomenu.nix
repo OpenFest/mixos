@@ -14,21 +14,24 @@ let
     (addExec "poweroff" "systemctl poweroff")
   ];
   binding = "Mod4+Shift+d";
-  shanomenu =
-    with pkgs;
-    # TODO: make nested menus work
+  shanomenu = with pkgs;
+  # TODO: make nested menus work
     writeScriptBin "shanomenu" ''
       #!${rofi-menugen}/bin/rofi-menugen
 
           #begin main
           name="ShanoMenu"
-          ${lib.concatStrings (lib.map (x: "add_exec '${x.name}' '${x.exec}'\n") menus)}
+          ${
+            lib.concatStrings (lib.map (x: ''
+              add_exec '${x.name}' '${x.exec}'
+            '') menus)
+          }
           #end main'';
-in
-{
+in {
   home.packages = [ shanomenu ];
 
-  wayland.windowManager.sway.config.keybindings."${binding}" = "exec ${shanomenu}/bin/shanomenu";
+  wayland.windowManager.sway.config.keybindings."${binding}" =
+    "exec ${shanomenu}/bin/shanomenu";
 
   programs.waybar.settings.main = {
     "modules-left" = [ "custom/shanomenu" ];
