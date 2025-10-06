@@ -51,7 +51,7 @@ let
         inherit name;
         runtimeInputs = [ pkgs.systemd pkgs.coreutils ];
         text = ''
-          systemd-umount "$DEVNAME" "${mountpoint}"
+          systemd-umount --no-block "$DEVNAME" "${mountpoint}"
           rmdir "${mountpoint}"
         '';
       };
