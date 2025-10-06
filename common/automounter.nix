@@ -14,26 +14,42 @@ let
       RUN+="${makeUmountScript opts}"
   '';
 
-  makeMountScript = { label, mountpoint }:
-    pkgs.writeShellApplication {
+  makeMountScript = { label, mountpoint, owner }:
+    let
       name = "mount-${label}";
-      runtimeInputs = [ pkgs.systemd pkgs.coreutils ];
-      text = ''
-        systemd-mount \
-          --no-block --automount=yes \
-          --collect --options=X-mount.mkdir \
-          "$DEVNAME" "${mountpoint}"
-      '';
-    };
-  makeUmountScript = { label, mountpoint }:
-    pkgs.writeShellApplication {
+      script = pkgs.writeShellApplication {
+        inherit name;
+        runtimeInputs = [ pkgs.systemd pkgs.coreutils ];
+        text = ''
+          if [[ -d "${mountpoint}" ]] && find "${mountpoint}" -mindepth 1 -maxdepth 1 | read -r; then
+            # mountpoint exists but is an empty dir
+            rmdir "${mountpoint}"
+          fi
+          if [[ -e "${mountpoint}" ]]; then
+            # mountpoint exists and is nonempty
+            mv -v "${mountpoint}" "${mountpoint}.$(date +'%Y%m%d%H%M%S')"
+          fi
+
+          systemd-mount \
+            --no-block --automount=yes \
+            --collect --options=X-mount.mkdir \
+            --owner "${owner}" \
+            "$DEVNAME" "${mountpoint}"
+        '';
+      };
+    in "${script}/bin/${name}";
+  makeUmountScript = { label, mountpoint, ... }:
+    let
       name = "mount-${label}";
-      runtimeInputs = [ pkgs.systemd pkgs.coreutils ];
-      text = ''
-        systemd-umount "$DEVNAME" "${mountpoint}"
-        rmdir "${mountpoint}"
-      '';
-    };
+      script = pkgs.writeShellApplication {
+        inherit name;
+        runtimeInputs = [ pkgs.systemd pkgs.coreutils ];
+        text = ''
+          systemd-umount "$DEVNAME" "${mountpoint}"
+          rmdir "${mountpoint}"
+        '';
+      };
+    in "${script}/bin/${name}";
 in {
   options.mixos.automount = {
     by-label = lib.mkOption {
@@ -42,6 +58,10 @@ in {
           label = lib.mkOption {
             type = lib.types.str;
             description = "Label to match filesystem of device by";
+          };
+          owner = lib.mkOption {
+            type = lib.types.str;
+            description = "Username to chown device to";
           };
           mountpoint = lib.mkOption {
             type = lib.types.str;

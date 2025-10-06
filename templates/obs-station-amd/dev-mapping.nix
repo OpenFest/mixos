@@ -10,8 +10,9 @@
   mixos.macro-keyboards.numpad.match = "145f:0239";
 
   mixos.automount.by-label = [{
-    label = "OF-RECORDINGS";
+    label = "OF-REC";
     mountpoint = "/mnt/rec_storage";
+    owner = "human";
   }];
 
   mixos.devMap = {
