@@ -7,8 +7,8 @@
 
     #systemd.enable = true;
 
-    settings = [{
-      height = 30;
+    settings.main = {
+      height = 25;
       spacing = 4;
 
       "modules-left" =
@@ -116,7 +116,9 @@
         "format-icons".default = [ "" "" "" ];
         "on-click" = "pavucontrol";
       };
-    }];
+    };
+
+    style = (builtins.readFile ./waybar-style.css);
   };
 
 }
