@@ -97,7 +97,7 @@
                         "name": "[svc] Audio",
                         "source_uuid": "2a96713d-7682-42d6-a25c-536f96db79c2",
                         "visible": true,
-                        "locked": false,
+                        "locked": true,
                         "rot": 0.0,
                         "scale_ref": {
                             "x": 1920.0,
@@ -152,7 +152,7 @@
                         "name": "[svc][input] Closeup",
                         "source_uuid": "c26cf447-f1e8-40e3-ae11-a7abdfdea66c",
                         "visible": true,
-                        "locked": false,
+                        "locked": true,
                         "rot": 0.0,
                         "scale_ref": {
                             "x": 1920.0,
@@ -243,7 +243,7 @@
                         "name": "[svc] Audio",
                         "source_uuid": "2a96713d-7682-42d6-a25c-536f96db79c2",
                         "visible": true,
-                        "locked": false,
+                        "locked": true,
                         "rot": 0.0,
                         "scale_ref": {
                             "x": 1920.0,
@@ -298,7 +298,7 @@
                         "name": "[svc][input] Audience",
                         "source_uuid": "30646db2-212b-4b5e-832c-0af46bf72292",
                         "visible": true,
-                        "locked": false,
+                        "locked": true,
                         "rot": 0.0,
                         "scale_ref": {
                             "x": 1920.0,
@@ -389,7 +389,7 @@
                         "name": "[svc] Audio",
                         "source_uuid": "2a96713d-7682-42d6-a25c-536f96db79c2",
                         "visible": true,
-                        "locked": false,
+                        "locked": true,
                         "rot": 0.0,
                         "scale_ref": {
                             "x": 1920.0,
@@ -444,7 +444,7 @@
                         "name": "[svc][input] Overview",
                         "source_uuid": "a09c0689-783d-4fcb-81e5-cdeddffb8315",
                         "visible": true,
-                        "locked": false,
+                        "locked": true,
                         "rot": 0.0,
                         "scale_ref": {
                             "x": 1920.0,
@@ -535,7 +535,7 @@
                         "name": "[svc] Audio",
                         "source_uuid": "2a96713d-7682-42d6-a25c-536f96db79c2",
                         "visible": true,
-                        "locked": false,
+                        "locked": true,
                         "rot": 0.0,
                         "scale_ref": {
                             "x": 1920.0,
@@ -590,7 +590,7 @@
                         "name": "[svc][media] Break",
                         "source_uuid": "1078c379-fda0-4dbe-8691-2065b54eda5a",
                         "visible": true,
-                        "locked": false,
+                        "locked": true,
                         "rot": 0.0,
                         "scale_ref": {
                             "x": 1920.0,
@@ -681,7 +681,7 @@
                         "name": "[svc] Audio",
                         "source_uuid": "2a96713d-7682-42d6-a25c-536f96db79c2",
                         "visible": true,
-                        "locked": false,
+                        "locked": true,
                         "rot": 0.0,
                         "scale_ref": {
                             "x": 1920.0,
@@ -736,7 +736,7 @@
                         "name": "[svc] Audio slides",
                         "source_uuid": "fd8213e8-1fc9-4768-a82e-1685a857ebf2",
                         "visible": true,
-                        "locked": false,
+                        "locked": true,
                         "rot": 0.0,
                         "scale_ref": {
                             "x": 1920.0,
@@ -791,7 +791,7 @@
                         "name": "[svc][input] Slides",
                         "source_uuid": "244415db-dd7b-43a4-b18a-4f3c8f743032",
                         "visible": true,
-                        "locked": false,
+                        "locked": true,
                         "rot": 0.0,
                         "scale_ref": {
                             "x": 1920.0,
@@ -884,7 +884,7 @@
                         "name": "Stream mix audio capture",
                         "source_uuid": "4501c27c-95fd-48a3-81fd-c7bb3108a246",
                         "visible": true,
-                        "locked": false,
+                        "locked": true,
                         "rot": 0.0,
                         "scale_ref": {
                             "x": 1920.0,
@@ -973,7 +973,7 @@
                         "name": "Fullscreen Slides",
                         "source_uuid": "53391888-260a-4ced-b44b-ce3f063cddf8",
                         "visible": true,
-                        "locked": false,
+                        "locked": true,
                         "rot": 0.0,
                         "scale_ref": {
                             "x": 1920.0,
@@ -1028,7 +1028,7 @@
                         "name": "Frame Image",
                         "source_uuid": "bb1a9502-3ef0-4328-bf91-259128e768f5",
                         "visible": true,
-                        "locked": false,
+                        "locked": true,
                         "rot": 0.0,
                         "scale_ref": {
                             "x": 1920.0,
@@ -1083,7 +1083,7 @@
                         "name": "Break",
                         "source_uuid": "c0cdd715-5426-45cb-9b01-e6fe94b403bd",
                         "visible": false,
-                        "locked": false,
+                        "locked": true,
                         "rot": 0.0,
                         "scale_ref": {
                             "x": 1920.0,
@@ -1138,7 +1138,7 @@
                         "name": "Intermezzo",
                         "source_uuid": "3a7b54ce-58ca-498c-9ad2-d9940d9c2ee4",
                         "visible": false,
-                        "locked": false,
+                        "locked": true,
                         "rot": 0.0,
                         "scale_ref": {
                             "x": 1920.0,
@@ -1233,7 +1233,7 @@
                         "name": "slides capture",
                         "source_uuid": "377f184f-3bbe-499a-b4be-f313d0d331b9",
                         "visible": true,
-                        "locked": false,
+                        "locked": true,
                         "rot": 0.0,
                         "scale_ref": {
                             "x": 1920.0,
@@ -1322,7 +1322,7 @@
                         "name": "closeup capture",
                         "source_uuid": "7c3e5bdf-abe9-404c-a43c-a4a12a6c99a8",
                         "visible": true,
-                        "locked": false,
+                        "locked": true,
                         "rot": 0.0,
                         "scale_ref": {
                             "x": 1920.0,
@@ -1411,7 +1411,7 @@
                         "name": "audience capture",
                         "source_uuid": "86936f3c-436d-486d-8f61-7875b05dcd68",
                         "visible": true,
-                        "locked": false,
+                        "locked": true,
                         "rot": 0.0,
                         "scale_ref": {
                             "x": 1920.0,
@@ -1500,7 +1500,7 @@
                         "name": "overview capture",
                         "source_uuid": "e92a2a62-c88f-48c3-a6a5-1a6e26303bd5",
                         "visible": true,
-                        "locked": false,
+                        "locked": true,
                         "rot": 0.0,
                         "scale_ref": {
                             "x": 1920.0,
@@ -1589,7 +1589,7 @@
                         "name": "Slides audio capture",
                         "source_uuid": "4a2014eb-ba02-4707-bd00-28ef80c3ce13",
                         "visible": true,
-                        "locked": false,
+                        "locked": true,
                         "rot": 0.0,
                         "scale_ref": {
                             "x": 1920.0,
@@ -1736,7 +1736,7 @@
                         "name": "Break Video",
                         "source_uuid": "8192383f-e036-4a6a-bce1-31bb9ee2dcf3",
                         "visible": true,
-                        "locked": false,
+                        "locked": true,
                         "rot": 0.0,
                         "scale_ref": {
                             "x": 1920.0,
@@ -1825,7 +1825,7 @@
                         "name": "[svc][media] Intermezzo",
                         "source_uuid": "82a6f08a-6b24-4b4a-9fb6-ca15bcd4710d",
                         "visible": true,
-                        "locked": false,
+                        "locked": true,
                         "rot": 0.0,
                         "scale_ref": {
                             "x": 1920.0,
@@ -1914,7 +1914,7 @@
                         "name": "Intermezzo Image",
                         "source_uuid": "32ab97b9-23df-426c-bbd0-2e8a8811b1e4",
                         "visible": true,
-                        "locked": false,
+                        "locked": true,
                         "rot": 0.0,
                         "scale_ref": {
                             "x": 1920.0,
@@ -1969,7 +1969,7 @@
                         "name": "Intermezzo Begin Video",
                         "source_uuid": "e5d0b057-5d70-46d3-af81-97d24ca3e449",
                         "visible": true,
-                        "locked": false,
+                        "locked": true,
                         "rot": 0.0,
                         "scale_ref": {
                             "x": 1920.0,
@@ -2153,7 +2153,7 @@
                         "name": "[svc] Audio",
                         "source_uuid": "2a96713d-7682-42d6-a25c-536f96db79c2",
                         "visible": true,
-                        "locked": false,
+                        "locked": true,
                         "rot": 0.0,
                         "scale_ref": {
                             "x": 1920.0,
@@ -2208,7 +2208,7 @@
                         "name": "[svc][input] Overview",
                         "source_uuid": "a09c0689-783d-4fcb-81e5-cdeddffb8315",
                         "visible": true,
-                        "locked": false,
+                        "locked": true,
                         "rot": 0.0,
                         "scale_ref": {
                             "x": 1920.0,
@@ -2299,7 +2299,7 @@
                         "name": "[svc] Audio",
                         "source_uuid": "2a96713d-7682-42d6-a25c-536f96db79c2",
                         "visible": true,
-                        "locked": false,
+                        "locked": true,
                         "rot": 0.0,
                         "scale_ref": {
                             "x": 1920.0,
@@ -2354,7 +2354,7 @@
                         "name": "[svc][input] Closeup",
                         "source_uuid": "c26cf447-f1e8-40e3-ae11-a7abdfdea66c",
                         "visible": true,
-                        "locked": false,
+                        "locked": true,
                         "rot": 0.0,
                         "scale_ref": {
                             "x": 1920.0,
@@ -2445,7 +2445,7 @@
                         "name": "[svc] Audio slides",
                         "source_uuid": "fd8213e8-1fc9-4768-a82e-1685a857ebf2",
                         "visible": true,
-                        "locked": false,
+                        "locked": true,
                         "rot": 0.0,
                         "scale_ref": {
                             "x": 1920.0,
@@ -2500,7 +2500,7 @@
                         "name": "[svc][input] Slides",
                         "source_uuid": "244415db-dd7b-43a4-b18a-4f3c8f743032",
                         "visible": true,
-                        "locked": false,
+                        "locked": true,
                         "rot": 0.0,
                         "scale_ref": {
                             "x": 1920.0,
@@ -2555,7 +2555,7 @@
                         "name": "[svc][input] Closeup",
                         "source_uuid": "c26cf447-f1e8-40e3-ae11-a7abdfdea66c",
                         "visible": true,
-                        "locked": false,
+                        "locked": true,
                         "rot": 0.0,
                         "scale_ref": {
                             "x": 1920.0,
@@ -2610,7 +2610,7 @@
                         "name": "[svc] Audio",
                         "source_uuid": "2a96713d-7682-42d6-a25c-536f96db79c2",
                         "visible": true,
-                        "locked": false,
+                        "locked": true,
                         "rot": 0.0,
                         "scale_ref": {
                             "x": 1920.0,
@@ -2665,7 +2665,7 @@
                         "name": "Dual Frame Image",
                         "source_uuid": "3e995e87-5adf-4f1c-a991-eae1ad2b199c",
                         "visible": true,
-                        "locked": false,
+                        "locked": true,
                         "rot": 0.0,
                         "scale_ref": {
                             "x": 1920.0,
@@ -2762,7 +2762,7 @@
                         "name": "[svc] Audio",
                         "source_uuid": "2a96713d-7682-42d6-a25c-536f96db79c2",
                         "visible": true,
-                        "locked": false,
+                        "locked": true,
                         "rot": 0.0,
                         "scale_ref": {
                             "x": 1920.0,
@@ -2817,7 +2817,7 @@
                         "name": "[svc][input] Closeup",
                         "source_uuid": "c26cf447-f1e8-40e3-ae11-a7abdfdea66c",
                         "visible": true,
-                        "locked": false,
+                        "locked": true,
                         "rot": 0.0,
                         "scale_ref": {
                             "x": 1920.0,
@@ -2872,7 +2872,7 @@
                         "name": "[svc][input] Slides",
                         "source_uuid": "244415db-dd7b-43a4-b18a-4f3c8f743032",
                         "visible": true,
-                        "locked": false,
+                        "locked": true,
                         "rot": 0.0,
                         "scale_ref": {
                             "x": 1920.0,
@@ -2927,7 +2927,7 @@
                         "name": "Banner Image",
                         "source_uuid": "3ea9ceb7-170d-4ee4-bae1-9066a04d3ba8",
                         "visible": true,
-                        "locked": false,
+                        "locked": true,
                         "rot": 0.0,
                         "scale_ref": {
                             "x": 1920.0,
@@ -3022,7 +3022,7 @@
                         "name": "[svc] Audio",
                         "source_uuid": "2a96713d-7682-42d6-a25c-536f96db79c2",
                         "visible": true,
-                        "locked": false,
+                        "locked": true,
                         "rot": 0.0,
                         "scale_ref": {
                             "x": 1920.0,
@@ -3077,7 +3077,7 @@
                         "name": "[svc][input] Audience",
                         "source_uuid": "30646db2-212b-4b5e-832c-0af46bf72292",
                         "visible": true,
-                        "locked": false,
+                        "locked": true,
                         "rot": 0.0,
                         "scale_ref": {
                             "x": 1920.0,
@@ -3132,7 +3132,7 @@
                         "name": "[svc][input] Closeup",
                         "source_uuid": "c26cf447-f1e8-40e3-ae11-a7abdfdea66c",
                         "visible": true,
-                        "locked": false,
+                        "locked": true,
                         "rot": 0.0,
                         "scale_ref": {
                             "x": 1920.0,
@@ -3187,7 +3187,7 @@
                         "name": "Dual Frame Image",
                         "source_uuid": "3e995e87-5adf-4f1c-a991-eae1ad2b199c",
                         "visible": true,
-                        "locked": false,
+                        "locked": true,
                         "rot": 0.0,
                         "scale_ref": {
                             "x": 1920.0,
@@ -3282,7 +3282,7 @@
                         "name": "[svc] Audio",
                         "source_uuid": "2a96713d-7682-42d6-a25c-536f96db79c2",
                         "visible": true,
-                        "locked": false,
+                        "locked": true,
                         "rot": 0.0,
                         "scale_ref": {
                             "x": 1920.0,
@@ -3337,7 +3337,7 @@
                         "name": "[svc][media]Cows",
                         "source_uuid": "09c92c17-49d4-4b48-bf53-d5172180d1b2",
                         "visible": true,
-                        "locked": false,
+                        "locked": true,
                         "rot": 0.0,
                         "scale_ref": {
                             "x": 1920.0,
@@ -3428,7 +3428,7 @@
                         "name": "[svc][media] Vader",
                         "source_uuid": "757a072f-5f8d-479c-8839-f4de9e03d001",
                         "visible": true,
-                        "locked": false,
+                        "locked": true,
                         "rot": 0.0,
                         "scale_ref": {
                             "x": 1920.0,
@@ -3545,7 +3545,7 @@
                         "name": "[svc] Audio slides",
                         "source_uuid": "fd8213e8-1fc9-4768-a82e-1685a857ebf2",
                         "visible": true,
-                        "locked": false,
+                        "locked": true,
                         "rot": 0.0,
                         "scale_ref": {
                             "x": 1920.0,
@@ -3600,7 +3600,7 @@
                         "name": "[svc][input] Closeup",
                         "source_uuid": "c26cf447-f1e8-40e3-ae11-a7abdfdea66c",
                         "visible": true,
-                        "locked": false,
+                        "locked": true,
                         "rot": 0.0,
                         "scale_ref": {
                             "x": 1920.0,
@@ -3655,7 +3655,7 @@
                         "name": "[svc][input] Slides",
                         "source_uuid": "244415db-dd7b-43a4-b18a-4f3c8f743032",
                         "visible": true,
-                        "locked": false,
+                        "locked": true,
                         "rot": 0.0,
                         "scale_ref": {
                             "x": 1920.0,
@@ -3710,7 +3710,7 @@
                         "name": "[svc] Audio",
                         "source_uuid": "2a96713d-7682-42d6-a25c-536f96db79c2",
                         "visible": true,
-                        "locked": false,
+                        "locked": true,
                         "rot": 0.0,
                         "scale_ref": {
                             "x": 1920.0,
@@ -3765,7 +3765,7 @@
                         "name": "Dual Frame Image",
                         "source_uuid": "3e995e87-5adf-4f1c-a991-eae1ad2b199c",
                         "visible": true,
-                        "locked": false,
+                        "locked": true,
                         "rot": 0.0,
                         "scale_ref": {
                             "x": 1920.0,
@@ -3888,7 +3888,7 @@
                         "name": "[svc] Audio",
                         "source_uuid": "2a96713d-7682-42d6-a25c-536f96db79c2",
                         "visible": true,
-                        "locked": false,
+                        "locked": true,
                         "rot": 0.0,
                         "scale_ref": {
                             "x": 1920.0,
@@ -3943,7 +3943,7 @@
                         "name": "[svc][input] Audience",
                         "source_uuid": "30646db2-212b-4b5e-832c-0af46bf72292",
                         "visible": true,
-                        "locked": false,
+                        "locked": true,
                         "rot": 0.0,
                         "scale_ref": {
                             "x": 1920.0,
@@ -3998,7 +3998,7 @@
                         "name": "[svc][input] Slides",
                         "source_uuid": "244415db-dd7b-43a4-b18a-4f3c8f743032",
                         "visible": true,
-                        "locked": false,
+                        "locked": true,
                         "rot": 0.0,
                         "scale_ref": {
                             "x": 1920.0,
@@ -4053,7 +4053,7 @@
                         "name": "Dual Frame Image",
                         "source_uuid": "3e995e87-5adf-4f1c-a991-eae1ad2b199c",
                         "visible": true,
-                        "locked": false,
+                        "locked": true,
                         "rot": 0.0,
                         "scale_ref": {
                             "x": 1920.0,
@@ -4250,7 +4250,7 @@
                         "name": "Imperial March Audio",
                         "source_uuid": "83d8deff-69f4-41a0-8ccb-e21c103f273a",
                         "visible": true,
-                        "locked": false,
+                        "locked": true,
                         "rot": 0.0,
                         "scale_ref": {
                             "x": 1920.0,
@@ -4305,7 +4305,7 @@
                         "name": "Intermezzo Image",
                         "source_uuid": "32ab97b9-23df-426c-bbd0-2e8a8811b1e4",
                         "visible": true,
-                        "locked": false,
+                        "locked": true,
                         "rot": 0.0,
                         "scale_ref": {
                             "x": 1920.0,
@@ -4360,7 +4360,7 @@
                         "name": "Thank You Video",
                         "source_uuid": "80de9bb2-b02c-472b-8ada-5f006b860769",
                         "visible": true,
-                        "locked": false,
+                        "locked": true,
                         "rot": 0.0,
                         "scale_ref": {
                             "x": 1920.0,
@@ -4490,7 +4490,7 @@
                         "name": "Cows Video",
                         "source_uuid": "5f687255-1bec-4b7f-aa8b-0620add8667d",
                         "visible": true,
-                        "locked": false,
+                        "locked": true,
                         "rot": 0.0,
                         "scale_ref": {
                             "x": 1920.0,
