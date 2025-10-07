@@ -4144,7 +4144,7 @@
                 "hw_decode": false,
                 "local_file": "/home/human/assets/test_videos/cows.mp4",
                 "is_local_file": true,
-                "looping": false
+                "looping": true
             },
             "mixers": 255,
             "sync": 0,
