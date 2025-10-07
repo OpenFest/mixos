@@ -2945,11 +2945,11 @@
                         "group_item_backup": false,
                         "pos": {
                             "x": -7.0,
-                            "y": 773.0
+                            "y": 769.0
                         },
                         "pos_rel": {
                             "x": -1.7907407283782959,
-                            "y": 0.43148148059844971
+                            "y": 0.42407405376434326
                         },
                         "scale": {
                             "x": 1.0,
@@ -4141,7 +4141,7 @@
             "id": "ffmpeg_source",
             "versioned_id": "ffmpeg_source",
             "settings": {
-                "hw_decode": true,
+                "hw_decode": false,
                 "local_file": "/home/human/assets/test_videos/cows.mp4",
                 "is_local_file": true,
                 "looping": false
@@ -4180,9 +4180,10 @@
             "versioned_id": "ffmpeg_source",
             "settings": {
                 "local_file": "/home/human/assets/break_video.mp4",
-                "hw_decode": true,
+                "hw_decode": false,
                 "close_when_inactive": false,
-                "looping": true
+                "looping": true,
+                "restart_on_activate": true
             },
             "mixers": 255,
             "sync": 0,
@@ -4448,7 +4449,7 @@
             "settings": {
                 "local_file": "/home/human/assets/thank_you.mp4",
                 "close_when_inactive": false,
-                "hw_decode": true
+                "hw_decode": false
             },
             "mixers": 255,
             "sync": 0,
@@ -4574,7 +4575,7 @@
             "settings": {
                 "local_file": "/home/human/assets/intermezzo_begin.mp4",
                 "close_when_inactive": false,
-                "hw_decode": true
+                "hw_decode": false
             },
             "mixers": 255,
             "sync": 0,
@@ -4635,7 +4636,7 @@
             "id": "ffmpeg_source",
             "versioned_id": "ffmpeg_source",
             "settings": {
-                "hw_decode": true,
+                "hw_decode": false,
                 "local_file": "/home/human/assets/imperial_march.ogg",
                 "is_local_file": true
             },
