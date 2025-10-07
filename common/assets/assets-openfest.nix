@@ -30,27 +30,26 @@ in {
       name = "thank_you.mp4";
     }
     {
-      url = "https://nc.openfest.org/shanovideo/Frames/Frame%202%20videos.svg";
-      sha256 = "sha256-0t6bZ5sheWQIRdM8DnEklMPJOmLoM00DcmAP7BcT43Q=";
+      url = "https://nc.openfest.org/shanovideo/Frames/Stream%202%20videos.svg";
+      sha256 = "sha256-7v22Vrr+ThuwNAaaO202WXulrL0POzJ7R6s3TBak5Vk=";
       name = "frame_dual.png";
       convert = inkscapify;
     }
     {
-      url = "https://nc.openfest.org/shanovideo/Frames/Banner.svg"; # FIXME
-      sha256 = "sha256-I0XhjljhUpjf1DVQ7D6wGasi94R5Gw8gv9Y3uO/AGi8=";
+      url = "https://nc.openfest.org/shanovideo/Frames/Banner.svg";
+      sha256 = "sha256-ylC4CvKi+DcdZTzIYBqG6XpYVlygbg8LsCnT7cqf4hw=";
       name = "banner.png";
       convert = inkscapify;
     }
     {
-      url = "https://nc.openfest.org/shanovideo/eye.svg"; # FIXME
-      sha256 = "sha256-orBpR/5qZdi1nLkfxaiGR+Ax/PmyY+TI7+yFYstHBck=";
+      url = "https://nc.openfest.org/shanovideo/Background%20s%20nadpis.png";
+      sha256 = "sha256-lrjUgENiImT6x/pfTQTsau9LepIF6KVNrhWYLIhJJwQ=";
       name = "intermezzo.png";
       convert = inkscapify;
     }
     {
-      url =
-        "https://nc.openfest.org/shanovideo/Frames/Frame%20projector.svg"; # FIXME
-      sha256 = "sha256-ZppVcDrggihU0cx2YfiR7Jxhdmv7f0WltTeaNu++nI4=";
+      url = "https://nc.openfest.org/shanovideo/Frames/Frame%201%20video.svg";
+      sha256 = "sha256-wUzurdbVkIJJVwe8Sn4tRRc9NJUf7nLRxBuDhf1dCds=";
       name = "frame_projector.png";
       convert = inkscapify;
     }
