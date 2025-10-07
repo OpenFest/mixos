@@ -5,6 +5,9 @@ let
     inherit hostname;
     system = "aarch64-linux";
     image = { format = "sdImage"; };
-    moduleArgs = { inherit hostname; };
+    moduleArgs = {
+      inherit hostname;
+      videoPlayerTarget = "https://rnd.qtrp.org/test_videos/cows.mp4";
+    };
   };
 in map mkHost hostnames
