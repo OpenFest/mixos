@@ -2,7 +2,7 @@
 let
   # start from 32, go higher if it causes problems
   # fosdem audio board doesn't like less than 128
-  audio_quant = 128;
+  audio_quant = 256;
 in {
   security.rtkit.enable = true;
 
