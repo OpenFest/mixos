@@ -2733,10 +2733,10 @@
                 "OBSBasic.SelectScene": [],
                 "libobs.show_scene_item.5": [],
                 "libobs.hide_scene_item.5": [],
-                "libobs.show_scene_item.1": [],
-                "libobs.hide_scene_item.1": [],
                 "libobs.show_scene_item.2": [],
                 "libobs.hide_scene_item.2": [],
+                "libobs.show_scene_item.1": [],
+                "libobs.hide_scene_item.1": [],
                 "libobs.show_scene_item.3": [],
                 "libobs.hide_scene_item.3": [],
                 "libobs.show_scene_item.4": [],
@@ -2897,12 +2897,12 @@
                             "y": -1.0
                         },
                         "scale": {
-                            "x": 0.76302081346511841,
-                            "y": 0.7629629373550415
+                            "x": 0.71875,
+                            "y": 0.71851849555969238
                         },
                         "scale_rel": {
-                            "x": 0.76302081346511841,
-                            "y": 0.7629629373550415
+                            "x": 0.71875,
+                            "y": 0.71851849555969238
                         },
                         "bounds": {
                             "x": 0.0,
@@ -2936,7 +2936,7 @@
                         "align": 5,
                         "bounds_type": 2,
                         "bounds_align": 0,
-                        "bounds_crop": false,
+                        "bounds_crop": true,
                         "crop_left": 0,
                         "crop_top": 0,
                         "crop_right": 0,
@@ -2944,12 +2944,12 @@
                         "id": 4,
                         "group_item_backup": false,
                         "pos": {
-                            "x": 0.0,
-                            "y": 555.0
+                            "x": -7.0,
+                            "y": 773.0
                         },
                         "pos_rel": {
-                            "x": -1.7777777910232544,
-                            "y": 0.027777791023254395
+                            "x": -1.7907407283782959,
+                            "y": 0.43148148059844971
                         },
                         "scale": {
                             "x": 1.0,
@@ -2960,12 +2960,12 @@
                             "y": 1.0
                         },
                         "bounds": {
-                            "x": 1464.0,
-                            "y": 842.0
+                            "x": 1388.0,
+                            "y": 315.0
                         },
                         "bounds_rel": {
-                            "x": 2.7111110687255859,
-                            "y": 1.559259295463562
+                            "x": 2.5703704357147217,
+                            "y": 0.58333331346511841
                         },
                         "scale_filter": "disable",
                         "blend_method": "default",
@@ -3255,10 +3255,10 @@
                 "OBSBasic.SelectScene": [],
                 "libobs.show_scene_item.1": [],
                 "libobs.hide_scene_item.1": [],
-                "libobs.show_scene_item.2": [],
-                "libobs.hide_scene_item.2": [],
                 "libobs.show_scene_item.4": [],
                 "libobs.hide_scene_item.4": [],
+                "libobs.show_scene_item.2": [],
+                "libobs.hide_scene_item.2": [],
                 "libobs.show_scene_item.5": [],
                 "libobs.hide_scene_item.5": []
             },
@@ -4121,10 +4121,10 @@
                 "OBSBasic.SelectScene": [],
                 "libobs.show_scene_item.1": [],
                 "libobs.hide_scene_item.1": [],
-                "libobs.show_scene_item.5": [],
-                "libobs.hide_scene_item.5": [],
                 "libobs.show_scene_item.3": [],
                 "libobs.hide_scene_item.3": [],
+                "libobs.show_scene_item.5": [],
+                "libobs.hide_scene_item.5": [],
                 "libobs.show_scene_item.4": [],
                 "libobs.hide_scene_item.4": []
             },
