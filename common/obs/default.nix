@@ -51,7 +51,7 @@ let
     '';
   };
 in {
-  imports = [ ../gui-sway ];
+  imports = [ ../gui-sway ./crashobs.nix ];
 
   users.users.human.packages = [
     # video shit
