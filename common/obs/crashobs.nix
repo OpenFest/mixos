@@ -14,6 +14,8 @@ let
 
   crashobs = pkgs.writeShellApplication {
     name = "crashobs";
+    meta.description =
+      "script for stress-testing obs on a barrage of clicks of the macropad";
     runtimeInputs = [ pkgs.shanokeys ];
 
     text = ''
