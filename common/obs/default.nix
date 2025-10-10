@@ -29,7 +29,7 @@ let
 
       if [[ $# -ge 1 ]]; then
         if [[ "$1" == "-n" ]]; then
-          if [[ -d "$HOME/.config/obs-studio" ]] && cmp ${configdir}/obs-studio/.version "$HOME/obs-studio/.version"; then
+          if [[ -d "$HOME/.config/obs-studio" ]] && cmp ${configdir}/obs-studio/.version "$HOME/.config/obs-studio/.version"; then
             exit 0
           fi
         else
@@ -43,10 +43,13 @@ let
       pkill '.obs-wrapped' || true && echo 'killed obs because it was running'
 
       mkdir -p "$HOME/.config"
+      if [[ -d "$HOME/.config/obs-studio" ]]; then
+        rm -rf "$HOME/.config/obs-studio"
+      fi
+
       rsync -rva \
         --chown="$USER" \
         --chmod=D755,F644 \
-        --delete \
         ${configdir}/obs-studio/ "$HOME/.config/obs-studio/"
     '';
   };
