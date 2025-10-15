@@ -1,6 +1,6 @@
 {
-    "current_scene": "Break",
-    "current_program_scene": "Break",
+    "current_scene": "Cows",
+    "current_program_scene": "Cows",
     "scene_order": [
         {
             "name": "Fullscreen Slides"
@@ -4764,7 +4764,7 @@
             "id": "browser_source",
             "versioned_id": "browser_source",
             "settings": {
-                "url": "https://openfest.org/interlude/?room=A",
+                "url": "https://openfest.org/interlude/?room=A&wait-on-startup=42",
                 "width": 1920,
                 "height": 1080,
                 "shutdown": false,
