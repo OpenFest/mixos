@@ -39,6 +39,9 @@
             "name": "Break"
         },
         {
+            "name": "Ads + Intermezzo"
+        },
+        {
             "name": "Intermezzo"
         },
         {
@@ -528,9 +531,64 @@
             "id": "scene",
             "versioned_id": "scene",
             "settings": {
-                "id_counter": 4,
+                "id_counter": 5,
                 "custom_size": false,
                 "items": [
+                    {
+                        "name": "Afterbreak",
+                        "source_uuid": "5b0a836e-038c-42c2-9a4b-3a53abdf2c85",
+                        "visible": true,
+                        "locked": true,
+                        "rot": 0.0,
+                        "scale_ref": {
+                            "x": 1920.0,
+                            "y": 1080.0
+                        },
+                        "align": 5,
+                        "bounds_type": 2,
+                        "bounds_align": 0,
+                        "bounds_crop": false,
+                        "crop_left": 0,
+                        "crop_top": 0,
+                        "crop_right": 0,
+                        "crop_bottom": 0,
+                        "id": 5,
+                        "group_item_backup": false,
+                        "pos": {
+                            "x": 0.0,
+                            "y": 0.0
+                        },
+                        "pos_rel": {
+                            "x": -1.7777777910232544,
+                            "y": -1.0
+                        },
+                        "scale": {
+                            "x": 1.0,
+                            "y": 1.0
+                        },
+                        "scale_rel": {
+                            "x": 1.0,
+                            "y": 1.0
+                        },
+                        "bounds": {
+                            "x": 1920.0,
+                            "y": 1080.0
+                        },
+                        "bounds_rel": {
+                            "x": 3.5555555820465088,
+                            "y": 2.0
+                        },
+                        "scale_filter": "disable",
+                        "blend_method": "default",
+                        "blend_type": "normal",
+                        "show_transition": {
+                            "duration": 0
+                        },
+                        "hide_transition": {
+                            "duration": 0
+                        },
+                        "private_settings": {}
+                    },
                     {
                         "name": "[svc] Audio",
                         "source_uuid": "2a96713d-7682-42d6-a25c-536f96db79c2",
@@ -656,6 +714,8 @@
             "push-to-talk-delay": 0,
             "hotkeys": {
                 "OBSBasic.SelectScene": [],
+                "libobs.show_scene_item.5": [],
+                "libobs.hide_scene_item.5": [],
                 "libobs.show_scene_item.2": [],
                 "libobs.hide_scene_item.2": [],
                 "libobs.show_scene_item.4": [],
@@ -966,7 +1026,7 @@
             "id": "scene",
             "versioned_id": "scene",
             "settings": {
-                "id_counter": 9,
+                "id_counter": 11,
                 "custom_size": false,
                 "items": [
                     {
@@ -1067,6 +1127,116 @@
                         "bounds_rel": {
                             "x": 3.5555555820465088,
                             "y": 2.0
+                        },
+                        "scale_filter": "disable",
+                        "blend_method": "default",
+                        "blend_type": "normal",
+                        "show_transition": {
+                            "duration": 0
+                        },
+                        "hide_transition": {
+                            "duration": 0
+                        },
+                        "private_settings": {}
+                    },
+                    {
+                        "name": "Vader",
+                        "source_uuid": "7386f186-9ac0-44db-a5b7-8948820053da",
+                        "visible": false,
+                        "locked": false,
+                        "rot": 0.0,
+                        "scale_ref": {
+                            "x": 1920.0,
+                            "y": 1080.0
+                        },
+                        "align": 5,
+                        "bounds_type": 0,
+                        "bounds_align": 0,
+                        "bounds_crop": false,
+                        "crop_left": 0,
+                        "crop_top": 0,
+                        "crop_right": 0,
+                        "crop_bottom": 0,
+                        "id": 11,
+                        "group_item_backup": false,
+                        "pos": {
+                            "x": 0.0,
+                            "y": 0.0
+                        },
+                        "pos_rel": {
+                            "x": -1.7777777910232544,
+                            "y": -1.0
+                        },
+                        "scale": {
+                            "x": 1.0,
+                            "y": 1.0
+                        },
+                        "scale_rel": {
+                            "x": 1.0,
+                            "y": 1.0
+                        },
+                        "bounds": {
+                            "x": 0.0,
+                            "y": 0.0
+                        },
+                        "bounds_rel": {
+                            "x": 0.0,
+                            "y": 0.0
+                        },
+                        "scale_filter": "disable",
+                        "blend_method": "default",
+                        "blend_type": "normal",
+                        "show_transition": {
+                            "duration": 0
+                        },
+                        "hide_transition": {
+                            "duration": 0
+                        },
+                        "private_settings": {}
+                    },
+                    {
+                        "name": "Ads + Intermezzo",
+                        "source_uuid": "7dfdc51b-7ec3-4cd6-a91c-3adb30f03938",
+                        "visible": false,
+                        "locked": false,
+                        "rot": 0.0,
+                        "scale_ref": {
+                            "x": 1920.0,
+                            "y": 1080.0
+                        },
+                        "align": 5,
+                        "bounds_type": 0,
+                        "bounds_align": 0,
+                        "bounds_crop": false,
+                        "crop_left": 0,
+                        "crop_top": 0,
+                        "crop_right": 0,
+                        "crop_bottom": 0,
+                        "id": 10,
+                        "group_item_backup": false,
+                        "pos": {
+                            "x": 0.0,
+                            "y": 0.0
+                        },
+                        "pos_rel": {
+                            "x": -1.7777777910232544,
+                            "y": -1.0
+                        },
+                        "scale": {
+                            "x": 1.0,
+                            "y": 1.0
+                        },
+                        "scale_rel": {
+                            "x": 1.0,
+                            "y": 1.0
+                        },
+                        "bounds": {
+                            "x": 0.0,
+                            "y": 0.0
+                        },
+                        "bounds_rel": {
+                            "x": 0.0,
+                            "y": 0.0
                         },
                         "scale_filter": "disable",
                         "blend_method": "default",
@@ -1208,6 +1378,10 @@
                 "libobs.hide_scene_item.8": [],
                 "libobs.show_scene_item.9": [],
                 "libobs.hide_scene_item.9": [],
+                "libobs.show_scene_item.11": [],
+                "libobs.hide_scene_item.11": [],
+                "libobs.show_scene_item.10": [],
+                "libobs.hide_scene_item.10": [],
                 "libobs.show_scene_item.6": [],
                 "libobs.hide_scene_item.6": [],
                 "libobs.show_scene_item.7": [],
@@ -4182,7 +4356,7 @@
                 "local_file": "/home/human/assets/break_video.mp4",
                 "hw_decode": false,
                 "close_when_inactive": false,
-                "looping": true,
+                "looping": false,
                 "restart_on_activate": true
             },
             "mixers": 255,
@@ -4696,6 +4870,245 @@
             "deinterlace_field_order": 0,
             "monitoring_type": 0,
             "private_settings": {}
+        },
+        {
+            "prev_ver": 520159234,
+            "name": "Ads + Intermezzo",
+            "uuid": "7dfdc51b-7ec3-4cd6-a91c-3adb30f03938",
+            "id": "scene",
+            "versioned_id": "scene",
+            "settings": {
+                "id_counter": 3,
+                "custom_size": false,
+                "items": [
+                    {
+                        "name": "Intermezzo Image",
+                        "source_uuid": "32ab97b9-23df-426c-bbd0-2e8a8811b1e4",
+                        "visible": true,
+                        "locked": true,
+                        "rot": 0.0,
+                        "scale_ref": {
+                            "x": 1920.0,
+                            "y": 1080.0
+                        },
+                        "align": 5,
+                        "bounds_type": 2,
+                        "bounds_align": 0,
+                        "bounds_crop": false,
+                        "crop_left": 0,
+                        "crop_top": 0,
+                        "crop_right": 0,
+                        "crop_bottom": 0,
+                        "id": 3,
+                        "group_item_backup": false,
+                        "pos": {
+                            "x": 0.0,
+                            "y": 0.0
+                        },
+                        "pos_rel": {
+                            "x": -1.7777777910232544,
+                            "y": -1.0
+                        },
+                        "scale": {
+                            "x": 1.0,
+                            "y": 1.0
+                        },
+                        "scale_rel": {
+                            "x": 1.0,
+                            "y": 1.0
+                        },
+                        "bounds": {
+                            "x": 1920.0,
+                            "y": 1080.0
+                        },
+                        "bounds_rel": {
+                            "x": 3.5555555820465088,
+                            "y": 2.0
+                        },
+                        "scale_filter": "disable",
+                        "blend_method": "default",
+                        "blend_type": "normal",
+                        "show_transition": {
+                            "duration": 0
+                        },
+                        "hide_transition": {
+                            "duration": 0
+                        },
+                        "private_settings": {}
+                    },
+                    {
+                        "name": "[svc] Audio",
+                        "source_uuid": "2a96713d-7682-42d6-a25c-536f96db79c2",
+                        "visible": true,
+                        "locked": true,
+                        "rot": 0.0,
+                        "scale_ref": {
+                            "x": 1920.0,
+                            "y": 1080.0
+                        },
+                        "align": 5,
+                        "bounds_type": 1,
+                        "bounds_align": 0,
+                        "bounds_crop": false,
+                        "crop_left": 0,
+                        "crop_top": 0,
+                        "crop_right": 0,
+                        "crop_bottom": 0,
+                        "id": 1,
+                        "group_item_backup": false,
+                        "pos": {
+                            "x": 0.0,
+                            "y": 0.0
+                        },
+                        "pos_rel": {
+                            "x": -1.7777777910232544,
+                            "y": -1.0
+                        },
+                        "scale": {
+                            "x": 1.0,
+                            "y": 1.0
+                        },
+                        "scale_rel": {
+                            "x": 1.0,
+                            "y": 1.0
+                        },
+                        "bounds": {
+                            "x": 1920.0,
+                            "y": 1080.0
+                        },
+                        "bounds_rel": {
+                            "x": 3.5555555820465088,
+                            "y": 2.0
+                        },
+                        "scale_filter": "disable",
+                        "blend_method": "default",
+                        "blend_type": "normal",
+                        "show_transition": {
+                            "duration": 0
+                        },
+                        "hide_transition": {
+                            "duration": 0
+                        },
+                        "private_settings": {}
+                    },
+                    {
+                        "name": "[svc][media] Break",
+                        "source_uuid": "1078c379-fda0-4dbe-8691-2065b54eda5a",
+                        "visible": true,
+                        "locked": true,
+                        "rot": 0.0,
+                        "scale_ref": {
+                            "x": 1920.0,
+                            "y": 1080.0
+                        },
+                        "align": 5,
+                        "bounds_type": 0,
+                        "bounds_align": 0,
+                        "bounds_crop": false,
+                        "crop_left": 0,
+                        "crop_top": 0,
+                        "crop_right": 0,
+                        "crop_bottom": 0,
+                        "id": 2,
+                        "group_item_backup": false,
+                        "pos": {
+                            "x": 0.0,
+                            "y": 0.0
+                        },
+                        "pos_rel": {
+                            "x": -1.7777777910232544,
+                            "y": -1.0
+                        },
+                        "scale": {
+                            "x": 1.0,
+                            "y": 1.0
+                        },
+                        "scale_rel": {
+                            "x": 1.0,
+                            "y": 1.0
+                        },
+                        "bounds": {
+                            "x": 0.0,
+                            "y": 0.0
+                        },
+                        "bounds_rel": {
+                            "x": 0.0,
+                            "y": 0.0
+                        },
+                        "scale_filter": "disable",
+                        "blend_method": "default",
+                        "blend_type": "normal",
+                        "show_transition": {
+                            "duration": 0
+                        },
+                        "hide_transition": {
+                            "duration": 0
+                        },
+                        "private_settings": {}
+                    }
+                ]
+            },
+            "mixers": 0,
+            "sync": 0,
+            "flags": 0,
+            "volume": 1.0,
+            "balance": 0.5,
+            "enabled": true,
+            "muted": false,
+            "push-to-mute": false,
+            "push-to-mute-delay": 0,
+            "push-to-talk": false,
+            "push-to-talk-delay": 0,
+            "hotkeys": {
+                "OBSBasic.SelectScene": [],
+                "libobs.show_scene_item.3": [],
+                "libobs.hide_scene_item.3": [],
+                "libobs.show_scene_item.1": [],
+                "libobs.hide_scene_item.1": [],
+                "libobs.show_scene_item.2": [],
+                "libobs.hide_scene_item.2": []
+            },
+            "deinterlace_mode": 0,
+            "deinterlace_field_order": 0,
+            "monitoring_type": 0,
+            "canvas_uuid": "6c69626f-6273-4c00-9d88-c5136d61696e",
+            "private_settings": {}
+        },
+        {
+            "prev_ver": 520159234,
+            "name": "Afterbreak",
+            "uuid": "5b0a836e-038c-42c2-9a4b-3a53abdf2c85",
+            "id": "browser_source",
+            "versioned_id": "browser_source",
+            "settings": {
+                "url": "https://openfest.org/interlude/?room=A&wait-on-startup=150000&client=obs",
+                "width": 1920,
+                "height": 1080,
+                "restart_when_active": true,
+                "css": ""
+            },
+            "mixers": 255,
+            "sync": 0,
+            "flags": 0,
+            "volume": 1.0,
+            "balance": 0.5,
+            "enabled": true,
+            "muted": false,
+            "push-to-mute": false,
+            "push-to-mute-delay": 0,
+            "push-to-talk": false,
+            "push-to-talk-delay": 0,
+            "hotkeys": {
+                "libobs.mute": [],
+                "libobs.unmute": [],
+                "libobs.push-to-mute": [],
+                "libobs.push-to-talk": [],
+                "ObsBrowser.Refresh": []
+            },
+            "deinterlace_mode": 0,
+            "deinterlace_field_order": 0,
+            "monitoring_type": 0,
+            "private_settings": {}
         }
     ],
     "groups": [],
@@ -4728,13 +5141,13 @@
             "name": "[svc] Project me",
             "monitor": -1,
             "type": 1,
-            "geometry": "AdnQywADAAD//+x4AAAAAP//8hcAAAOD///seAAAAAD///IXAAADgwAAAAAABAAABaD//+x4AAAAAP//8hcAAAOD",
+            "geometry": "AdnQywADAAD//+x4AAAAAP//8/cAAASv///seAAAAAD///P3AAAErwAAAAIABAAAB4D//+x4AAAAAP//8/cAAASv",
             "alwaysOnTopOverridden": false
         },
         {
             "monitor": -1,
             "type": 4,
-            "geometry": "AdnQywADAAAAABOIAAAAAAAAGScAAAODAAATiAAAAAAAABklAAADaQAAAAEABAAABaAAABOIAAAAAAAAGScAAAOD",
+            "geometry": "AdnQywADAAAAABOIAAAAAAAAGwcAAASvAAATiAAAAAAAABVnAAABDQAAAAAABAAAB4AAABOIAAAAAAAAGwcAAASv",
             "alwaysOnTopOverridden": false
         }
     ],
@@ -4805,15 +5218,15 @@
                     },
                     "macroActionConditionSplitterPosition": [
                         {
-                            "pos": 192
+                            "pos": 371
                         },
                         {
-                            "pos": 191
+                            "pos": 370
                         }
                     ],
                     "macroElseActionSplitterPosition": [
                         {
-                            "pos": 159
+                            "pos": 338
                         },
                         {
                             "pos": 0
@@ -4878,13 +5291,132 @@
                                 "name": "[svc] Project me"
                             },
                             "sceneItemSelection": {
+                                "type": 50,
+                                "idxType": 0,
+                                "idx": 0
+                            },
+                            "action": 1
+                        },
+                        {
+                            "segmentSettings": {
+                                "collapsed": false,
+                                "useCustomLabel": false,
+                                "customLabel": "My label",
+                                "enabled": true,
+                                "version": 1
+                            },
+                            "id": "scene_visibility",
+                            "sceneSelection": {
+                                "type": 0,
+                                "name": "[svc] Project me"
+                            },
+                            "sceneItemSelection": {
                                 "type": 0,
                                 "idxType": 0,
                                 "idx": 0,
                                 "item": "Break"
                             },
                             "action": 0
+                        }
+                    ],
+                    "elseActions": [],
+                    "inputVariables": []
+                },
+                {
+                    "name": "Project me source switch to Ads + Intermezzo",
+                    "group": false,
+                    "pauseSaveBehavior": 0,
+                    "pause": false,
+                    "parallel": false,
+                    "checkConditionsInParallel": false,
+                    "onChange": true,
+                    "skipExecOnStart": false,
+                    "stopActionsIfNotDone": false,
+                    "useShortCircuitEvaluation": false,
+                    "useCustomConditionCheckInterval": false,
+                    "customConditionCheckInterval": {
+                        "value": {
+                            "value": 0.29999999999999999,
+                            "type": 0
                         },
+                        "unit": 0,
+                        "version": 1
+                    },
+                    "dockSettings": {
+                        "register": false,
+                        "hasRunButton": true,
+                        "hasPauseButton": true,
+                        "hasStatusLabel": false,
+                        "highlightIfConditionsTrue": false,
+                        "runButtonText": "Run",
+                        "pauseButtonText": "Pause",
+                        "unpauseButtonText": "Unpause",
+                        "conditionsTrueStatusText": "Conditions are true.",
+                        "conditionsFalseStatusText": "Conditions are false.",
+                        "dockId": "advss-macro-dock-9ee72f25-b674-40b1-b4f3-28f62bcd5f98",
+                        "version": 1
+                    },
+                    "macroActionConditionSplitterPosition": [
+                        {
+                            "pos": 371
+                        },
+                        {
+                            "pos": 370
+                        }
+                    ],
+                    "macroElseActionSplitterPosition": [
+                        {
+                            "pos": 338
+                        },
+                        {
+                            "pos": 0
+                        }
+                    ],
+                    "registerHotkeys": false,
+                    "pauseHotkey": [],
+                    "unpauseHotkey": [],
+                    "togglePauseHotkey": [],
+                    "conditions": [
+                        {
+                            "segmentSettings": {
+                                "collapsed": false,
+                                "useCustomLabel": false,
+                                "customLabel": "My label",
+                                "enabled": true,
+                                "version": 1
+                            },
+                            "id": "transition",
+                            "logic": 0,
+                            "durationModifier": {
+                                "time_constraint": 0,
+                                "seconds": {
+                                    "value": {
+                                        "value": 0.0,
+                                        "type": 0
+                                    },
+                                    "unit": 0,
+                                    "version": 1
+                                }
+                            },
+                            "condition": 101,
+                            "transitionType": 0,
+                            "transition": "",
+                            "sceneSelection": {
+                                "type": 0,
+                                "name": "Ads + Intermezzo"
+                            },
+                            "duration": {
+                                "value": {
+                                    "value": 0.0,
+                                    "type": 0
+                                },
+                                "unit": 0,
+                                "version": 1
+                            },
+                            "version": 1
+                        }
+                    ],
+                    "actions": [
                         {
                             "segmentSettings": {
                                 "collapsed": false,
@@ -4899,10 +5431,9 @@
                                 "name": "[svc] Project me"
                             },
                             "sceneItemSelection": {
-                                "type": 0,
+                                "type": 50,
                                 "idxType": 0,
-                                "idx": 0,
-                                "item": "Intermezzo"
+                                "idx": 0
                             },
                             "action": 1
                         },
@@ -4923,30 +5454,9 @@
                                 "type": 0,
                                 "idxType": 0,
                                 "idx": 0,
-                                "item": "Fullscreen Slides"
+                                "item": "Ads + Intermezzo"
                             },
-                            "action": 1
-                        },
-                        {
-                            "segmentSettings": {
-                                "collapsed": false,
-                                "useCustomLabel": false,
-                                "customLabel": "My label",
-                                "enabled": true,
-                                "version": 1
-                            },
-                            "id": "scene_visibility",
-                            "sceneSelection": {
-                                "type": 0,
-                                "name": "[svc] Project me"
-                            },
-                            "sceneItemSelection": {
-                                "type": 0,
-                                "idxType": 0,
-                                "idx": 0,
-                                "item": "Frame Image"
-                            },
-                            "action": 1
+                            "action": 0
                         }
                     ],
                     "elseActions": [],
@@ -4988,15 +5498,15 @@
                     },
                     "macroActionConditionSplitterPosition": [
                         {
-                            "pos": 192
+                            "pos": 371
                         },
                         {
-                            "pos": 191
+                            "pos": 370
                         }
                     ],
                     "macroElseActionSplitterPosition": [
                         {
-                            "pos": 159
+                            "pos": 338
                         },
                         {
                             "pos": 0
@@ -5137,13 +5647,132 @@
                                 "name": "[svc] Project me"
                             },
                             "sceneItemSelection": {
+                                "type": 50,
+                                "idxType": 0,
+                                "idx": 0
+                            },
+                            "action": 1
+                        },
+                        {
+                            "segmentSettings": {
+                                "collapsed": false,
+                                "useCustomLabel": false,
+                                "customLabel": "My label",
+                                "enabled": true,
+                                "version": 1
+                            },
+                            "id": "scene_visibility",
+                            "sceneSelection": {
+                                "type": 0,
+                                "name": "[svc] Project me"
+                            },
+                            "sceneItemSelection": {
                                 "type": 0,
                                 "idxType": 0,
                                 "idx": 0,
                                 "item": "Intermezzo"
                             },
                             "action": 0
+                        }
+                    ],
+                    "elseActions": [],
+                    "inputVariables": []
+                },
+                {
+                    "name": "Project me source switch to Vader",
+                    "group": false,
+                    "pauseSaveBehavior": 0,
+                    "pause": false,
+                    "parallel": false,
+                    "checkConditionsInParallel": false,
+                    "onChange": true,
+                    "skipExecOnStart": false,
+                    "stopActionsIfNotDone": false,
+                    "useShortCircuitEvaluation": false,
+                    "useCustomConditionCheckInterval": false,
+                    "customConditionCheckInterval": {
+                        "value": {
+                            "value": 0.29999999999999999,
+                            "type": 0
                         },
+                        "unit": 0,
+                        "version": 1
+                    },
+                    "dockSettings": {
+                        "register": false,
+                        "hasRunButton": true,
+                        "hasPauseButton": true,
+                        "hasStatusLabel": false,
+                        "highlightIfConditionsTrue": false,
+                        "runButtonText": "Run",
+                        "pauseButtonText": "Pause",
+                        "unpauseButtonText": "Unpause",
+                        "conditionsTrueStatusText": "Conditions are true.",
+                        "conditionsFalseStatusText": "Conditions are false.",
+                        "dockId": "advss-macro-dock-2a9e84ab-2793-4ea0-bf28-06aba815fc2c",
+                        "version": 1
+                    },
+                    "macroActionConditionSplitterPosition": [
+                        {
+                            "pos": 371
+                        },
+                        {
+                            "pos": 370
+                        }
+                    ],
+                    "macroElseActionSplitterPosition": [
+                        {
+                            "pos": 338
+                        },
+                        {
+                            "pos": 0
+                        }
+                    ],
+                    "registerHotkeys": false,
+                    "pauseHotkey": [],
+                    "unpauseHotkey": [],
+                    "togglePauseHotkey": [],
+                    "conditions": [
+                        {
+                            "segmentSettings": {
+                                "collapsed": false,
+                                "useCustomLabel": false,
+                                "customLabel": "My label",
+                                "enabled": true,
+                                "version": 1
+                            },
+                            "id": "transition",
+                            "logic": 0,
+                            "durationModifier": {
+                                "time_constraint": 0,
+                                "seconds": {
+                                    "value": {
+                                        "value": 0.0,
+                                        "type": 0
+                                    },
+                                    "unit": 0,
+                                    "version": 1
+                                }
+                            },
+                            "condition": 101,
+                            "transitionType": 0,
+                            "transition": "",
+                            "sceneSelection": {
+                                "type": 0,
+                                "name": "Vader"
+                            },
+                            "duration": {
+                                "value": {
+                                    "value": 0.0,
+                                    "type": 0
+                                },
+                                "unit": 0,
+                                "version": 1
+                            },
+                            "version": 1
+                        }
+                    ],
+                    "actions": [
                         {
                             "segmentSettings": {
                                 "collapsed": false,
@@ -5158,10 +5787,9 @@
                                 "name": "[svc] Project me"
                             },
                             "sceneItemSelection": {
-                                "type": 0,
+                                "type": 50,
                                 "idxType": 0,
-                                "idx": 0,
-                                "item": "Break"
+                                "idx": 0
                             },
                             "action": 1
                         },
@@ -5182,30 +5810,9 @@
                                 "type": 0,
                                 "idxType": 0,
                                 "idx": 0,
-                                "item": "Fullscreen Slides"
+                                "item": "Vader"
                             },
-                            "action": 1
-                        },
-                        {
-                            "segmentSettings": {
-                                "collapsed": false,
-                                "useCustomLabel": false,
-                                "customLabel": "My label",
-                                "enabled": true,
-                                "version": 1
-                            },
-                            "id": "scene_visibility",
-                            "sceneSelection": {
-                                "type": 0,
-                                "name": "[svc] Project me"
-                            },
-                            "sceneItemSelection": {
-                                "type": 0,
-                                "idxType": 0,
-                                "idx": 0,
-                                "item": "Frame Image"
-                            },
-                            "action": 1
+                            "action": 0
                         }
                     ],
                     "elseActions": [],
@@ -5247,15 +5854,15 @@
                     },
                     "macroActionConditionSplitterPosition": [
                         {
-                            "pos": 192
+                            "pos": 371
                         },
                         {
-                            "pos": 191
+                            "pos": 370
                         }
                     ],
                     "macroElseActionSplitterPosition": [
                         {
-                            "pos": 159
+                            "pos": 338
                         },
                         {
                             "pos": 0
@@ -5292,7 +5899,7 @@
                                 "name": ""
                             },
                             "type": 60,
-                            "pattern": "^(?!Break$)(?!Intermezzo$)(?!Herald).*$\n",
+                            "pattern": "^(?!Break$)(?!Ads.*Intermezzo$)(?!Intermezzo$)(?!Vader$)(?!Herald).*$\n",
                             "useTransitionTargetScene": true,
                             "regexConfig": {
                                 "enable": true,
@@ -5303,6 +5910,26 @@
                         }
                     ],
                     "actions": [
+                        {
+                            "segmentSettings": {
+                                "collapsed": false,
+                                "useCustomLabel": false,
+                                "customLabel": "My label",
+                                "enabled": true,
+                                "version": 1
+                            },
+                            "id": "scene_visibility",
+                            "sceneSelection": {
+                                "type": 0,
+                                "name": "[svc] Project me"
+                            },
+                            "sceneItemSelection": {
+                                "type": 50,
+                                "idxType": 0,
+                                "idx": 0
+                            },
+                            "action": 1
+                        },
                         {
                             "segmentSettings": {
                                 "collapsed": false,
@@ -5344,48 +5971,6 @@
                                 "item": "Fullscreen Slides"
                             },
                             "action": 0
-                        },
-                        {
-                            "segmentSettings": {
-                                "collapsed": false,
-                                "useCustomLabel": false,
-                                "customLabel": "My label",
-                                "enabled": true,
-                                "version": 1
-                            },
-                            "id": "scene_visibility",
-                            "sceneSelection": {
-                                "type": 0,
-                                "name": "[svc] Project me"
-                            },
-                            "sceneItemSelection": {
-                                "type": 0,
-                                "idxType": 0,
-                                "idx": 0,
-                                "item": "Break"
-                            },
-                            "action": 1
-                        },
-                        {
-                            "segmentSettings": {
-                                "collapsed": false,
-                                "useCustomLabel": false,
-                                "customLabel": "My label",
-                                "enabled": true,
-                                "version": 1
-                            },
-                            "id": "scene_visibility",
-                            "sceneSelection": {
-                                "type": 0,
-                                "name": "[svc] Project me"
-                            },
-                            "sceneItemSelection": {
-                                "type": 0,
-                                "idxType": 0,
-                                "idx": 0,
-                                "item": "Intermezzo"
-                            },
-                            "action": 1
                         }
                     ],
                     "elseActions": [],
@@ -5560,16 +6145,16 @@
                 }
             ],
             "saveWindowGeo": false,
-            "windowPosX": 448,
-            "windowPosY": 173,
-            "windowWidth": 1000,
-            "windowHeight": 600,
+            "windowPosX": 440,
+            "windowPosY": 228,
+            "windowWidth": 1820,
+            "windowHeight": 958,
             "macroListMacroEditSplitterPosition": [
                 {
-                    "pos": 136
+                    "pos": 391
                 },
                 {
-                    "pos": 838
+                    "pos": 1403
                 }
             ],
             "version": "GITDIR-NOTFOUND",
