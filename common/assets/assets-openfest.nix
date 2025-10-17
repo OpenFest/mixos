@@ -49,7 +49,7 @@ in {
     }
     {
       url = "https://nc.openfest.org/shanovideo/Frames/Frame%201%20video.svg";
-      sha256 = "sha256-wUzurdbVkIJJVwe8Sn4tRRc9NJUf7nLRxBuDhf1dCds=";
+      sha256 = "sha256-mOIrneNs9K8QECSfcICDqI3kkk2zlzDdRdhgeGHdR+Q=";
       name = "frame_projector.png";
       convert = inkscapify;
     }

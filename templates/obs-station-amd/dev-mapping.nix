@@ -2,8 +2,8 @@
   imports = [ ../../common/dev-mapper.nix ../../common/automounter.nix ];
 
   mixos.videoOutputs = {
-    main = "DP-1";
-    multiview = "DP-2";
+    main = "DP-3";
+    multiview = "DP-4";
     projector = "HDMI-A-1";
   };
 
