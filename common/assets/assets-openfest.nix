@@ -20,8 +20,9 @@ in {
       name = "intermezzo_begin.mp4";
     }
     {
-      url = "https://rnd.qtrp.org/break.mp4";
-      sha256 = "sha256-664vgGNB4FI3+zTcdGNtmq6AQyCC7Tl4QP55SjKYO8c=";
+      url =
+        "https://nc.openfest.org/shanovideo/Commercial%20Break/Commercials.mov";
+      sha256 = "sha256-/fquvVtR5LX1Yynku/tUJIgWgsnKROf+U4f5O9MM+lQ=";
       name = "break_video.mp4";
     }
     {
