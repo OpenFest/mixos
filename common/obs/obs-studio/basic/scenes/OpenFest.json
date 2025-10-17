@@ -5081,7 +5081,7 @@
             "id": "browser_source",
             "versioned_id": "browser_source",
             "settings": {
-                "url": "https://openfest.org/interlude/?room=A&wait-on-startup=150000&client=obs",
+                "url": "https://openfest.org/interlude/?room=A&wait-on-startup=201500&client=obs",
                 "width": 1920,
                 "height": 1080,
                 "restart_when_active": true,
