@@ -4828,7 +4828,7 @@
                 "shutdown": false,
                 "restart_when_active": true,
                 "css": "",
-                "url": "https://openfest.org/interlude/?room=A&wait-on-startup=42&client=obs"
+                "url": "https://openfest.org/interlude/?room=A&wait-on-startup=150000&client=obs"
             },
             "mixers": 255,
             "sync": 0,
