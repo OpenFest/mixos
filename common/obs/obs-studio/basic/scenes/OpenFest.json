@@ -1026,7 +1026,7 @@
             "id": "scene",
             "versioned_id": "scene",
             "settings": {
-                "id_counter": 10,
+                "id_counter": 19,
                 "custom_size": false,
                 "items": [
                     {
@@ -1127,6 +1127,61 @@
                         "bounds_rel": {
                             "x": 3.555555582046509,
                             "y": 2.0
+                        },
+                        "scale_filter": "disable",
+                        "blend_method": "default",
+                        "blend_type": "normal",
+                        "show_transition": {
+                            "duration": 0
+                        },
+                        "hide_transition": {
+                            "duration": 0
+                        },
+                        "private_settings": {}
+                    },
+                    {
+                        "name": "Vader",
+                        "source_uuid": "7386f186-9ac0-44db-a5b7-8948820053da",
+                        "visible": false,
+                        "locked": true,
+                        "rot": 0.0,
+                        "scale_ref": {
+                            "x": 1920.0,
+                            "y": 1080.0
+                        },
+                        "align": 5,
+                        "bounds_type": 0,
+                        "bounds_align": 0,
+                        "bounds_crop": false,
+                        "crop_left": 0,
+                        "crop_top": 0,
+                        "crop_right": 0,
+                        "crop_bottom": 0,
+                        "id": 11,
+                        "group_item_backup": false,
+                        "pos": {
+                            "x": 0.0,
+                            "y": 0.0
+                        },
+                        "pos_rel": {
+                            "x": -1.7777777910232544,
+                            "y": -1.0
+                        },
+                        "scale": {
+                            "x": 1.0,
+                            "y": 1.0
+                        },
+                        "scale_rel": {
+                            "x": 1.0,
+                            "y": 1.0
+                        },
+                        "bounds": {
+                            "x": 0.0,
+                            "y": 0.0
+                        },
+                        "bounds_rel": {
+                            "x": 0.0,
+                            "y": 0.0
                         },
                         "scale_filter": "disable",
                         "blend_method": "default",
@@ -1323,6 +1378,8 @@
                 "libobs.hide_scene_item.8": [],
                 "libobs.show_scene_item.9": [],
                 "libobs.hide_scene_item.9": [],
+                "libobs.show_scene_item.11": [],
+                "libobs.hide_scene_item.11": [],
                 "libobs.show_scene_item.10": [],
                 "libobs.hide_scene_item.10": [],
                 "libobs.show_scene_item.6": [],
@@ -4822,13 +4879,13 @@
             "versioned_id": "browser_source",
             "settings": {
                 "is_local_file": false,
+                "url": "https://openfest.org/interlude/?room=A&wait-on-startup=150000&client=obs",
                 "width": 1920,
                 "height": 1080,
                 "fps_custom": false,
                 "shutdown": false,
                 "restart_when_active": true,
-                "css": "",
-                "url": "https://openfest.org/interlude/?room=A&wait-on-startup=150000&client=obs"
+                "css": ""
             },
             "mixers": 255,
             "sync": 0,
@@ -5153,15 +5210,15 @@
                     },
                     "macroActionConditionSplitterPosition": [
                         {
-                            "pos": 234
+                            "pos": 255
                         },
                         {
-                            "pos": 232
+                            "pos": 253
                         }
                     ],
                     "macroElseActionSplitterPosition": [
                         {
-                            "pos": 200
+                            "pos": 221
                         },
                         {
                             "pos": 0
@@ -5226,96 +5283,32 @@
                                 "name": "[svc] Project me"
                             },
                             "sceneItemSelection": {
+                                "type": 50,
+                                "idxType": 0,
+                                "idx": 0
+                            },
+                            "action": 1
+                        },
+                        {
+                            "segmentSettings": {
+                                "collapsed": false,
+                                "useCustomLabel": false,
+                                "customLabel": "My label",
+                                "enabled": true,
+                                "version": 1
+                            },
+                            "id": "scene_visibility",
+                            "sceneSelection": {
+                                "type": 0,
+                                "name": "[svc] Project me"
+                            },
+                            "sceneItemSelection": {
                                 "type": 0,
                                 "idxType": 0,
                                 "idx": 0,
                                 "item": "Break"
                             },
                             "action": 0
-                        },
-                        {
-                            "segmentSettings": {
-                                "collapsed": false,
-                                "useCustomLabel": false,
-                                "customLabel": "My label",
-                                "enabled": true,
-                                "version": 1
-                            },
-                            "id": "scene_visibility",
-                            "sceneSelection": {
-                                "type": 0,
-                                "name": "[svc] Project me"
-                            },
-                            "sceneItemSelection": {
-                                "type": 0,
-                                "idxType": 0,
-                                "idx": 0,
-                                "item": "Ads + Intermezzo"
-                            },
-                            "action": 1
-                        },
-                        {
-                            "segmentSettings": {
-                                "collapsed": false,
-                                "useCustomLabel": false,
-                                "customLabel": "My label",
-                                "enabled": true,
-                                "version": 1
-                            },
-                            "id": "scene_visibility",
-                            "sceneSelection": {
-                                "type": 0,
-                                "name": "[svc] Project me"
-                            },
-                            "sceneItemSelection": {
-                                "type": 0,
-                                "idxType": 0,
-                                "idx": 0,
-                                "item": "Intermezzo"
-                            },
-                            "action": 1
-                        },
-                        {
-                            "segmentSettings": {
-                                "collapsed": false,
-                                "useCustomLabel": false,
-                                "customLabel": "My label",
-                                "enabled": true,
-                                "version": 1
-                            },
-                            "id": "scene_visibility",
-                            "sceneSelection": {
-                                "type": 0,
-                                "name": "[svc] Project me"
-                            },
-                            "sceneItemSelection": {
-                                "type": 0,
-                                "idxType": 0,
-                                "idx": 0,
-                                "item": "Fullscreen Slides"
-                            },
-                            "action": 1
-                        },
-                        {
-                            "segmentSettings": {
-                                "collapsed": false,
-                                "useCustomLabel": false,
-                                "customLabel": "My label",
-                                "enabled": true,
-                                "version": 1
-                            },
-                            "id": "scene_visibility",
-                            "sceneSelection": {
-                                "type": 0,
-                                "name": "[svc] Project me"
-                            },
-                            "sceneItemSelection": {
-                                "type": 0,
-                                "idxType": 0,
-                                "idx": 0,
-                                "item": "Frame Image"
-                            },
-                            "action": 1
                         }
                     ],
                     "elseActions": [],
@@ -5430,96 +5423,32 @@
                                 "name": "[svc] Project me"
                             },
                             "sceneItemSelection": {
+                                "type": 50,
+                                "idxType": 0,
+                                "idx": 0
+                            },
+                            "action": 1
+                        },
+                        {
+                            "segmentSettings": {
+                                "collapsed": false,
+                                "useCustomLabel": false,
+                                "customLabel": "My label",
+                                "enabled": true,
+                                "version": 1
+                            },
+                            "id": "scene_visibility",
+                            "sceneSelection": {
+                                "type": 0,
+                                "name": "[svc] Project me"
+                            },
+                            "sceneItemSelection": {
                                 "type": 0,
                                 "idxType": 0,
                                 "idx": 0,
                                 "item": "Ads + Intermezzo"
                             },
                             "action": 0
-                        },
-                        {
-                            "segmentSettings": {
-                                "collapsed": false,
-                                "useCustomLabel": false,
-                                "customLabel": "My label",
-                                "enabled": true,
-                                "version": 1
-                            },
-                            "id": "scene_visibility",
-                            "sceneSelection": {
-                                "type": 0,
-                                "name": "[svc] Project me"
-                            },
-                            "sceneItemSelection": {
-                                "type": 0,
-                                "idxType": 0,
-                                "idx": 0,
-                                "item": "Break"
-                            },
-                            "action": 1
-                        },
-                        {
-                            "segmentSettings": {
-                                "collapsed": false,
-                                "useCustomLabel": false,
-                                "customLabel": "My label",
-                                "enabled": true,
-                                "version": 1
-                            },
-                            "id": "scene_visibility",
-                            "sceneSelection": {
-                                "type": 0,
-                                "name": "[svc] Project me"
-                            },
-                            "sceneItemSelection": {
-                                "type": 0,
-                                "idxType": 0,
-                                "idx": 0,
-                                "item": "Intermezzo"
-                            },
-                            "action": 1
-                        },
-                        {
-                            "segmentSettings": {
-                                "collapsed": false,
-                                "useCustomLabel": false,
-                                "customLabel": "My label",
-                                "enabled": true,
-                                "version": 1
-                            },
-                            "id": "scene_visibility",
-                            "sceneSelection": {
-                                "type": 0,
-                                "name": "[svc] Project me"
-                            },
-                            "sceneItemSelection": {
-                                "type": 0,
-                                "idxType": 0,
-                                "idx": 0,
-                                "item": "Fullscreen Slides"
-                            },
-                            "action": 1
-                        },
-                        {
-                            "segmentSettings": {
-                                "collapsed": false,
-                                "useCustomLabel": false,
-                                "customLabel": "My label",
-                                "enabled": true,
-                                "version": 1
-                            },
-                            "id": "scene_visibility",
-                            "sceneSelection": {
-                                "type": 0,
-                                "name": "[svc] Project me"
-                            },
-                            "sceneItemSelection": {
-                                "type": 0,
-                                "idxType": 0,
-                                "idx": 0,
-                                "item": "Frame Image"
-                            },
-                            "action": 1
                         }
                     ],
                     "elseActions": [],
@@ -5710,13 +5639,132 @@
                                 "name": "[svc] Project me"
                             },
                             "sceneItemSelection": {
+                                "type": 50,
+                                "idxType": 0,
+                                "idx": 0
+                            },
+                            "action": 1
+                        },
+                        {
+                            "segmentSettings": {
+                                "collapsed": false,
+                                "useCustomLabel": false,
+                                "customLabel": "My label",
+                                "enabled": true,
+                                "version": 1
+                            },
+                            "id": "scene_visibility",
+                            "sceneSelection": {
+                                "type": 0,
+                                "name": "[svc] Project me"
+                            },
+                            "sceneItemSelection": {
                                 "type": 0,
                                 "idxType": 0,
                                 "idx": 0,
                                 "item": "Intermezzo"
                             },
                             "action": 0
+                        }
+                    ],
+                    "elseActions": [],
+                    "inputVariables": []
+                },
+                {
+                    "name": "Project me source switch to Vader",
+                    "group": false,
+                    "pauseSaveBehavior": 0,
+                    "pause": false,
+                    "parallel": false,
+                    "checkConditionsInParallel": false,
+                    "onChange": true,
+                    "skipExecOnStart": false,
+                    "stopActionsIfNotDone": false,
+                    "useShortCircuitEvaluation": false,
+                    "useCustomConditionCheckInterval": false,
+                    "customConditionCheckInterval": {
+                        "value": {
+                            "value": 0.3,
+                            "type": 0
                         },
+                        "unit": 0,
+                        "version": 1
+                    },
+                    "dockSettings": {
+                        "register": false,
+                        "hasRunButton": true,
+                        "hasPauseButton": true,
+                        "hasStatusLabel": false,
+                        "highlightIfConditionsTrue": false,
+                        "runButtonText": "Run",
+                        "pauseButtonText": "Pause",
+                        "unpauseButtonText": "Unpause",
+                        "conditionsTrueStatusText": "Conditions are true.",
+                        "conditionsFalseStatusText": "Conditions are false.",
+                        "dockId": "advss-macro-dock-bbb3452b-c0bc-4dc3-a03e-2eef60fd9ac0",
+                        "version": 1
+                    },
+                    "macroActionConditionSplitterPosition": [
+                        {
+                            "pos": 224
+                        },
+                        {
+                            "pos": 110
+                        }
+                    ],
+                    "macroElseActionSplitterPosition": [
+                        {
+                            "pos": 78
+                        },
+                        {
+                            "pos": 0
+                        }
+                    ],
+                    "registerHotkeys": false,
+                    "pauseHotkey": [],
+                    "unpauseHotkey": [],
+                    "togglePauseHotkey": [],
+                    "conditions": [
+                        {
+                            "segmentSettings": {
+                                "collapsed": false,
+                                "useCustomLabel": false,
+                                "customLabel": "My label",
+                                "enabled": true,
+                                "version": 1
+                            },
+                            "id": "transition",
+                            "logic": 0,
+                            "durationModifier": {
+                                "time_constraint": 0,
+                                "seconds": {
+                                    "value": {
+                                        "value": 0.0,
+                                        "type": 0
+                                    },
+                                    "unit": 0,
+                                    "version": 1
+                                }
+                            },
+                            "condition": 101,
+                            "transitionType": 0,
+                            "transition": "",
+                            "sceneSelection": {
+                                "type": 0,
+                                "name": "Vader"
+                            },
+                            "duration": {
+                                "value": {
+                                    "value": 0.0,
+                                    "type": 0
+                                },
+                                "unit": 0,
+                                "version": 1
+                            },
+                            "version": 1
+                        }
+                    ],
+                    "actions": [
                         {
                             "segmentSettings": {
                                 "collapsed": false,
@@ -5731,10 +5779,9 @@
                                 "name": "[svc] Project me"
                             },
                             "sceneItemSelection": {
-                                "type": 0,
+                                "type": 50,
                                 "idxType": 0,
-                                "idx": 0,
-                                "item": "Ads + Intermezzo"
+                                "idx": 0
                             },
                             "action": 1
                         },
@@ -5755,51 +5802,9 @@
                                 "type": 0,
                                 "idxType": 0,
                                 "idx": 0,
-                                "item": "Break"
+                                "item": "Vader"
                             },
-                            "action": 1
-                        },
-                        {
-                            "segmentSettings": {
-                                "collapsed": false,
-                                "useCustomLabel": false,
-                                "customLabel": "My label",
-                                "enabled": true,
-                                "version": 1
-                            },
-                            "id": "scene_visibility",
-                            "sceneSelection": {
-                                "type": 0,
-                                "name": "[svc] Project me"
-                            },
-                            "sceneItemSelection": {
-                                "type": 0,
-                                "idxType": 0,
-                                "idx": 0,
-                                "item": "Fullscreen Slides"
-                            },
-                            "action": 1
-                        },
-                        {
-                            "segmentSettings": {
-                                "collapsed": false,
-                                "useCustomLabel": false,
-                                "customLabel": "My label",
-                                "enabled": true,
-                                "version": 1
-                            },
-                            "id": "scene_visibility",
-                            "sceneSelection": {
-                                "type": 0,
-                                "name": "[svc] Project me"
-                            },
-                            "sceneItemSelection": {
-                                "type": 0,
-                                "idxType": 0,
-                                "idx": 0,
-                                "item": "Frame Image"
-                            },
-                            "action": 1
+                            "action": 0
                         }
                     ],
                     "elseActions": [],
@@ -5886,7 +5891,7 @@
                                 "name": ""
                             },
                             "type": 60,
-                            "pattern": "^(?!Break$)(?!Ads.*Intermezzo$)(?!Intermezzo$)(?!Herald).*$\n",
+                            "pattern": "^(?!Break$)(?!Ads.*Intermezzo$)(?!Intermezzo$)(?!Vader$)(?!Herald).*$\n",
                             "useTransitionTargetScene": true,
                             "regexConfig": {
                                 "enable": true,
@@ -5897,6 +5902,26 @@
                         }
                     ],
                     "actions": [
+                        {
+                            "segmentSettings": {
+                                "collapsed": false,
+                                "useCustomLabel": false,
+                                "customLabel": "My label",
+                                "enabled": true,
+                                "version": 1
+                            },
+                            "id": "scene_visibility",
+                            "sceneSelection": {
+                                "type": 0,
+                                "name": "[svc] Project me"
+                            },
+                            "sceneItemSelection": {
+                                "type": 50,
+                                "idxType": 0,
+                                "idx": 0
+                            },
+                            "action": 1
+                        },
                         {
                             "segmentSettings": {
                                 "collapsed": false,
@@ -5938,69 +5963,6 @@
                                 "item": "Fullscreen Slides"
                             },
                             "action": 0
-                        },
-                        {
-                            "segmentSettings": {
-                                "collapsed": false,
-                                "useCustomLabel": false,
-                                "customLabel": "My label",
-                                "enabled": true,
-                                "version": 1
-                            },
-                            "id": "scene_visibility",
-                            "sceneSelection": {
-                                "type": 0,
-                                "name": "[svc] Project me"
-                            },
-                            "sceneItemSelection": {
-                                "type": 0,
-                                "idxType": 0,
-                                "idx": 0,
-                                "item": "Break"
-                            },
-                            "action": 1
-                        },
-                        {
-                            "segmentSettings": {
-                                "collapsed": false,
-                                "useCustomLabel": false,
-                                "customLabel": "My label",
-                                "enabled": true,
-                                "version": 1
-                            },
-                            "id": "scene_visibility",
-                            "sceneSelection": {
-                                "type": 0,
-                                "name": "[svc] Project me"
-                            },
-                            "sceneItemSelection": {
-                                "type": 0,
-                                "idxType": 0,
-                                "idx": 0,
-                                "item": "Ads + Intermezzo"
-                            },
-                            "action": 1
-                        },
-                        {
-                            "segmentSettings": {
-                                "collapsed": false,
-                                "useCustomLabel": false,
-                                "customLabel": "My label",
-                                "enabled": true,
-                                "version": 1
-                            },
-                            "id": "scene_visibility",
-                            "sceneSelection": {
-                                "type": 0,
-                                "name": "[svc] Project me"
-                            },
-                            "sceneItemSelection": {
-                                "type": 0,
-                                "idxType": 0,
-                                "idx": 0,
-                                "item": "Intermezzo"
-                            },
-                            "action": 1
                         }
                     ],
                     "elseActions": [],
@@ -6178,8 +6140,8 @@
                 }
             ],
             "saveWindowGeo": false,
-            "windowPosX": 51,
-            "windowPosY": 94,
+            "windowPosX": 591,
+            "windowPosY": 93,
             "windowWidth": 1000,
             "windowHeight": 600,
             "macroListMacroEditSplitterPosition": [
