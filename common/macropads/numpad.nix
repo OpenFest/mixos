@@ -40,9 +40,10 @@
       kpminus = setScene "Audience + Closeup";
 
       homepage = setScene "Break";
+      tab = setScene "Ads + Intermezzo";
 
       # unused keys:
-      # tab kpslash kpasterisk backspace space kpdot
+      # kpslash kpasterisk backspace space kpdot
     };
   };
 }
