@@ -87,7 +87,7 @@
     "name": "OpenFest",
     "sources": [
         {
-            "prev_ver": 536870913,
+            "prev_ver": 520159234,
             "name": "Fullscreen Closeup",
             "uuid": "075ec011-c115-48d0-8687-05425aacaa1e",
             "id": "scene",
@@ -233,7 +233,7 @@
             "private_settings": {}
         },
         {
-            "prev_ver": 536870913,
+            "prev_ver": 520159234,
             "name": "Fullscreen Audience",
             "uuid": "25b2b3b6-f618-473c-a926-16a8f63cf4fd",
             "id": "scene",
@@ -379,7 +379,7 @@
             "private_settings": {}
         },
         {
-            "prev_ver": 536870913,
+            "prev_ver": 520159234,
             "name": "Fullscreen Overview",
             "uuid": "bd62bb5c-b2c0-4dad-b2e2-7b1941916b04",
             "id": "scene",
@@ -525,7 +525,7 @@
             "private_settings": {}
         },
         {
-            "prev_ver": 536870913,
+            "prev_ver": 520159234,
             "name": "Break",
             "uuid": "c0cdd715-5426-45cb-9b01-e6fe94b403bd",
             "id": "scene",
@@ -536,7 +536,7 @@
                 "items": [
                     {
                         "name": "Afterbreak",
-                        "source_uuid": "3a4713d3-1b0b-4c25-a61f-61c3fe68c781",
+                        "source_uuid": "5b0a836e-038c-42c2-9a4b-3a53abdf2c85",
                         "visible": true,
                         "locked": true,
                         "rot": 0.0,
@@ -575,7 +575,7 @@
                             "y": 1080.0
                         },
                         "bounds_rel": {
-                            "x": 3.555555582046509,
+                            "x": 3.5555555820465088,
                             "y": 2.0
                         },
                         "scale_filter": "disable",
@@ -630,7 +630,7 @@
                             "y": 1080.0
                         },
                         "bounds_rel": {
-                            "x": 3.555555582046509,
+                            "x": 3.5555555820465088,
                             "y": 2.0
                         },
                         "scale_filter": "disable",
@@ -728,7 +728,7 @@
             "private_settings": {}
         },
         {
-            "prev_ver": 536870913,
+            "prev_ver": 520159234,
             "name": "Fullscreen Slides",
             "uuid": "53391888-260a-4ced-b44b-ce3f063cddf8",
             "id": "scene",
@@ -931,7 +931,7 @@
             "private_settings": {}
         },
         {
-            "prev_ver": 536870913,
+            "prev_ver": 520159234,
             "name": "[svc] Audio",
             "uuid": "2a96713d-7682-42d6-a25c-536f96db79c2",
             "id": "scene",
@@ -1020,13 +1020,13 @@
             "private_settings": {}
         },
         {
-            "prev_ver": 536870913,
+            "prev_ver": 520159234,
             "name": "[svc] Project me",
             "uuid": "3b2d48b1-b017-4308-9105-65b0c36cee8d",
             "id": "scene",
             "versioned_id": "scene",
             "settings": {
-                "id_counter": 19,
+                "id_counter": 11,
                 "custom_size": false,
                 "items": [
                     {
@@ -1055,15 +1055,15 @@
                         },
                         "pos_rel": {
                             "x": -1.6685185432434082,
-                            "y": -0.8870370388031006
+                            "y": -0.88703703880310059
                         },
                         "scale": {
-                            "x": 0.7604166865348816,
-                            "y": 0.760185182094574
+                            "x": 0.76041668653488159,
+                            "y": 0.76018518209457397
                         },
                         "scale_rel": {
-                            "x": 0.7604166865348816,
-                            "y": 0.760185182094574
+                            "x": 0.76041668653488159,
+                            "y": 0.76018518209457397
                         },
                         "bounds": {
                             "x": 0.0,
@@ -1125,7 +1125,7 @@
                             "y": 1080.0
                         },
                         "bounds_rel": {
-                            "x": 3.555555582046509,
+                            "x": 3.5555555820465088,
                             "y": 2.0
                         },
                         "scale_filter": "disable",
@@ -1143,7 +1143,7 @@
                         "name": "Vader",
                         "source_uuid": "7386f186-9ac0-44db-a5b7-8948820053da",
                         "visible": false,
-                        "locked": true,
+                        "locked": false,
                         "rot": 0.0,
                         "scale_ref": {
                             "x": 1920.0,
@@ -1196,9 +1196,9 @@
                     },
                     {
                         "name": "Ads + Intermezzo",
-                        "source_uuid": "0df9c6ad-3f32-484d-aff2-a5fde877af55",
+                        "source_uuid": "7dfdc51b-7ec3-4cd6-a91c-3adb30f03938",
                         "visible": false,
-                        "locked": true,
+                        "locked": false,
                         "rot": 0.0,
                         "scale_ref": {
                             "x": 1920.0,
@@ -1345,7 +1345,7 @@
                             "y": 1080.0
                         },
                         "bounds_rel": {
-                            "x": 3.555555582046509,
+                            "x": 3.5555555820465088,
                             "y": 2.0
                         },
                         "scale_filter": "disable",
@@ -1394,7 +1394,7 @@
             "private_settings": {}
         },
         {
-            "prev_ver": 536870913,
+            "prev_ver": 520159234,
             "name": "[svc][input] Slides",
             "uuid": "244415db-dd7b-43a4-b18a-4f3c8f743032",
             "id": "scene",
@@ -1483,7 +1483,7 @@
             "private_settings": {}
         },
         {
-            "prev_ver": 536870913,
+            "prev_ver": 520159234,
             "name": "[svc][input] Closeup",
             "uuid": "c26cf447-f1e8-40e3-ae11-a7abdfdea66c",
             "id": "scene",
@@ -1572,7 +1572,7 @@
             "private_settings": {}
         },
         {
-            "prev_ver": 536870913,
+            "prev_ver": 520159234,
             "name": "[svc][input] Audience",
             "uuid": "30646db2-212b-4b5e-832c-0af46bf72292",
             "id": "scene",
@@ -1661,7 +1661,7 @@
             "private_settings": {}
         },
         {
-            "prev_ver": 536870913,
+            "prev_ver": 520159234,
             "name": "[svc][input] Overview",
             "uuid": "a09c0689-783d-4fcb-81e5-cdeddffb8315",
             "id": "scene",
@@ -1750,7 +1750,7 @@
             "private_settings": {}
         },
         {
-            "prev_ver": 536870913,
+            "prev_ver": 520159234,
             "name": "[svc] Audio slides",
             "uuid": "fd8213e8-1fc9-4768-a82e-1685a857ebf2",
             "id": "scene",
@@ -1839,7 +1839,7 @@
             "private_settings": {}
         },
         {
-            "prev_ver": 536870913,
+            "prev_ver": 520159234,
             "name": "Slides audio capture",
             "uuid": "4a2014eb-ba02-4707-bd00-28ef80c3ce13",
             "id": "jack_output_capture",
@@ -1868,7 +1868,7 @@
             "private_settings": {}
         },
         {
-            "prev_ver": 536870913,
+            "prev_ver": 520159234,
             "name": "Stream mix audio capture",
             "uuid": "4501c27c-95fd-48a3-81fd-c7bb3108a246",
             "id": "jack_output_capture",
@@ -1897,7 +1897,7 @@
             "private_settings": {}
         },
         {
-            "prev_ver": 536870913,
+            "prev_ver": 520159234,
             "name": "[svc][media] Break",
             "uuid": "1078c379-fda0-4dbe-8691-2065b54eda5a",
             "id": "scene",
@@ -1986,7 +1986,7 @@
             "private_settings": {}
         },
         {
-            "prev_ver": 536870913,
+            "prev_ver": 520159234,
             "name": "Intermezzo",
             "uuid": "3a7b54ce-58ca-498c-9ad2-d9940d9c2ee4",
             "id": "scene",
@@ -2075,7 +2075,7 @@
             "private_settings": {}
         },
         {
-            "prev_ver": 536870913,
+            "prev_ver": 520159234,
             "name": "[svc][media] Intermezzo",
             "uuid": "82a6f08a-6b24-4b4a-9fb6-ca15bcd4710d",
             "id": "scene",
@@ -2125,7 +2125,7 @@
                             "y": 1080.0
                         },
                         "bounds_rel": {
-                            "x": 3.555555582046509,
+                            "x": 3.5555555820465088,
                             "y": 2.0
                         },
                         "scale_filter": "disable",
@@ -2221,7 +2221,7 @@
             "private_settings": {}
         },
         {
-            "prev_ver": 536870913,
+            "prev_ver": 520159234,
             "name": "slides capture",
             "uuid": "377f184f-3bbe-499a-b4be-f313d0d331b9",
             "id": "v4l2_input",
@@ -2252,7 +2252,7 @@
             "private_settings": {}
         },
         {
-            "prev_ver": 536870913,
+            "prev_ver": 520159234,
             "name": "closeup capture",
             "uuid": "7c3e5bdf-abe9-404c-a43c-a4a12a6c99a8",
             "id": "v4l2_input",
@@ -2283,7 +2283,7 @@
             "private_settings": {}
         },
         {
-            "prev_ver": 536870913,
+            "prev_ver": 520159234,
             "name": "overview capture",
             "uuid": "e92a2a62-c88f-48c3-a6a5-1a6e26303bd5",
             "id": "v4l2_input",
@@ -2314,7 +2314,7 @@
             "private_settings": {}
         },
         {
-            "prev_ver": 536870913,
+            "prev_ver": 520159234,
             "name": "Herald Overview",
             "uuid": "0b8311f3-b613-47a6-9483-f5d17930d084",
             "id": "scene",
@@ -2460,7 +2460,7 @@
             "private_settings": {}
         },
         {
-            "prev_ver": 536870913,
+            "prev_ver": 520159234,
             "name": "Herald Closeup",
             "uuid": "4f693f7c-c2c0-457c-8937-c2e5f879a4f4",
             "id": "scene",
@@ -2606,7 +2606,7 @@
             "private_settings": {}
         },
         {
-            "prev_ver": 536870913,
+            "prev_ver": 520159234,
             "name": "Slides + Closeup",
             "uuid": "b1908bb1-d821-477a-85e0-23b662a69e25",
             "id": "scene",
@@ -2696,15 +2696,15 @@
                         },
                         "pos_rel": {
                             "x": -1.7185184955596924,
-                            "y": -0.9574074149131775
+                            "y": -0.95740741491317749
                         },
                         "scale": {
-                            "x": 0.8427083492279053,
-                            "y": 0.8425925970077515
+                            "x": 0.84270834922790527,
+                            "y": 0.84259259700775146
                         },
                         "scale_rel": {
-                            "x": 0.8427083492279053,
-                            "y": 0.8425925970077515
+                            "x": 0.84270834922790527,
+                            "y": 0.84259259700775146
                         },
                         "bounds": {
                             "x": 0.0,
@@ -2750,15 +2750,15 @@
                             "y": 623.0
                         },
                         "pos_rel": {
-                            "x": 0.8277778029441833,
-                            "y": 0.1537036895751953
+                            "x": 0.82777780294418335,
+                            "y": 0.15370368957519531
                         },
                         "scale": {
-                            "x": 0.3010416626930237,
+                            "x": 0.30104166269302368,
                             "y": 0.30092594027519226
                         },
                         "scale_rel": {
-                            "x": 0.3010416626930237,
+                            "x": 0.30104166269302368,
                             "y": 0.30092594027519226
                         },
                         "bounds": {
@@ -2876,7 +2876,7 @@
                             "y": 1080.0
                         },
                         "bounds_rel": {
-                            "x": 3.555555582046509,
+                            "x": 3.5555555820465088,
                             "y": 2.0
                         },
                         "scale_filter": "disable",
@@ -2923,7 +2923,7 @@
             "private_settings": {}
         },
         {
-            "prev_ver": 536870913,
+            "prev_ver": 520159234,
             "name": "Lectern View",
             "uuid": "ced207d4-8b01-4543-8ce4-1ce864ff3509",
             "id": "scene",
@@ -3072,11 +3072,11 @@
                         },
                         "scale": {
                             "x": 0.71875,
-                            "y": 0.7185184955596924
+                            "y": 0.71851849555969238
                         },
                         "scale_rel": {
                             "x": 0.71875,
-                            "y": 0.7185184955596924
+                            "y": 0.71851849555969238
                         },
                         "bounds": {
                             "x": 0.0,
@@ -3122,7 +3122,7 @@
                             "y": 769.0
                         },
                         "pos_rel": {
-                            "x": -1.790740728378296,
+                            "x": -1.7907407283782959,
                             "y": 0.42407405376434326
                         },
                         "scale": {
@@ -3139,7 +3139,7 @@
                         },
                         "bounds_rel": {
                             "x": 2.5703704357147217,
-                            "y": 0.5833333134651184
+                            "y": 0.58333331346511841
                         },
                         "scale_filter": "disable",
                         "blend_method": "default",
@@ -3183,7 +3183,7 @@
             "private_settings": {}
         },
         {
-            "prev_ver": 536870913,
+            "prev_ver": 520159234,
             "name": "Audience + Closeup",
             "uuid": "5565f427-dbf1-4569-87b4-a4e393da7854",
             "id": "scene",
@@ -3273,15 +3273,15 @@
                         },
                         "pos_rel": {
                             "x": -1.7148147821426392,
-                            "y": -0.9444444179534912
+                            "y": -0.94444441795349121
                         },
                         "scale": {
-                            "x": 0.8416666388511658,
-                            "y": 0.8416666388511658
+                            "x": 0.84166663885116577,
+                            "y": 0.84166663885116577
                         },
                         "scale_rel": {
-                            "x": 0.8416666388511658,
-                            "y": 0.8416666388511658
+                            "x": 0.84166663885116577,
+                            "y": 0.84166663885116577
                         },
                         "bounds": {
                             "x": 0.0,
@@ -3327,15 +3327,15 @@
                             "y": 625.0
                         },
                         "pos_rel": {
-                            "x": 0.8296296000480652,
+                            "x": 0.82962960004806519,
                             "y": 0.15740740299224854
                         },
                         "scale": {
-                            "x": 0.3010416626930237,
+                            "x": 0.30104166269302368,
                             "y": 0.30092594027519226
                         },
                         "scale_rel": {
-                            "x": 0.3010416626930237,
+                            "x": 0.30104166269302368,
                             "y": 0.30092594027519226
                         },
                         "bounds": {
@@ -3398,7 +3398,7 @@
                             "y": 1080.0
                         },
                         "bounds_rel": {
-                            "x": 3.555555582046509,
+                            "x": 3.5555555820465088,
                             "y": 2.0
                         },
                         "scale_filter": "disable",
@@ -3443,7 +3443,7 @@
             "private_settings": {}
         },
         {
-            "prev_ver": 536870913,
+            "prev_ver": 520159234,
             "name": "Cows",
             "uuid": "f2da5b13-c83c-4062-a02b-524db003747d",
             "id": "scene",
@@ -3493,7 +3493,7 @@
                             "y": 1080.0
                         },
                         "bounds_rel": {
-                            "x": 3.555555582046509,
+                            "x": 3.5555555820465088,
                             "y": 2.0
                         },
                         "scale_filter": "disable",
@@ -3589,7 +3589,7 @@
             "private_settings": {}
         },
         {
-            "prev_ver": 536870913,
+            "prev_ver": 520159234,
             "name": "Vader",
             "uuid": "7386f186-9ac0-44db-a5b7-8948820053da",
             "id": "scene",
@@ -3639,7 +3639,7 @@
                             "y": 1080.0
                         },
                         "bounds_rel": {
-                            "x": 3.555555582046509,
+                            "x": 3.5555555820465088,
                             "y": 2.0
                         },
                         "scale_filter": "disable",
@@ -3678,7 +3678,7 @@
             "private_settings": {}
         },
         {
-            "prev_ver": 536870913,
+            "prev_ver": 520159234,
             "name": "Dual Frame Image",
             "uuid": "3e995e87-5adf-4f1c-a991-eae1ad2b199c",
             "id": "image_source",
@@ -3706,7 +3706,7 @@
             "private_settings": {}
         },
         {
-            "prev_ver": 536870913,
+            "prev_ver": 520159234,
             "name": "Closeup + Slides",
             "uuid": "c539f041-61be-4dd0-873b-1543e59b238f",
             "id": "scene",
@@ -3796,15 +3796,15 @@
                         },
                         "pos_rel": {
                             "x": -1.7166666984558105,
-                            "y": -0.9574074149131775
+                            "y": -0.95740741491317749
                         },
                         "scale": {
-                            "x": 0.840624988079071,
-                            "y": 0.8407407402992249
+                            "x": 0.84062498807907104,
+                            "y": 0.84074074029922485
                         },
                         "scale_rel": {
-                            "x": 0.840624988079071,
-                            "y": 0.8407407402992249
+                            "x": 0.84062498807907104,
+                            "y": 0.84074074029922485
                         },
                         "bounds": {
                             "x": 0.0,
@@ -3850,15 +3850,15 @@
                             "y": 625.0
                         },
                         "pos_rel": {
-                            "x": 0.8240740895271301,
+                            "x": 0.82407408952713013,
                             "y": 0.15740740299224854
                         },
                         "scale": {
-                            "x": 0.3005208373069763,
+                            "x": 0.30052083730697632,
                             "y": 0.30092594027519226
                         },
                         "scale_rel": {
-                            "x": 0.3005208373069763,
+                            "x": 0.30052083730697632,
                             "y": 0.30092594027519226
                         },
                         "bounds": {
@@ -3921,7 +3921,7 @@
                             "y": 1080.0
                         },
                         "bounds_rel": {
-                            "x": 3.555555582046509,
+                            "x": 3.5555555820465088,
                             "y": 2.0
                         },
                         "scale_filter": "disable",
@@ -3976,7 +3976,7 @@
                             "y": 1080.0
                         },
                         "bounds_rel": {
-                            "x": 3.555555582046509,
+                            "x": 3.5555555820465088,
                             "y": 2.0
                         },
                         "scale_filter": "disable",
@@ -4023,7 +4023,7 @@
             "private_settings": {}
         },
         {
-            "prev_ver": 536870913,
+            "prev_ver": 520159234,
             "name": "Banner Image",
             "uuid": "3ea9ceb7-170d-4ee4-bae1-9066a04d3ba8",
             "id": "image_source",
@@ -4049,7 +4049,7 @@
             "private_settings": {}
         },
         {
-            "prev_ver": 536870913,
+            "prev_ver": 520159234,
             "name": "Audience + Slides",
             "uuid": "2e7180bd-5a43-4a5e-9c94-34433e67ce41",
             "id": "scene",
@@ -4139,15 +4139,15 @@
                         },
                         "pos_rel": {
                             "x": -1.7222222089767456,
-                            "y": -0.9518518447875977
+                            "y": -0.95185184478759766
                         },
                         "scale": {
                             "x": 0.84375,
-                            "y": 0.8435184955596924
+                            "y": 0.84351849555969238
                         },
                         "scale_rel": {
                             "x": 0.84375,
-                            "y": 0.8435184955596924
+                            "y": 0.84351849555969238
                         },
                         "bounds": {
                             "x": 0.0,
@@ -4193,16 +4193,16 @@
                             "y": 624.0
                         },
                         "pos_rel": {
-                            "x": 0.8277778029441833,
+                            "x": 0.82777780294418335,
                             "y": 0.1555556058883667
                         },
                         "scale": {
                             "x": 0.3020833432674408,
-                            "y": 0.3018518388271332
+                            "y": 0.30185183882713318
                         },
                         "scale_rel": {
                             "x": 0.3020833432674408,
-                            "y": 0.3018518388271332
+                            "y": 0.30185183882713318
                         },
                         "bounds": {
                             "x": 0.0,
@@ -4264,7 +4264,7 @@
                             "y": 1080.0
                         },
                         "bounds_rel": {
-                            "x": 3.555555582046509,
+                            "x": 3.5555555820465088,
                             "y": 2.0
                         },
                         "scale_filter": "disable",
@@ -4309,7 +4309,7 @@
             "private_settings": {}
         },
         {
-            "prev_ver": 536870913,
+            "prev_ver": 520159234,
             "name": "Cows Video",
             "uuid": "5f687255-1bec-4b7f-aa8b-0620add8667d",
             "id": "ffmpeg_source",
@@ -4347,7 +4347,7 @@
             "private_settings": {}
         },
         {
-            "prev_ver": 536870913,
+            "prev_ver": 520159234,
             "name": "Break Video",
             "uuid": "8192383f-e036-4a6a-bce1-31bb9ee2dcf3",
             "id": "ffmpeg_source",
@@ -4386,7 +4386,7 @@
             "private_settings": {}
         },
         {
-            "prev_ver": 536870913,
+            "prev_ver": 520159234,
             "name": "Intermezzo Image",
             "uuid": "32ab97b9-23df-426c-bbd0-2e8a8811b1e4",
             "id": "image_source",
@@ -4412,7 +4412,7 @@
             "private_settings": {}
         },
         {
-            "prev_ver": 536870913,
+            "prev_ver": 520159234,
             "name": "[svc][media] Vader",
             "uuid": "757a072f-5f8d-479c-8839-f4de9e03d001",
             "id": "scene",
@@ -4517,7 +4517,7 @@
                             "y": 1080.0
                         },
                         "bounds_rel": {
-                            "x": 3.555555582046509,
+                            "x": 3.5555555820465088,
                             "y": 2.0
                         },
                         "scale_filter": "disable",
@@ -4615,7 +4615,7 @@
             "private_settings": {}
         },
         {
-            "prev_ver": 536870913,
+            "prev_ver": 520159234,
             "name": "Thank You Video",
             "uuid": "80de9bb2-b02c-472b-8ada-5f006b860769",
             "id": "ffmpeg_source",
@@ -4652,7 +4652,7 @@
             "private_settings": {}
         },
         {
-            "prev_ver": 536870913,
+            "prev_ver": 520159234,
             "name": "[svc][media]Cows",
             "uuid": "09c92c17-49d4-4b48-bf53-d5172180d1b2",
             "id": "scene",
@@ -4702,7 +4702,7 @@
                             "y": 1080.0
                         },
                         "bounds_rel": {
-                            "x": 3.555555582046509,
+                            "x": 3.5555555820465088,
                             "y": 2.0
                         },
                         "scale_filter": "disable",
@@ -4741,7 +4741,7 @@
             "private_settings": {}
         },
         {
-            "prev_ver": 536870913,
+            "prev_ver": 520159234,
             "name": "Intermezzo Begin Video",
             "uuid": "e5d0b057-5d70-46d3-af81-97d24ca3e449",
             "id": "ffmpeg_source",
@@ -4778,7 +4778,7 @@
             "private_settings": {}
         },
         {
-            "prev_ver": 536870913,
+            "prev_ver": 520159234,
             "name": "Frame Image",
             "uuid": "bb1a9502-3ef0-4328-bf91-259128e768f5",
             "id": "image_source",
@@ -4804,7 +4804,7 @@
             "private_settings": {}
         },
         {
-            "prev_ver": 536870913,
+            "prev_ver": 520159234,
             "name": "Imperial March Audio",
             "uuid": "83d8deff-69f4-41a0-8ccb-e21c103f273a",
             "id": "ffmpeg_source",
@@ -4841,7 +4841,7 @@
             "private_settings": {}
         },
         {
-            "prev_ver": 536870913,
+            "prev_ver": 520159234,
             "name": "audience capture",
             "uuid": "86936f3c-436d-486d-8f61-7875b05dcd68",
             "id": "v4l2_input",
@@ -4872,52 +4872,13 @@
             "private_settings": {}
         },
         {
-            "prev_ver": 536870913,
-            "name": "Afterbreak",
-            "uuid": "3a4713d3-1b0b-4c25-a61f-61c3fe68c781",
-            "id": "browser_source",
-            "versioned_id": "browser_source",
-            "settings": {
-                "is_local_file": false,
-                "url": "https://openfest.org/interlude/?room=A&wait-on-startup=150000&client=obs",
-                "width": 1920,
-                "height": 1080,
-                "fps_custom": false,
-                "shutdown": false,
-                "restart_when_active": true,
-                "css": ""
-            },
-            "mixers": 255,
-            "sync": 0,
-            "flags": 0,
-            "volume": 1.0,
-            "balance": 0.5,
-            "enabled": true,
-            "muted": false,
-            "push-to-mute": false,
-            "push-to-mute-delay": 0,
-            "push-to-talk": false,
-            "push-to-talk-delay": 0,
-            "hotkeys": {
-                "libobs.mute": [],
-                "libobs.unmute": [],
-                "libobs.push-to-mute": [],
-                "libobs.push-to-talk": [],
-                "ObsBrowser.Refresh": []
-            },
-            "deinterlace_mode": 0,
-            "deinterlace_field_order": 0,
-            "monitoring_type": 0,
-            "private_settings": {}
-        },
-        {
-            "prev_ver": 536870913,
+            "prev_ver": 520159234,
             "name": "Ads + Intermezzo",
-            "uuid": "0df9c6ad-3f32-484d-aff2-a5fde877af55",
+            "uuid": "7dfdc51b-7ec3-4cd6-a91c-3adb30f03938",
             "id": "scene",
             "versioned_id": "scene",
             "settings": {
-                "id_counter": 4,
+                "id_counter": 3,
                 "custom_size": false,
                 "items": [
                     {
@@ -4938,7 +4899,7 @@
                         "crop_top": 0,
                         "crop_right": 0,
                         "crop_bottom": 0,
-                        "id": 4,
+                        "id": 3,
                         "group_item_backup": false,
                         "pos": {
                             "x": 0.0,
@@ -4961,7 +4922,7 @@
                             "y": 1080.0
                         },
                         "bounds_rel": {
-                            "x": 3.555555582046509,
+                            "x": 3.5555555820465088,
                             "y": 2.0
                         },
                         "scale_filter": "disable",
@@ -5016,7 +4977,7 @@
                             "y": 1080.0
                         },
                         "bounds_rel": {
-                            "x": 3.555555582046509,
+                            "x": 3.5555555820465088,
                             "y": 2.0
                         },
                         "scale_filter": "disable",
@@ -5100,8 +5061,8 @@
             "push-to-talk-delay": 0,
             "hotkeys": {
                 "OBSBasic.SelectScene": [],
-                "libobs.show_scene_item.4": [],
-                "libobs.hide_scene_item.4": [],
+                "libobs.show_scene_item.3": [],
+                "libobs.hide_scene_item.3": [],
                 "libobs.show_scene_item.1": [],
                 "libobs.hide_scene_item.1": [],
                 "libobs.show_scene_item.2": [],
@@ -5111,6 +5072,42 @@
             "deinterlace_field_order": 0,
             "monitoring_type": 0,
             "canvas_uuid": "6c69626f-6273-4c00-9d88-c5136d61696e",
+            "private_settings": {}
+        },
+        {
+            "prev_ver": 520159234,
+            "name": "Afterbreak",
+            "uuid": "5b0a836e-038c-42c2-9a4b-3a53abdf2c85",
+            "id": "browser_source",
+            "versioned_id": "browser_source",
+            "settings": {
+                "url": "https://openfest.org/interlude/?room=A&wait-on-startup=201500&client=obs",
+                "width": 1920,
+                "height": 1080,
+                "restart_when_active": true,
+                "css": ""
+            },
+            "mixers": 255,
+            "sync": 0,
+            "flags": 0,
+            "volume": 1.0,
+            "balance": 0.5,
+            "enabled": true,
+            "muted": false,
+            "push-to-mute": false,
+            "push-to-mute-delay": 0,
+            "push-to-talk": false,
+            "push-to-talk-delay": 0,
+            "hotkeys": {
+                "libobs.mute": [],
+                "libobs.unmute": [],
+                "libobs.push-to-mute": [],
+                "libobs.push-to-talk": [],
+                "ObsBrowser.Refresh": []
+            },
+            "deinterlace_mode": 0,
+            "deinterlace_field_order": 0,
+            "monitoring_type": 0,
             "private_settings": {}
         }
     ],
@@ -5139,18 +5136,29 @@
         }
     ],
     "transitions": [],
-    "saved_projectors": [],
+    "saved_projectors": [
+        {
+            "name": "[svc] Project me",
+            "monitor": -1,
+            "type": 1,
+            "geometry": "AdnQywADAAD//+x4AAAAAP//8/cAAASv///seAAAAAD///P3AAAErwAAAAIABAAAB4D//+x4AAAAAP//8/cAAASv",
+            "alwaysOnTopOverridden": false
+        },
+        {
+            "monitor": -1,
+            "type": 4,
+            "geometry": "AdnQywADAAAAABOIAAAAAAAAGwcAAASvAAATiAAAAAAAABVnAAABDQAAAAAABAAAB4AAABOIAAAAAAAAGwcAAASv",
+            "alwaysOnTopOverridden": false
+        }
+    ],
     "canvases": [],
     "current_transition": "Cut",
     "transition_duration": 300,
     "preview_locked": false,
     "scaling_enabled": false,
-    "scaling_level": -12,
+    "scaling_level": -13,
     "scaling_off_x": 0.0,
     "scaling_off_y": 0.0,
-    "virtual-camera": {
-        "type2": 3
-    },
     "modules": {
         "scripts-tool": [],
         "output-timer": {
@@ -5188,7 +5196,7 @@
                     "useCustomConditionCheckInterval": false,
                     "customConditionCheckInterval": {
                         "value": {
-                            "value": 0.3,
+                            "value": 0.29999999999999999,
                             "type": 0
                         },
                         "unit": 0,
@@ -5210,15 +5218,15 @@
                     },
                     "macroActionConditionSplitterPosition": [
                         {
-                            "pos": 255
+                            "pos": 371
                         },
                         {
-                            "pos": 253
+                            "pos": 370
                         }
                     ],
                     "macroElseActionSplitterPosition": [
                         {
-                            "pos": 221
+                            "pos": 338
                         },
                         {
                             "pos": 0
@@ -5328,7 +5336,7 @@
                     "useCustomConditionCheckInterval": false,
                     "customConditionCheckInterval": {
                         "value": {
-                            "value": 0.3,
+                            "value": 0.29999999999999999,
                             "type": 0
                         },
                         "unit": 0,
@@ -5345,20 +5353,20 @@
                         "unpauseButtonText": "Unpause",
                         "conditionsTrueStatusText": "Conditions are true.",
                         "conditionsFalseStatusText": "Conditions are false.",
-                        "dockId": "advss-macro-dock-1b7e4327-ed0d-4e54-91ae-ef0968c76617",
+                        "dockId": "advss-macro-dock-9ee72f25-b674-40b1-b4f3-28f62bcd5f98",
                         "version": 1
                     },
                     "macroActionConditionSplitterPosition": [
                         {
-                            "pos": 168
+                            "pos": 371
                         },
                         {
-                            "pos": 166
+                            "pos": 370
                         }
                     ],
                     "macroElseActionSplitterPosition": [
                         {
-                            "pos": 134
+                            "pos": 338
                         },
                         {
                             "pos": 0
@@ -5468,7 +5476,7 @@
                     "useCustomConditionCheckInterval": false,
                     "customConditionCheckInterval": {
                         "value": {
-                            "value": 0.3,
+                            "value": 0.29999999999999999,
                             "type": 0
                         },
                         "unit": 0,
@@ -5490,15 +5498,15 @@
                     },
                     "macroActionConditionSplitterPosition": [
                         {
-                            "pos": 113
+                            "pos": 371
                         },
                         {
-                            "pos": 221
+                            "pos": 370
                         }
                     ],
                     "macroElseActionSplitterPosition": [
                         {
-                            "pos": 189
+                            "pos": 338
                         },
                         {
                             "pos": 0
@@ -5684,7 +5692,7 @@
                     "useCustomConditionCheckInterval": false,
                     "customConditionCheckInterval": {
                         "value": {
-                            "value": 0.3,
+                            "value": 0.29999999999999999,
                             "type": 0
                         },
                         "unit": 0,
@@ -5701,20 +5709,20 @@
                         "unpauseButtonText": "Unpause",
                         "conditionsTrueStatusText": "Conditions are true.",
                         "conditionsFalseStatusText": "Conditions are false.",
-                        "dockId": "advss-macro-dock-bbb3452b-c0bc-4dc3-a03e-2eef60fd9ac0",
+                        "dockId": "advss-macro-dock-2a9e84ab-2793-4ea0-bf28-06aba815fc2c",
                         "version": 1
                     },
                     "macroActionConditionSplitterPosition": [
                         {
-                            "pos": 224
+                            "pos": 371
                         },
                         {
-                            "pos": 110
+                            "pos": 370
                         }
                     ],
                     "macroElseActionSplitterPosition": [
                         {
-                            "pos": 78
+                            "pos": 338
                         },
                         {
                             "pos": 0
@@ -5824,7 +5832,7 @@
                     "useCustomConditionCheckInterval": false,
                     "customConditionCheckInterval": {
                         "value": {
-                            "value": 0.3,
+                            "value": 0.29999999999999999,
                             "type": 0
                         },
                         "unit": 0,
@@ -5846,15 +5854,15 @@
                     },
                     "macroActionConditionSplitterPosition": [
                         {
-                            "pos": 168
+                            "pos": 371
                         },
                         {
-                            "pos": 166
+                            "pos": 370
                         }
                     ],
                     "macroElseActionSplitterPosition": [
                         {
-                            "pos": 134
+                            "pos": 338
                         },
                         {
                             "pos": 0
@@ -6127,34 +6135,30 @@
                     "twitchConnectionTab": 16
                 },
                 {
-                    "mqttConnectionTab": 17
+                    "websocketConnectionTab": 17
                 },
                 {
-                    "websocketConnectionTab": 18
+                    "variableTab": 18
                 },
                 {
-                    "variableTab": 19
-                },
-                {
-                    "actionQueueTab": 20
+                    "actionQueueTab": 19
                 }
             ],
             "saveWindowGeo": false,
-            "windowPosX": 591,
-            "windowPosY": 93,
-            "windowWidth": 1000,
-            "windowHeight": 600,
+            "windowPosX": 440,
+            "windowPosY": 228,
+            "windowWidth": 1820,
+            "windowHeight": 958,
             "macroListMacroEditSplitterPosition": [
                 {
-                    "pos": 142
+                    "pos": 391
                 },
                 {
-                    "pos": 811
+                    "pos": 1403
                 }
             ],
-            "version": "bf7fe71ae39a9a0a782a224dedda14513b97dfc2",
+            "version": "GITDIR-NOTFOUND",
             "twitchConnections": [],
-            "mqttConnections": [],
             "websocketConnections": [],
             "actionQueues": []
         }
