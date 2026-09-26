@@ -159,7 +159,7 @@ in
         grim
         playerctl
         pulseaudio # pactl comes from pulseaudio
-        rofi-wayland
+        rofi
         swaylock
         swayidle
         slurp
