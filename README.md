@@ -14,10 +14,6 @@ Each template is instantiated into one or more hosts.
     - `hala`: development host for running locally
 - `obs-station-nvidia`: for running an OBS workstation on machines with NVIDIA gpus
     - `zver`: an nvidia-based machine currently located in the protopit office
-- `fosdem-box`: for headless mixing on [fosdem boxes](https://github.com/fosdem/video)
-    - `fosdem-box-101`: one of the testing boxes
-    - `fosdem-box-102`: one of the testing boxes
-    - `fosdem-box-103`: one of the testing boxes
 
 ## Requirements
 
