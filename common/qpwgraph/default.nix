@@ -1,11 +1,22 @@
-{ config, pkgs, lib, ... }:
+{
+  config,
+  pkgs,
+  lib,
+  ...
+}:
 let
   configdir = pkgs.stdenvNoCC.mkDerivation rec {
     name = "qpwgraph-config";
     meta.description = "qpwgraph configuration and patchbays";
     src = ./data;
-    buildInputs = [ pkgs.coreutils pkgs.rsync ];
-    phases = [ "unpackPhase" "installPhase" ];
+    buildInputs = [
+      pkgs.coreutils
+      pkgs.rsync
+    ];
+    phases = [
+      "unpackPhase"
+      "installPhase"
+    ];
     installPhase = ''
       mkdir -p $out
       rsync -rva ./ $out/data/
@@ -14,7 +25,10 @@ let
   };
   qpwgraph-reset = pkgs.writeShellApplication {
     name = "qpwgraph-reset";
-    runtimeInputs = [ pkgs.rsync pkgs.procps ];
+    runtimeInputs = [
+      pkgs.rsync
+      pkgs.procps
+    ];
     text = ''
       set -euo pipefail
 
@@ -44,17 +58,20 @@ let
         ${configdir}/data/patchbays/${config.mixos.qpwgraph.patchbay}.qpwgraph "$HOME/.local/share/patchbays/main.qpwgraph"
     '';
   };
-in {
+in
+{
   imports = [ ../gui-sway ];
 
   options.mixos.qpwgraph.patchbay = lib.mkOption {
     type = lib.types.str;
-    description =
-      "Name of qpwgraph patchbay that will be used as main patchbay and loaded on startup";
+    description = "Name of qpwgraph patchbay that will be used as main patchbay and loaded on startup";
   };
 
   config = {
-    users.users.human.packages = [ pkgs.qpwgraph qpwgraph-reset ];
+    users.users.human.packages = [
+      pkgs.qpwgraph
+      qpwgraph-reset
+    ];
 
     systemd.services.qpwgraph-init = {
       enable = true;
@@ -69,8 +86,7 @@ in {
     };
 
     home-manager.users.human = {
-      wayland.windowManager.sway.config.startup =
-        [{ command = "${pkgs.qpwgraph}/bin/qpwgraph"; }];
+      wayland.windowManager.sway.config.startup = [ { command = "${pkgs.qpwgraph}/bin/qpwgraph"; } ];
     };
   };
 }

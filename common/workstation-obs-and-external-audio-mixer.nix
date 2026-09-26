@@ -1,4 +1,10 @@
-{ inputs, lib, pkgs, ... }: {
+{
+  inputs,
+  lib,
+  pkgs,
+  ...
+}:
+{
   imports = [
     ./base-config.nix
     ./audio-config.nix

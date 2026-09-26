@@ -1,4 +1,10 @@
-{ inputs, lib, pkgs, ... }: {
+{
+  inputs,
+  lib,
+  pkgs,
+  ...
+}:
+{
   imports = [
     ./dev-mapping.nix
 

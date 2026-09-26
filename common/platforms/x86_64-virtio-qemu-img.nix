@@ -1,4 +1,11 @@
-{ config, lib, pkgs, modulesPath, ... }: {
+{
+  config,
+  lib,
+  pkgs,
+  modulesPath,
+  ...
+}:
+{
   # for virtio kernel drivers
   imports = [ "${toString modulesPath}/profiles/qemu-guest.nix" ];
 
@@ -22,12 +29,11 @@
     boot.loader.grub.efiInstallAsRemovable = true;
     boot.loader.timeout = 0;
 
-    system.build.qcow-efi =
-      import "${toString modulesPath}/../lib/make-disk-image.nix" {
-        inherit lib config pkgs;
-        inherit (config.virtualisation) diskSize;
-        format = "qcow2";
-        partitionTableType = "efi";
-      };
+    system.build.qcow-efi = import "${toString modulesPath}/../lib/make-disk-image.nix" {
+      inherit lib config pkgs;
+      inherit (config.virtualisation) diskSize;
+      format = "qcow2";
+      partitionTableType = "efi";
+    };
   };
 }

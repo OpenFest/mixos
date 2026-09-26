@@ -12,36 +12,53 @@
     nixos-hardware.url = "github:NixOS/nixos-hardware";
   };
 
-  outputs = { self, nixpkgs, nixos-hardware, deploy-o-matic, ... }@inputs:
+  outputs =
+    {
+      self,
+      nixpkgs,
+      nixos-hardware,
+      deploy-o-matic,
+      ...
+    }@inputs:
     let
       dom = deploy-o-matic.lib.deployOMatic {
         templatesDir = ./templates;
         overlaysDir = ./overlays;
-        moduleArgs = { inherit inputs; };
+        moduleArgs = {
+          inherit inputs;
+          nixosConfigurations = dom.nixosConfigurations;
+        };
         nixpkgsConfig = (import ./nixpkgs-global-config.nix);
       };
 
       lib = nixpkgs.lib;
-      forAllSystems = lib.genAttrs [ "x86_64-linux" "aarch64-darwin" ];
-    in {
+      forAllSystems = lib.genAttrs [
+        "x86_64-linux"
+        "aarch64-darwin"
+      ];
+    in
+    {
       nixosConfigurations = dom.nixosConfigurations;
       packages = dom.packages;
       deploy = dom.deploy;
-      checks = dom.checks;
       apps = dom.apps;
 
-      devShells = forAllSystems (system:
-        let pkgs = import nixpkgs { inherit system; };
-        in {
+      devShells = forAllSystems (
+        system:
+        let
+          pkgs = import nixpkgs { inherit system; };
+        in
+        {
           default = pkgs.mkShell {
             packages = with pkgs; [
               OVMF.fd
               findutils
               gnumake
-              nixfmt-classic
               rsync
             ];
           };
-        });
+        }
+      );
+      formatter = forAllSystems (system: nixpkgs.legacyPackages.${system}.nixfmt-tree);
     };
 }

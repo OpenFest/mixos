@@ -9,14 +9,24 @@
 
   mixos.devMap = {
     videoCapture.by-path = {
-      "pci-0000:03:00.0-usbv3-0:1:1.0" = { name = "video-slides"; };
-      "pci-0000:03:00.0-usbv3-0:2:1.0" = { name = "video-overview"; };
-      "pci-0000:03:00.0-usbv3-0:3:1.0" = { name = "video-closeup"; };
+      "pci-0000:03:00.0-usbv3-0:1:1.0" = {
+        name = "video-slides";
+      };
+      "pci-0000:03:00.0-usbv3-0:2:1.0" = {
+        name = "video-overview";
+      };
+      "pci-0000:03:00.0-usbv3-0:3:1.0" = {
+        name = "video-closeup";
+      };
     };
 
     audio.by-path = {
-      "pci-0000:03:00.0-usb-0:1:1.2" = { name = "capture-slides"; };
-      "pci-0000:03:00.0-usb-0:2:1.2" = { name = "capture-overview"; };
+      "pci-0000:03:00.0-usb-0:1:1.2" = {
+        name = "capture-slides";
+      };
+      "pci-0000:03:00.0-usb-0:2:1.2" = {
+        name = "capture-overview";
+      };
     };
   };
 }

@@ -4,12 +4,14 @@ self: super: {
     version = "1.8.1";
 
     src = super.fetchurl {
-      url =
-        "https://cdn.mediavalet.com/aunsw/musictribe/VX4UkGFjQ0a1DH2Q8zg3sg/_KJ6tGIG7kGVqPxP-OsnLQ/Original/X-AIR-Edit_LINUX_1.8.1.tar.gz";
+      url = "https://cdn.mediavalet.com/aunsw/musictribe/VX4UkGFjQ0a1DH2Q8zg3sg/_KJ6tGIG7kGVqPxP-OsnLQ/Original/X-AIR-Edit_LINUX_1.8.1.tar.gz";
       sha256 = "sha256-vFy3/iAsGs1IlBSYAX5zTghbPtBfFCUtqVFxfMsFCGY=";
     };
 
-    nativeBuildInputs = with super; [ autoPatchelfHook makeWrapper ];
+    nativeBuildInputs = with super; [
+      autoPatchelfHook
+      makeWrapper
+    ];
 
     buildInputs = with super; [
       stdenv.cc.cc.lib # libstdc++.so.6, libgcc_s.so.1

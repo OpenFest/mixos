@@ -3,7 +3,8 @@ let
   # start from 32, go higher if it causes problems
   # fosdem audio board doesn't like less than 128
   audio_quant = 256;
-in {
+in
+{
   security.rtkit.enable = true;
 
   boot.kernelParams = [ "threadirqs" ];
@@ -22,13 +23,15 @@ in {
         "default.clock.min-quantum" = audio_quant;
         "default.clock.max-quantum" = audio_quant;
       };
-      "context.modules" = [{
-        name = "libpipewire-module-rt";
-        args = {
-          "nice.level" = -11;
-          "rt.prio" = 19;
-        };
-      }];
+      "context.modules" = [
+        {
+          name = "libpipewire-module-rt";
+          args = {
+            "nice.level" = -11;
+            "rt.prio" = 19;
+          };
+        }
+      ];
     };
   };
 

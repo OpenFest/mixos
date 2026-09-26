@@ -6,7 +6,8 @@ let
       --export-filename="$outf" \
       --export-width=$(( 1920 * 4 ))
   '';
-in {
+in
+{
   imports = [ ./asset-downloader.nix ];
   mixos.assets = [
     {
@@ -20,8 +21,7 @@ in {
       name = "intermezzo_begin.mp4";
     }
     {
-      url =
-        "https://nc.openfest.org/shanovideo/Commercial%20Break/Commercials.mov";
+      url = "https://nc.openfest.org/shanovideo/Commercial%20Break/Commercials.mov";
       sha256 = "sha256-/fquvVtR5LX1Yynku/tUJIgWgsnKROf+U4f5O9MM+lQ=";
       name = "break_video.mp4";
     }
@@ -55,8 +55,7 @@ in {
       convert = inkscapify;
     }
     {
-      url =
-        "https://archive.org/download/star-wars-the-imperial-march-darth-vaders-theme/star-wars-the-imperial-march-darth-vaders-theme.mp3";
+      url = "https://archive.org/download/star-wars-the-imperial-march-darth-vaders-theme/star-wars-the-imperial-march-darth-vaders-theme.mp3";
       sha256 = "sha256-CB9iJI1ehQcxm9AX7FcEG6Uckn6t+h20Nj9NZXoV3/w=";
       name = "imperial_march.ogg";
       convert = ffmpegify;

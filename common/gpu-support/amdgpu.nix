@@ -1,7 +1,15 @@
-{ config, lib, pkgs, ... }: {
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
+{
 
   # Enable OpenGL
-  hardware.graphics = { enable = true; };
+  hardware.graphics = {
+    enable = true;
+  };
 
   # enable firmware blobs
   hardware.enableRedistributableFirmware = true;

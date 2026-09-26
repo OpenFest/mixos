@@ -14,12 +14,16 @@ let
     "ecdsa-sha2-nistp521 AAAAE2VjZHNhLXNoYTItbmlzdHA1MjEAAAAIbmlzdHA1MjEAAACFBABG5KQNTQjiVelCYBKv6FmrfvTv1C50JPCkeUgBRxm3RUcX0oDMIRgnIZCSQvVdbrl/XgCsmtbI5Ynj+HdHiKYr9wDsEO9ZeEElHY5ZBbvJfpwMVC0K1fNDeaPrEAmUUp4GZsHo1OowkbvITVdN/jiuoIJFhJKBXGbWuor1oyy8MmCBPQ== albert@einstein"
     "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCitk7il0b3QqHYm2RexaWDcJcPcjGYOpgvR62vmtuZIl54MySl1bc2Cl0mr0nh6URQB4E0jqNndi/e3KYRaKBCO1wxZNUEqDWNtbg+w3yDbKXjaqNTKYBVf7MLfmOuKDy9lmukTMDNs5zAce3E3cUtSkpOKzsAhtNd7fY6rCfXkbiYoDA0ARxvOfAMGTpTcjWWo+Wo5qj5v6iNeJWkgefH/w3ZBWM/xJyoyI/3eabA0rrLP+Llg/Fnx1X3m5j0UaiMdwyGh3MdfvsL8dTCHz+ClipyZ5OlJQmIu6w2q1Av6tbvZFdXgtj6STGMVKvKHb0dPZNRWPi2daFzI1UvPjTF albert@neeinstein"
   ];
-in {
+in
+{
   imports = [ inputs.home-manager.nixosModules.home-manager ];
 
   system.stateVersion = "25.05";
 
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  nix.settings.experimental-features = [
+    "nix-command"
+    "flakes"
+  ];
   nix.settings.require-sigs = false;
 
   boot.kernelModules = [
@@ -28,7 +32,8 @@ in {
 
   boot.kernelParams = [ "mitigations=off" ];
 
-  environment.systemPackages = with pkgs;
+  environment.systemPackages =
+    with pkgs;
     [
       # absolutely essential
       bc
@@ -54,7 +59,8 @@ in {
       usbutils
       lshw
       usbtop
-    ] ++ (if pkgs.system == "x86_64-linux" then [ pcm ] else [ ]);
+    ]
+    ++ (if pkgs.system == "x86_64-linux" then [ pcm ] else [ ]);
 
   time.timeZone = "Europe/Sofia";
 
@@ -63,19 +69,29 @@ in {
   security.sudo = {
     enable = true;
     wheelNeedsPassword = false;
-    extraRules = [{
-      commands = [{
-        command = "ALL";
-        options = [ "NOPASSWD" ];
-      }];
-      groups = [ "wheel" ];
-    }];
+    extraRules = [
+      {
+        commands = [
+          {
+            command = "ALL";
+            options = [ "NOPASSWD" ];
+          }
+        ];
+        groups = [ "wheel" ];
+      }
+    ];
   };
 
   users.users.human = {
     home = "/home/human";
     description = "human";
-    extraGroups = [ "wheel" "video" "audio" "power" "adm" ];
+    extraGroups = [
+      "wheel"
+      "video"
+      "audio"
+      "power"
+      "adm"
+    ];
     isSystemUser = false;
     isNormalUser = true;
     group = "human";
@@ -83,7 +99,9 @@ in {
     password = "asdf";
     shell = pkgs.zsh;
   };
-  users.groups.human = { gid = 1000; };
+  users.groups.human = {
+    gid = 1000;
+  };
 
   home-manager = {
     useGlobalPkgs = true;

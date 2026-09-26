@@ -1,4 +1,9 @@
-{ config, pkgs, lib, ... }:
+{
+  config,
+  pkgs,
+  lib,
+  ...
+}:
 let
   mod = "Mod4";
   term = "alacritty";
@@ -22,10 +27,9 @@ let
     modifier = "${mod}";
 
     terminal = "alacritty";
-    bars = [{ command = "waybar"; }];
+    bars = [ { command = "waybar"; } ];
 
-    startup =
-      [{ command = "${pkgs.wayvnc}/bin/wayvnc '::' &> /tmp/wayvnc.log"; }];
+    startup = [ { command = "${pkgs.wayvnc}/bin/wayvnc '::' &> /tmp/wayvnc.log"; } ];
 
     workspaceLayout = "tabbed";
     defaultWorkspace = "workspace number 1";
@@ -77,18 +81,25 @@ let
 
       # Resize mode
       "${mod}+r" = "mode resize";
-    } // (forEveryMainWorkspaceKV (n: {
+    }
+    // (forEveryMainWorkspaceKV (n: {
       "${mod}+${n}" = "workspace number ${n}";
       "${mod}+Shift+${n}" = "move container to workspace number ${n}";
     }));
 
-    output."*" = { background = "${sway-user-data}/wallpaper.jpg fill"; };
-    output."${config.mixos.videoOutputs.main}" = { pos = "0 0"; };
+    output."*" = {
+      background = "${sway-user-data}/wallpaper.jpg fill";
+    };
+    output."${config.mixos.videoOutputs.main}" = {
+      pos = "0 0";
+    };
     output."${config.mixos.videoOutputs.projector}" = {
       pos = "-5000 0";
       bg = "#ebac54 solid_color";
     };
-    output."${config.mixos.videoOutputs.multiview}" = { pos = "5000 0"; };
+    output."${config.mixos.videoOutputs.multiview}" = {
+      pos = "5000 0";
+    };
 
     workspaceOutputAssign = [
       {
@@ -99,7 +110,8 @@ let
         workspace = "multiview";
         output = config.mixos.videoOutputs.multiview;
       }
-    ] ++ (forEveryMainWorkspace (n: {
+    ]
+    ++ (forEveryMainWorkspace (n: {
       workspace = "${n}";
       output = config.mixos.videoOutputs.main;
     }));
@@ -110,18 +122,20 @@ let
     meta.description = "Extra user files for sway";
     src = ./data;
     buildInputs = [ pkgs.coreutils ];
-    phases = [ "unpackPhase" "installPhase" ];
+    phases = [
+      "unpackPhase"
+      "installPhase"
+    ];
     installPhase = ''
       mkdir -p $out
       cp -vfT wallpaper.jpg $out/wallpaper.jpg
     '';
   };
 
-  forEveryMainWorkspace = f:
-    builtins.map f (builtins.map toString (lib.lists.range 1 9));
-  forEveryMainWorkspaceKV = f:
-    lib.attrsets.mergeAttrsList (forEveryMainWorkspace f);
-in {
+  forEveryMainWorkspace = f: builtins.map f (builtins.map toString (lib.lists.range 1 9));
+  forEveryMainWorkspaceKV = f: lib.attrsets.mergeAttrsList (forEveryMainWorkspace f);
+in
+{
   options.mixos.videoOutputs = lib.mkOption {
     type = lib.types.attrsOf (lib.types.str);
     default = { };
@@ -133,7 +147,10 @@ in {
 
   config = {
     home-manager.users.human = {
-      imports = [ ./waybar.nix ./shanomenu.nix ];
+      imports = [
+        ./waybar.nix
+        ./shanomenu.nix
+      ];
 
       home.packages = with pkgs; [
         alacritty
