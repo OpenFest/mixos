@@ -18,7 +18,17 @@ writeShellApplication {
 
   text =
     let
-      hostnames = lib.concatMapAttrsStringSep "\n" (name: _: "- ${name}") nixosConfigurations;
+      installableConfigurations =
+        let
+          filtered = lib.filterAttrs (
+            _: sys: sys.config.system.build ? destroyFormatMount
+          ) nixosConfigurations;
+        in
+        lib.warnIfNot (filtered != { })
+          "mixos-installer: no installable configurations found, none of the nixosConfigurations define a disko layout"
+          filtered;
+
+      hostnames = lib.concatMapAttrsStringSep "\n" (name: _: "- ${name}") installableConfigurations;
 
       branch = name: sys: ''
         ${name})
@@ -27,7 +37,7 @@ writeShellApplication {
           ;;
       '';
 
-      branches = lib.strings.concatMapAttrsStringSep "\n" branch nixosConfigurations;
+      branches = lib.strings.concatMapAttrsStringSep "\n" branch installableConfigurations;
     in
     ''
       if [[ $# -ne 1 ]]; then
