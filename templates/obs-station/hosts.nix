@@ -2,9 +2,9 @@
   rec {
     hostname = "lamya";
     system = "x86_64-linux";
-    image = {
-      format = "raw";
-    };
+    # image = {
+    #   format = "raw";
+    # };
     moduleArgs = {
       inherit hostname;
       streamInfo = {

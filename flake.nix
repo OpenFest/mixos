@@ -10,6 +10,11 @@
     deploy-o-matic.inputs.nixpkgs.follows = "nixpkgs";
 
     nixos-hardware.url = "github:NixOS/nixos-hardware";
+
+    disko = {
+      url = "github:nix-community/disko";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =
@@ -41,7 +46,6 @@
       nixosConfigurations = dom.nixosConfigurations;
       packages = dom.packages;
       deploy = dom.deploy;
-      apps = dom.apps;
 
       devShells = forAllSystems (
         system:
@@ -59,6 +63,29 @@
           };
         }
       );
+
+      apps =
+        dom.apps
+        // forAllSystems (
+          system:
+          let
+            pkgs = (import nixpkgs { inherit system; });
+            installer-img = dom.packages.x86_64-linux.mixos-installer-image;
+            install = pkgs.writeShellApplication {
+              name = "flash-mixos";
+              runtimeInputs = [ pkgs.caligula ];
+              text = ''
+                exec caligula burn --hash skip --compression none --root always \
+                  ${installer-img}/${dom.nixosConfigurations.mixos-installer.config.image.filePath}
+              '';
+            };
+          in
+          {
+            default.type = "app";
+            default.program = "${install}";
+          }
+        );
+
       formatter = forAllSystems (system: nixpkgs.legacyPackages.${system}.nixfmt-tree);
     };
 }
