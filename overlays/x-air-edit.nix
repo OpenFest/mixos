@@ -22,7 +22,22 @@ self: super: {
       # libdl.so.2, libpthread.so.0, libm.so.6, libc.so.6 are provided by stdenv
     ];
 
-    sourceRoot = ".";
+    # The tarball has no common top-level directory, so it can't use the
+    # default sourceRoot auto-detection. sourceRoot = "." would make the
+    # generic unpackPhase chmod the whole build directory recursively,
+    # which fails if the build sandbox places its own files there. Extract
+    # into a dedicated subdirectory instead; nixpkgs' runPhase cds into
+    # sourceRoot for us once unpackPhase returns, so don't cd here too.
+    unpackPhase = ''
+      runHook preUnpack
+
+      mkdir x-air-edit-src
+      tar xf "$src" -C x-air-edit-src
+
+      runHook postUnpack
+    '';
+
+    sourceRoot = "x-air-edit-src";
 
     installPhase = ''
       runHook preInstall
