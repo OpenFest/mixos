@@ -13,7 +13,8 @@
       };
     };
     deploy = {
-      hostname = "${hostname}.pit.protopit.eu";
+      # hostname = "${hostname}.video.openfest.eu";
+      hostname = "172.31.190.205";
       sshUser = "human";
 
       remoteBuild = false;

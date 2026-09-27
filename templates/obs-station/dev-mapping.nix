@@ -5,8 +5,8 @@
   ];
 
   mixos.videoOutputs = {
-    main = "DP-3";
-    multiview = "DP-4";
+    main = "DP-2";
+    multiview = "HDMI-A-2";
     projector = "HDMI-A-1";
   };
 
