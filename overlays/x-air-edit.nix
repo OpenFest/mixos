@@ -5,7 +5,7 @@ self: super: {
 
     src = super.fetchurl {
       url = "https://cdn-media.empowertribe.com/4240ddc8835149e486922840e9379af0/X-AIR-Edit_LINUX_${version}.tar.gz";
-      sha256 = "sha256-baba/iAsGs1IlBSYAX5zTghbPtBfFCUtqVFxfMsFCGY=";
+      sha256 = "sha256-vFy3/iAsGs1IlBSYAX5zTghbPtBfFCUtqVFxfMsFCGY=";
     };
 
     nativeBuildInputs = with super; [

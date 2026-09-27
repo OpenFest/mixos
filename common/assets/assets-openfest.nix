@@ -32,7 +32,7 @@ in
     }
     {
       url = "https://nc.openfest.org/shanovideo/Frames/Stream%202%20videos.svg";
-      sha256 = "sha256-7v22Vrr+ThuwNAaaO202WXulrL0POzJ7R6s3TBak5Vk=";
+      sha256 = "sha256-apOQKblz5lF9K2eqKQhNCA/locyirvRb4iXz9ogZbcQ=";
       name = "frame_dual.png";
       convert = inkscapify;
     }
