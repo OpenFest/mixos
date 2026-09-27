@@ -5,7 +5,7 @@
   nixosConfigurations ? { },
 }:
 writeShellApplication {
-  name = "install-mixos";
+  name = "mixos-install";
 
   runtimeInputs = with pkgs; [
     coreutils
@@ -59,6 +59,8 @@ writeShellApplication {
         ${branches}
         *)
           echo "unknown hostname: $1"
+          echo "available hostnames:"
+          echo "${hostnames}"
           exit 1
           ;;
       esac

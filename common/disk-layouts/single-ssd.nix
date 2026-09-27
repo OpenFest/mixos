@@ -26,11 +26,19 @@
             };
           };
           root = {
+            size = "64G";
+            content = {
+              type = "filesystem";
+              format = "ext4";
+              mountpoint = "/";
+            };
+          };
+          "of-rec" = {
             size = "100%";
             content = {
-              type = "btrfs";
-              extraArgs = [ "-f" ];
-              mountpoint = "/";
+              type = "filesystem";
+              format = "ext4";
+              extraArgs = [ "-L" "OF-REC" ];
             };
           };
         };

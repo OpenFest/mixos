@@ -1,7 +1,7 @@
 { lib, hostname, ... }: {
   networking = rec {
     hostName = hostname;
-    domain = "video.fosdem.org";
+    domain = "video.openfest.org";
     dhcpcd.enable = true;
     hosts = {
       "::1" = [
