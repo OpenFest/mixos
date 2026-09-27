@@ -4,8 +4,8 @@ self: super: {
     version = "1.8.1";
 
     src = super.fetchurl {
-      url = "https://cdn.mediavalet.com/aunsw/musictribe/VX4UkGFjQ0a1DH2Q8zg3sg/_KJ6tGIG7kGVqPxP-OsnLQ/Original/X-AIR-Edit_LINUX_1.8.1.tar.gz";
-      sha256 = "sha256-vFy3/iAsGs1IlBSYAX5zTghbPtBfFCUtqVFxfMsFCGY=";
+      url = "https://cdn-media.empowertribe.com/4240ddc8835149e486922840e9379af0/X-AIR-Edit_LINUX_${version}.tar.gz";
+      sha256 = "sha256-baba/iAsGs1IlBSYAX5zTghbPtBfFCUtqVFxfMsFCGY=";
     };
 
     nativeBuildInputs = with super; [
