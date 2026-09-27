@@ -38,7 +38,8 @@
             content = {
               type = "filesystem";
               format = "ext4";
-              extraArgs = [ "-L" "OF-REC" ];
+              extraArgs = [ "-L" "OF-REC-LOCAL" ];
+              mountpoint = "/mnt/rec_storage";
             };
           };
         };
