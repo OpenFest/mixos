@@ -1,5 +1,6 @@
 {
   inputs,
+  lib,
   ...
 }:
 {
@@ -41,7 +42,7 @@
     loader.timeout = lib.mkDefault 0;
     initrd.availableKernelModules = [ "uas" ];
     loader.grub = {
-      device = "fixme";
+      device = "nodev";
       efiSupport = true;
     };
   };

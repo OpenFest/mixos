@@ -75,8 +75,9 @@
               name = "flash-mixos";
               runtimeInputs = [ pkgs.caligula ];
               text = ''
+                find ${installer-img}/
                 exec caligula burn --hash skip --compression none --root always \
-                  ${installer-img}/${dom.nixosConfigurations.mixos-installer.config.image.filePath}
+                  ${installer-img}/nixos.img
               '';
             };
           in

@@ -60,7 +60,7 @@ in
       lshw
       usbtop
     ]
-    ++ (if pkgs.system == "x86_64-linux" then [ pcm ] else [ ]);
+    ++ (if pkgs.stdenv.hostPlatform.system == "x86_64-linux" then [ pcm ] else [ ]);
 
   time.timeZone = "Europe/Sofia";
 
