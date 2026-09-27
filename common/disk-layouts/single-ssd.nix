@@ -56,4 +56,8 @@
       efiInstallAsRemovable = true;
     };
   };
+
+  systemd.tmpfiles.rules = [
+    "d /mnt/rec_storage 0755 human human -"
+  ];
 }

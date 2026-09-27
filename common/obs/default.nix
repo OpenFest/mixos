@@ -56,7 +56,10 @@ let
         fi
       fi
 
-      pkill '.obs-wrapped' || true && echo 'killed obs because it was running'
+      if pkill '.obs-wrapped'; then
+        echo 'killed obs because it was running'
+        sleep 3
+      fi
 
       mkdir -p "$HOME/.config"
       if [[ -d "$HOME/.config/obs-studio" ]]; then
