@@ -35,12 +35,11 @@
         in {
           default = pkgs.mkShell {
             packages = with pkgs; [
-              OVMF.fd
               findutils
               gnumake
               nixfmt-classic
               rsync
-            ];
+            ] ++ lib.optional (system == "x86_64-linux") OVMF.fd;
           };
         });
     };
