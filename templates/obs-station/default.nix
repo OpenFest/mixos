@@ -11,7 +11,7 @@
 
     ../../common/gpu-support/amdgpu.nix
     ../../common/networking-dhcp.nix
-#     ../../common/platforms/x86_64-efi-bootdisk.nix
+    #     ../../common/platforms/x86_64-efi-bootdisk.nix
     ../../common/disk-layouts/single-ssd.nix
 
     ../../common/workstation-obs-and-external-audio-mixer.nix
