@@ -79,6 +79,6 @@ writeShellApplication {
       echo "press enter to reboot"
       read -r || exit 1
 
-      reboot
+      systemctl reboot
     '';
 }

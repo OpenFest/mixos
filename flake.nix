@@ -83,7 +83,7 @@
           in
           {
             default.type = "app";
-            default.program = "${install}";
+            default.program = "${install}/bin/flash-mixos";
           }
         );
 
