@@ -42,9 +42,9 @@
     loader.timeout = lib.mkDefault 0;
     initrd.availableKernelModules = [ "uas" ];
     loader.grub = {
-      device = "/dev/sda";
+      device = "nodev";
       efiSupport = true;
-      # efiInstallAsRemovable = true;
+      efiInstallAsRemovable = true;
     };
   };
 }

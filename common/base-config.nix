@@ -111,6 +111,7 @@ in
       home.stateVersion = "25.05";
       home.username = "human";
       home.homeDirectory = "/home/human";
+      home.file.".zshrc".text = "";
     };
   };
 
