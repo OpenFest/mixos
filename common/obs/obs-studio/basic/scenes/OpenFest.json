@@ -762,10 +762,10 @@
                 "libobs.hide_scene_item.7": [],
                 "libobs.show_scene_item.5": [],
                 "libobs.hide_scene_item.5": [],
-                "libobs.show_scene_item.6": [],
-                "libobs.hide_scene_item.6": [],
                 "libobs.show_scene_item.8": [],
-                "libobs.hide_scene_item.8": []
+                "libobs.hide_scene_item.8": [],
+                "libobs.show_scene_item.6": [],
+                "libobs.hide_scene_item.6": []
             },
             "deinterlace_mode": 0,
             "deinterlace_field_order": 0,
@@ -1022,10 +1022,10 @@
                 "libobs.hide_scene_item.4": [],
                 "libobs.show_scene_item.2": [],
                 "libobs.hide_scene_item.2": [],
-                "libobs.show_scene_item.3": [],
-                "libobs.hide_scene_item.3": [],
                 "libobs.show_scene_item.5": [],
-                "libobs.hide_scene_item.5": []
+                "libobs.hide_scene_item.5": [],
+                "libobs.show_scene_item.3": [],
+                "libobs.hide_scene_item.3": []
             },
             "deinterlace_mode": 0,
             "deinterlace_field_order": 0,
@@ -1282,10 +1282,10 @@
                 "libobs.hide_scene_item.4": [],
                 "libobs.show_scene_item.2": [],
                 "libobs.hide_scene_item.2": [],
-                "libobs.show_scene_item.3": [],
-                "libobs.hide_scene_item.3": [],
                 "libobs.show_scene_item.5": [],
-                "libobs.hide_scene_item.5": []
+                "libobs.hide_scene_item.5": [],
+                "libobs.show_scene_item.3": [],
+                "libobs.hide_scene_item.3": []
             },
             "deinterlace_mode": 0,
             "deinterlace_field_order": 0,
@@ -4239,6 +4239,8 @@
                 "OBSBasic.SelectScene": [],
                 "libobs.show_scene_item.5": [],
                 "libobs.hide_scene_item.5": [],
+                "libobs.show_scene_item.6": [],
+                "libobs.hide_scene_item.6": [],
                 "libobs.show_scene_item.1": [],
                 "libobs.hide_scene_item.1": [],
                 "libobs.show_scene_item.2": [],
@@ -4246,9 +4248,7 @@
                 "libobs.show_scene_item.3": [],
                 "libobs.hide_scene_item.3": [],
                 "libobs.show_scene_item.4": [],
-                "libobs.hide_scene_item.4": [],
-                "libobs.show_scene_item.6": [],
-                "libobs.hide_scene_item.6": []
+                "libobs.hide_scene_item.4": []
             },
             "deinterlace_mode": 0,
             "deinterlace_field_order": 0,
@@ -4613,6 +4613,8 @@
                 "OBSBasic.SelectScene": [],
                 "libobs.show_scene_item.6": [],
                 "libobs.hide_scene_item.6": [],
+                "libobs.show_scene_item.7": [],
+                "libobs.hide_scene_item.7": [],
                 "libobs.show_scene_item.1": [],
                 "libobs.hide_scene_item.1": [],
                 "libobs.show_scene_item.4": [],
@@ -4620,9 +4622,7 @@
                 "libobs.show_scene_item.2": [],
                 "libobs.hide_scene_item.2": [],
                 "libobs.show_scene_item.5": [],
-                "libobs.hide_scene_item.5": [],
-                "libobs.show_scene_item.7": [],
-                "libobs.hide_scene_item.7": []
+                "libobs.hide_scene_item.5": []
             },
             "deinterlace_mode": 0,
             "deinterlace_field_order": 0,
@@ -5596,6 +5596,8 @@
                 "OBSBasic.SelectScene": [],
                 "libobs.show_scene_item.6": [],
                 "libobs.hide_scene_item.6": [],
+                "libobs.show_scene_item.7": [],
+                "libobs.hide_scene_item.7": [],
                 "libobs.show_scene_item.1": [],
                 "libobs.hide_scene_item.1": [],
                 "libobs.show_scene_item.3": [],
@@ -5603,9 +5605,7 @@
                 "libobs.show_scene_item.5": [],
                 "libobs.hide_scene_item.5": [],
                 "libobs.show_scene_item.4": [],
-                "libobs.hide_scene_item.4": [],
-                "libobs.show_scene_item.7": [],
-                "libobs.hide_scene_item.7": []
+                "libobs.hide_scene_item.4": []
             },
             "deinterlace_mode": 0,
             "deinterlace_field_order": 0,
@@ -6292,20 +6292,13 @@
     ],
     "saved_projectors": [
         {
-            "name": "[svc] Project me",
-            "monitor": -1,
-            "type": 1,
-            "geometry": "AdnQywADAAD//+x4AAAAAP//8/MAAAQg///seAAAAAD///PzAAAEIAAAAAEAAAAAB4D//+x4AAAAAP//8/MAAAQg",
-            "alwaysOnTopOverridden": false
-        },
-        {
             "monitor": -1,
             "type": 4,
             "geometry": "AdnQywADAAAAABOIAAAAAAAAGwcAAASvAAATiQAAABkAABVoAAABJgAAAAAABAAAB4AAABOIAAAAAAAAGwcAAASv",
             "alwaysOnTopOverridden": false
         },
         {
-            "name": "Fullscreen Audience",
+            "name": "[svc] Project me",
             "monitor": 1,
             "type": 1,
             "geometry": "AdnQywADAAD//+x4AAAAAP//8/cAAAQ3///seAAAAAD///P3AAAENwAAAAEABAAAB4D//+x4AAAAAP//8/cAAAQ3",
