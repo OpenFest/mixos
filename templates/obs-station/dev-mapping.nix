@@ -46,7 +46,10 @@
     };
 
     audio.by-name = {
-      "~alsa_card.usb-FOSDEM_Audio_Board_" = {
+      # "~alsa_card.usb-FOSDEM_Audio_Board_" = {
+      #   name = "out-streamcam";
+      # };
+      "~alsa_card.usb-BEHRINGER_UMC404HD_192k" = {
         name = "out-streamcam";
       };
     };
