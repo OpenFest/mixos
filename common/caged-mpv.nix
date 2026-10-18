@@ -2,7 +2,11 @@
 let
   player = pkgs.writeShellApplication {
     name = "video-player";
-    runtimeInputs = [ pkgs.cage pkgs.mpv pkgs.cowsay ];
+    runtimeInputs = [
+      pkgs.cage
+      pkgs.mpv
+      pkgs.cowsay
+    ];
     text = ''
       function pre {
         clear
@@ -20,7 +24,8 @@ let
       done
     '';
   };
-in {
+in
+{
   home-manager.users.human = {
     home.file.".zprofile".text = ''
       # Auto-start player on first VT if not already under Wayland

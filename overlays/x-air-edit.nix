@@ -4,12 +4,14 @@ self: super: {
     version = "1.8.1";
 
     src = super.fetchurl {
-      url =
-        "https://cdn.mediavalet.com/aunsw/musictribe/VX4UkGFjQ0a1DH2Q8zg3sg/_KJ6tGIG7kGVqPxP-OsnLQ/Original/X-AIR-Edit_LINUX_1.8.1.tar.gz";
+      url = "https://cdn-media.empowertribe.com/4240ddc8835149e486922840e9379af0/X-AIR-Edit_LINUX_${version}.tar.gz";
       sha256 = "sha256-vFy3/iAsGs1IlBSYAX5zTghbPtBfFCUtqVFxfMsFCGY=";
     };
 
-    nativeBuildInputs = with super; [ autoPatchelfHook makeWrapper ];
+    nativeBuildInputs = with super; [
+      autoPatchelfHook
+      makeWrapper
+    ];
 
     buildInputs = with super; [
       stdenv.cc.cc.lib # libstdc++.so.6, libgcc_s.so.1
@@ -20,7 +22,22 @@ self: super: {
       # libdl.so.2, libpthread.so.0, libm.so.6, libc.so.6 are provided by stdenv
     ];
 
-    sourceRoot = ".";
+    # The tarball has no common top-level directory, so it can't use the
+    # default sourceRoot auto-detection. sourceRoot = "." would make the
+    # generic unpackPhase chmod the whole build directory recursively,
+    # which fails if the build sandbox places its own files there. Extract
+    # into a dedicated subdirectory instead; nixpkgs' runPhase cds into
+    # sourceRoot for us once unpackPhase returns, so don't cd here too.
+    unpackPhase = ''
+      runHook preUnpack
+
+      mkdir x-air-edit-src
+      tar xf "$src" -C x-air-edit-src
+
+      runHook postUnpack
+    '';
+
+    sourceRoot = "x-air-edit-src";
 
     installPhase = ''
       runHook preInstall

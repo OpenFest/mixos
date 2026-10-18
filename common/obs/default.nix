@@ -1,11 +1,24 @@
-{ lib, pkgs, streamInfo, ... }:
+{
+  lib,
+  pkgs,
+  streamInfo,
+  ...
+}:
 let
   configdir = pkgs.stdenvNoCC.mkDerivation rec {
     name = "obs-config-dir";
     meta.description = "obs config directory";
     src = ./obs-studio;
-    buildInputs = [ pkgs.coreutils pkgs.moreutils pkgs.rsync pkgs.jq ];
-    phases = [ "unpackPhase" "installPhase" ];
+    buildInputs = [
+      pkgs.coreutils
+      pkgs.moreutils
+      pkgs.rsync
+      pkgs.jq
+    ];
+    phases = [
+      "unpackPhase"
+      "installPhase"
+    ];
     installPhase = ''
       mkdir -p $out
       rsync -rva ./ $out/obs-studio/
@@ -23,7 +36,10 @@ let
   };
   obs-config-reset = pkgs.writeShellApplication {
     name = "obs-config-reset";
-    runtimeInputs = [ pkgs.rsync pkgs.procps ];
+    runtimeInputs = [
+      pkgs.rsync
+      pkgs.procps
+    ];
     text = ''
       set -euo pipefail
 
@@ -40,7 +56,10 @@ let
         fi
       fi
 
-      pkill '.obs-wrapped' || true && echo 'killed obs because it was running'
+      if pkill '.obs-wrapped'; then
+        echo 'killed obs because it was running'
+        sleep 3
+      fi
 
       mkdir -p "$HOME/.config"
       if [[ -d "$HOME/.config/obs-studio" ]]; then
@@ -53,8 +72,12 @@ let
         ${configdir}/obs-studio/ "$HOME/.config/obs-studio/"
     '';
   };
-in {
-  imports = [ ../gui-sway ./crashobs.nix ];
+in
+{
+  imports = [
+    ../gui-sway
+    ./crashobs.nix
+  ];
 
   users.users.human.packages = [
     # video shit
@@ -81,22 +104,24 @@ in {
   };
 
   home-manager.users.human = {
-    wayland.windowManager.sway.config.startup = [{ command = "obs"; }];
+    wayland.windowManager.sway.config.startup = [ { command = "obs"; } ];
   };
 
   services.pipewire.extraConfig.pipewire = {
     "55-obs-monitor-sink" = {
-      "context.objects" = [{
-        factory = "adapter";
-        args = {
-          "factory.name" = "support.null-audio-sink";
-          "media.class" = "Audio/Sink";
-          "node.name" = "obs_monitor";
-          "node.nick" = "obsMonitor";
-          "node.description" = "OBS Monitor";
-          "audio.position" = "[ FL FR ]";
-        };
-      }];
+      "context.objects" = [
+        {
+          factory = "adapter";
+          args = {
+            "factory.name" = "support.null-audio-sink";
+            "media.class" = "Audio/Sink";
+            "node.name" = "obs_monitor";
+            "node.nick" = "obsMonitor";
+            "node.description" = "OBS Monitor";
+            "audio.position" = "[ FL FR ]";
+          };
+        }
+      ];
     };
   };
 }

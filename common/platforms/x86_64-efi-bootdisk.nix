@@ -1,4 +1,12 @@
-{ config, lib, options, pkgs, modulesPath, ... }: {
+{
+  config,
+  lib,
+  options,
+  pkgs,
+  modulesPath,
+  ...
+}:
+{
   fileSystems."/boot" = {
     device = "/dev/disk/by-label/ESP";
     fsType = "vfat";
@@ -22,11 +30,12 @@
     };
   };
 
-  system.build.raw = lib.mkOverride 99
-    (import "${toString modulesPath}/../lib/make-disk-image.nix" {
+  system.build.raw = lib.mkOverride 99 (
+    import "${toString modulesPath}/../lib/make-disk-image.nix" {
       inherit lib config pkgs;
       partitionTableType = "efi";
       inherit (config.virtualisation) diskSize;
       format = "raw";
-    });
+    }
+  );
 }

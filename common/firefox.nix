@@ -8,7 +8,8 @@ let
     Value = true;
     Status = "locked";
   };
-in {
+in
+{
   programs = {
     firefox = {
       enable = true;
@@ -33,8 +34,7 @@ in {
         OverridePostUpdatePage = "";
         DontCheckDefaultBrowser = true;
         DisplayBookmarksToolbar = "never"; # alternatives: "always" or "newtab"
-        DisplayMenuBar =
-          "default-off"; # alternatives: "always", "never" or "default-on"
+        DisplayMenuBar = "default-off"; # alternatives: "always", "never" or "default-on"
         SearchBar = "unified"; # alternative: "separate"
 
         # ---- EXTENSIONS ----
@@ -42,12 +42,10 @@ in {
         # Valid strings for installation_mode are "allowed", "blocked",
         # "force_installed" and "normal_installed".
         ExtensionSettings = {
-          "*".installation_mode =
-            "blocked"; # blocks all addons except the ones specified below
+          "*".installation_mode = "blocked"; # blocks all addons except the ones specified below
           # uBlock Origin:
           "uBlock0@raymondhill.net" = {
-            install_url =
-              "https://addons.mozilla.org/firefox/downloads/latest/ublock-origin/latest.xpi";
+            install_url = "https://addons.mozilla.org/firefox/downloads/latest/ublock-origin/latest.xpi";
             installation_mode = "force_installed";
           };
         };
@@ -77,22 +75,15 @@ in {
           "browser.search.suggest.enabled.private" = lock-false;
           "browser.urlbar.suggest.searches" = lock-false;
           "browser.urlbar.showSearchSuggestionsFirst" = lock-false;
-          "browser.newtabpage.activity-stream.feeds.section.topstories" =
-            lock-false;
+          "browser.newtabpage.activity-stream.feeds.section.topstories" = lock-false;
           "browser.newtabpage.activity-stream.feeds.snippets" = lock-false;
-          "browser.newtabpage.activity-stream.section.highlights.includePocket" =
-            lock-false;
-          "browser.newtabpage.activity-stream.section.highlights.includeBookmarks" =
-            lock-false;
-          "browser.newtabpage.activity-stream.section.highlights.includeDownloads" =
-            lock-false;
-          "browser.newtabpage.activity-stream.section.highlights.includeVisited" =
-            lock-false;
+          "browser.newtabpage.activity-stream.section.highlights.includePocket" = lock-false;
+          "browser.newtabpage.activity-stream.section.highlights.includeBookmarks" = lock-false;
+          "browser.newtabpage.activity-stream.section.highlights.includeDownloads" = lock-false;
+          "browser.newtabpage.activity-stream.section.highlights.includeVisited" = lock-false;
           "browser.newtabpage.activity-stream.showSponsored" = lock-false;
-          "browser.newtabpage.activity-stream.system.showSponsored" =
-            lock-false;
-          "browser.newtabpage.activity-stream.showSponsoredTopSites" =
-            lock-false;
+          "browser.newtabpage.activity-stream.system.showSponsored" = lock-false;
+          "browser.newtabpage.activity-stream.showSponsoredTopSites" = lock-false;
         };
       };
     };

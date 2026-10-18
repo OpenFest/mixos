@@ -1,4 +1,11 @@
-{ modulesPath, lib, pkgs, inputs, ... }: {
+{
+  modulesPath,
+  lib,
+  pkgs,
+  inputs,
+  ...
+}:
+{
   imports = [
     inputs.nixos-hardware.nixosModules.raspberry-pi-4
     "${toString modulesPath}/installer/sd-card/sd-image-aarch64.nix"
@@ -12,5 +19,8 @@
     };
   };
   console.enable = false;
-  environment.systemPackages = with pkgs; [ libraspberrypi raspberrypi-eeprom ];
+  environment.systemPackages = with pkgs; [
+    libraspberrypi
+    raspberrypi-eeprom
+  ];
 }
