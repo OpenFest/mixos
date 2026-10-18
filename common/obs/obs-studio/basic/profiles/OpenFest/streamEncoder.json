@@ -1,1 +1,1 @@
-{"bitrate":5000,"profile":"high"}
+{"vaapi_device":"/dev/dri/by-path/pci-0000:03:00.0-render","keyint_sec":5}
