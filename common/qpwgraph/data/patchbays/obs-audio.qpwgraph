@@ -6,10 +6,6 @@
    <input node="OBS Studio: Slides audio capture" port="OBS Studio: Slides audio capture:in_2"/>
   </item>
   <item node-type="pipewire" port-type="pipewire-audio">
-   <output node="OBS Monitor" port="obsMonitor:monitor_FR"/>
-   <input node="out-streamcam Pro" port="UMC404HD 192k:playback_AUX1"/>
-  </item>
-  <item node-type="pipewire" port-type="pipewire-audio">
    <output node="capture-overview Pro" port="Hagibis:capture_AUX0"/>
    <input node="OBS Studio: Stream mix audio capture" port="OBS Studio: Stream mix audio capture:in_1"/>
   </item>
@@ -23,7 +19,11 @@
   </item>
   <item node-type="pipewire" port-type="pipewire-audio">
    <output node="OBS Monitor" port="obsMonitor:monitor_FL"/>
-   <input node="out-streamcam Pro" port="UMC404HD 192k:playback_AUX0"/>
+   <input node="out-streamcam Pro" port="Pro:playback_FL"/>
+  </item>
+  <item node-type="pipewire" port-type="pipewire-audio">
+   <output node="OBS Monitor" port="obsMonitor:monitor_FR"/>
+   <input node="out-streamcam Pro" port="Pro:playback_FR"/>
   </item>
  </items>
 </patchbay>

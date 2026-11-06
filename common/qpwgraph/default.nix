@@ -28,6 +28,8 @@ let
     runtimeInputs = [
       pkgs.rsync
       pkgs.procps
+      pkgs.coreutils
+      pkgs.diffutils
     ];
     text = ''
       set -euo pipefail
@@ -45,7 +47,7 @@ let
         fi
       fi
 
-      pkill '^qpwgraph$' || true && echo 'killed qpwgraph because it was running'
+      pkill '^\.?qpwgraph-wrap' || true && echo 'killed qpwgraph because it was running'
 
       mkdir -p "$HOME/.config/rncbc.org" "$HOME/.local/share/patchbays"
       rsync -rva \
@@ -56,6 +58,10 @@ let
         --chown="$USER" \
         --chmod=D755,F644 \
         ${configdir}/data/patchbays/${config.mixos.qpwgraph.patchbay}.qpwgraph "$HOME/.local/share/patchbays/main.qpwgraph"
+      rsync -rva \
+        --chown="$USER" \
+        --chmod=D755,F644 \
+        ${configdir}/.version "$HOME/.local/share/patchbays/.version"
     '';
   };
 in

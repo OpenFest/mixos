@@ -10,7 +10,8 @@
     projector = "HDMI-A-1";
   };
 
-  mixos.macro-keyboards.numpad.match = "145f:0239";
+  mixos.macro-keyboards.numpad.match = "145f:0239"; # kroci
+  # mixos.macro-keyboards.numpad.match = "c0f4:08c0"; # albert
 
   mixos.automount.by-label = [
     {

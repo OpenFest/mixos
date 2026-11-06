@@ -10,11 +10,11 @@
       streamInfo = {
         url = "rtmp://strm.ludost.net/st";
         key = "hall-a";
-      };
+     };
     };
     deploy = {
       # hostname = "${hostname}.video.openfest.eu";
-      hostname = "172.31.190.205";
+      hostname = "lamya.video.openfest.org";
       sshUser = "human";
 
       remoteBuild = false;
