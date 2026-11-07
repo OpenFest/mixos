@@ -37,8 +37,8 @@ in
       convert = inkscapify;
     }
     {
-      url = "https://nc.openfest.org/shanovideo/Frames/Banner.svg";
-      sha256 = "sha256-ylC4CvKi+DcdZTzIYBqG6XpYVlygbg8LsCnT7cqf4hw=";
+      url = "https://rnd.qtrp.org/of_banner.png";
+      sha256 = "sha256-DZgQ/Z5YL+GIGdXx3J1N3nk3FER1JGC5avidEE78I2M=";
       name = "banner.png";
       convert = inkscapify;
     }

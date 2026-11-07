@@ -9,7 +9,7 @@
       inherit hostname;
       streamInfo = {
         url = "rtmp://strm.ludost.net/st";
-        key = "hall-a";
+        key = "sofia";
      };
     };
     deploy = {

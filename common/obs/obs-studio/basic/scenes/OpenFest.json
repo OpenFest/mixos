@@ -1856,6 +1856,61 @@
                 "custom_size": false,
                 "items": [
                     {
+                        "name": "Frame Image",
+                        "source_uuid": "bb1a9502-3ef0-4328-bf91-259128e768f5",
+                        "visible": true,
+                        "locked": true,
+                        "rot": 0.0,
+                        "scale_ref": {
+                            "x": 1920.0,
+                            "y": 1080.0
+                        },
+                        "align": 5,
+                        "bounds_type": 2,
+                        "bounds_align": 0,
+                        "bounds_crop": false,
+                        "crop_left": 0,
+                        "crop_top": 0,
+                        "crop_right": 0,
+                        "crop_bottom": 0,
+                        "id": 9,
+                        "group_item_backup": false,
+                        "pos": {
+                            "x": 0.0,
+                            "y": 0.0
+                        },
+                        "pos_rel": {
+                            "x": -1.7777777910232544,
+                            "y": -1.0
+                        },
+                        "scale": {
+                            "x": 1.0,
+                            "y": 1.0
+                        },
+                        "scale_rel": {
+                            "x": 1.0,
+                            "y": 1.0
+                        },
+                        "bounds": {
+                            "x": 1920.0,
+                            "y": 1080.0
+                        },
+                        "bounds_rel": {
+                            "x": 3.555555582046509,
+                            "y": 2.0
+                        },
+                        "scale_filter": "disable",
+                        "blend_method": "default",
+                        "blend_type": "normal",
+                        "show_transition": {
+                            "duration": 0
+                        },
+                        "hide_transition": {
+                            "duration": 0
+                        },
+                        "private_settings": {}
+                    },
+                    {
                         "name": "Cows",
                         "source_uuid": "f2da5b13-c83c-4062-a02b-524db003747d",
                         "visible": true,
@@ -1931,61 +1986,6 @@
                         "id": 8,
                         "group_item_backup": false,
                         "pos": {
-                            "x": 59.0,
-                            "y": 61.0
-                        },
-                        "pos_rel": {
-                            "x": -1.6685185432434082,
-                            "y": -0.8870370388031006
-                        },
-                        "scale": {
-                            "x": 0.7604166865348816,
-                            "y": 0.760185182094574
-                        },
-                        "scale_rel": {
-                            "x": 0.7604166865348816,
-                            "y": 0.760185182094574
-                        },
-                        "bounds": {
-                            "x": 0.0,
-                            "y": 0.0
-                        },
-                        "bounds_rel": {
-                            "x": 0.0,
-                            "y": 0.0
-                        },
-                        "scale_filter": "disable",
-                        "blend_method": "default",
-                        "blend_type": "normal",
-                        "show_transition": {
-                            "duration": 0
-                        },
-                        "hide_transition": {
-                            "duration": 0
-                        },
-                        "private_settings": {}
-                    },
-                    {
-                        "name": "Frame Image",
-                        "source_uuid": "bb1a9502-3ef0-4328-bf91-259128e768f5",
-                        "visible": true,
-                        "locked": true,
-                        "rot": 0.0,
-                        "scale_ref": {
-                            "x": 1920.0,
-                            "y": 1080.0
-                        },
-                        "align": 5,
-                        "bounds_type": 2,
-                        "bounds_align": 0,
-                        "bounds_crop": false,
-                        "crop_left": 0,
-                        "crop_top": 0,
-                        "crop_right": 0,
-                        "crop_bottom": 0,
-                        "id": 9,
-                        "group_item_backup": false,
-                        "pos": {
                             "x": 0.0,
                             "y": 0.0
                         },
@@ -2002,12 +2002,12 @@
                             "y": 1.0
                         },
                         "bounds": {
-                            "x": 1920.0,
-                            "y": 1080.0
+                            "x": 0.0,
+                            "y": 0.0
                         },
                         "bounds_rel": {
-                            "x": 3.555555582046509,
-                            "y": 2.0
+                            "x": 0.0,
+                            "y": 0.0
                         },
                         "scale_filter": "disable",
                         "blend_method": "default",
@@ -2255,12 +2255,12 @@
             "push-to-talk-delay": 0,
             "hotkeys": {
                 "OBSBasic.SelectScene": [],
+                "libobs.show_scene_item.9": [],
+                "libobs.hide_scene_item.9": [],
                 "libobs.show_scene_item.12": [],
                 "libobs.hide_scene_item.12": [],
                 "libobs.show_scene_item.8": [],
                 "libobs.hide_scene_item.8": [],
-                "libobs.show_scene_item.9": [],
-                "libobs.hide_scene_item.9": [],
                 "libobs.show_scene_item.11": [],
                 "libobs.hide_scene_item.11": [],
                 "libobs.show_scene_item.10": [],
@@ -6294,14 +6294,14 @@
         {
             "monitor": -1,
             "type": 4,
-            "geometry": "AdnQywADAAAAABOIAAAAAAAAGwcAAASvAAATiQAAABkAABsIAAAEyAAAAAAABAAAB4AAABOIAAAAAAAAGwcAAASv",
+            "geometry": "AdnQywADAAAAABOIAAAAAAAAGvMAAAP3AAATiAAAAAAAABrzAAAD9wAAAAAAAAAAB4AAABOIAAAAAAAAGvMAAAP3",
             "alwaysOnTopOverridden": false
         },
         {
             "name": "[svc] Project me",
-            "monitor": 1,
+            "monitor": 0,
             "type": 1,
-            "geometry": "AdnQywADAAD//+x4AAAAAP//8/cAAAQ3///seAAAAAD///P3AAAENwAAAAEABAAAB4D//+x4AAAAAP//8/cAAAQ3",
+            "geometry": "AdnQywADAAD//+x4AAAAAP//8/cAAAQ3AAATiAAAAAAAABsHAAAENwAAAAIABAAAB4D//+x4AAAAAP//8/cAAAQ3",
             "alwaysOnTopOverridden": false
         }
     ],
