@@ -4,6 +4,6 @@
     "server": "rtmp://strm.ludost.net/st",
     "use_auth": false,
     "bwtest": false,
-    "key": "hall-a"
+    "key": "sofia"
   }
 }

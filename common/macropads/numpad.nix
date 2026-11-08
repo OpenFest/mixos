@@ -46,6 +46,8 @@
         homepage = setScene "Break";
         tab = setScene "Ads + Intermezzo";
 
+        backspace = setScene "Presenter testing";
+
         # unused keys:
         # kpslash kpasterisk backspace space kpdot
       };
