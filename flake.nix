@@ -45,7 +45,6 @@
     {
       nixosConfigurations = dom.nixosConfigurations;
       packages = dom.packages;
-      deploy = dom.deploy;
 
       devShells = forAllSystems (
         system:

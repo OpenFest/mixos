@@ -13,12 +13,8 @@
      };
     };
     deploy = {
-      # hostname = "${hostname}.video.openfest.eu";
       hostname = "lamya.video.openfest.org";
       sshUser = "human";
-
-      remoteBuild = false;
-      fastConnection = true;
     };
   }
 ]

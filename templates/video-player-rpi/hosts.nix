@@ -15,6 +15,10 @@ let
       inherit hostname;
       videoPlayerTarget = "https://rnd.qtrp.org/test_videos/cows.mp4";
     };
+    deploy = {
+      hostname = "${hostname}.video.openfest.org";
+      sshUser = "human";
+    };
   };
 in
 map mkHost hostnames
